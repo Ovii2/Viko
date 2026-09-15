@@ -1,0 +1,122 @@
+@import "../../colors.css";
+
+.header {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 1rem;
+}
+
+.header-logo {
+  width: 4rem;
+  flex-shrink: 0;
+}
+
+.header-title,
+.header-subtitle {
+  color: var(--color-table-header);
+}
+
+.header-title {
+  font-size: x-large;
+}
+
+.header-subtitle {
+  font-size: small;
+  white-space: nowrap;
+}
+
+.burger-menu {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+ul li {
+  color: var(--color-table-header);
+  cursor: pointer;
+  padding: 0.1rem;
+}
+
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  flex-shrink: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.navigation {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: auto;
+  right: 0;
+  width: 10rem;
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.nav-item {
+  color: var(--color-table-header);
+}
+
+.nav-item.active {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  font-weight: 600;
+}
+
+.navigation.is-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-menu {
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 500px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header-menu {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .navigation {
+    position: static;
+    display: block;
+    width: auto;
+  }
+
+  .navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .header-menu {
+    width: auto;
+    margin-left: auto;
+  }
+}

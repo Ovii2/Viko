@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagrindinis | Atrask Lietuvą</title>
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <script type="module">
+      import { initMenu } from "./scripts/menu.js";
+
+      initMenu();
+    </script>
+  </head>
+  <body>
+    <!-- HEADER START -->
+    <header class="header">
+      <img class="header-logo" src="./assets/logo.svg" alt="Logo" />
+      <div class="header-text">
+        <p class="header-title">Atrask Lietuvą</p>
+        <p class="header-subtitle">Gamta · Kelionės · Įspūdžiai</p>
+      </div>
+      <div class="header-menu">
+        <button class="menu-toggle" type="button">
+          <img class="burger-menu" src="../../assets/menu.svg" alt="Menu" />
+        </button>
+        <nav class="navigation">
+          <ul>
+            <li><a class="nav-item" href="../../index.html">Pagrindinis</a></li>
+            <li><a class="nav-item" href="/pages/about/about.html">Apie</a></li>
+            <li><a class="nav-item" href="/pages/gallery/gallery.html">Galerija</a></li>
+            <li><a class="nav-item" href="/pages/survery/survey.html">Anketa</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- HEADER END -->
+    <!-- MAIN START -->
+    <div class="content-container">
+      <main class="main">
+        <section class="hero">
+          <img src="./assets/sartu-parkas.jpg" alt="Sartų regionins parkas" />
+          <div class="hero-content">
+            <h1 class="hero-title">Atrask Lietuvą</h1>
+            <p class="hero-description">Ežerai, miškai, miesteliai ir unikali gamta laukia tavęs visai čia pat.</p>
+            <button class="hero-button" type="button">Planuok kelionę ➝</button>
+          </div>
+        </section>
+        <section class="destinations-grid">
+          <h2>Populiarios kryptys</h2>
+          <article class="destination-card">
+            <img src="./assets/traku-pilis.jpeg" alt="Trakų pilis" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Trakų pilis</h3>
+              <p class="destination-card-description">Istorija ir gamta</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="./assets/nidos-kopos.jpg" alt="Nidos kopos" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Nidos kopos</h3>
+              <p class="destination-card-description">Kuršių Nerija</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="./assets/aukstaitijos-ezerai.jpeg" alt="Aukštaitijos Ežerai" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Aukštaitijos Ežerai</h3>
+              <p class="destination-card-description">Ramybės oazė</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="./assets/cepkeliu-raistas.jpg" alt="Čepkelių raistas" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Čepkelių raistas</h3>
+              <p class="destination-card-description">Pažintiniai takai</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="./assets/anyksciu-silelis.jpeg" alt="Anykščių šilelis" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Anykščių šilelis</h3>
+              <p class="destination-card-description">Miškų paslaptys</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="./assets/vilniaus-senamiestis.jpg" alt="Vilniaus senamiestis" />
+            <div class="destination-card-text">
+              <h3 class="destination-card-title">Vilniaus senamiestis</h3>
+              <p class="destination-card-description">Kultūra ir atmosfera</p>
+            </div>
+          </article>
+        </section>
+        <section class="routes">
+          <h2>Maršrutai</h2>
+          <table class="routes-table">
+            <tr>
+              <th>Kryptis</th>
+              <th>Atstumas (km)</th>
+              <th>Trukmė (val.)</th>
+            </tr>
+            <tr>
+              <td>Trakai - Galvės ežero ratas</td>
+              <td>12</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Nida - Parnidžio kopa</td>
+              <td>8</td>
+              <td>2,5</td>
+            </tr>
+            <tr>
+              <td>Aukštaitijos nacionalinis parkas</td>
+              <td>15</td>
+              <td>4</td>
+            </tr>
+          </table>
+        </section>
+      </main>
+      <aside>
+        <div class="route-plan">
+          <div class="route-plan-title">
+            <img src="./assets/terrain.svg" alt="Kalnai" />
+            <h3>Kelionės planas</h3>
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <p>Pasirink maršrutą</p>
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            Susidėk daiktus
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            Įkrauk prietaisus
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            Patikrink orus
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            Gerbk gamtą ir kitus
+          </div>
+          <div class="route-plan-option">
+            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            Rink įspūdžius
+          </div>
+        </div>
+
+        <section class="travel-quote">
+          <hr />
+          <p>"Geriausios kelionės prasideda nuo smalsumo."</p>
+          <hr />
+        </section>
+
+        <section class="registration">
+          <div class="registration-title">
+            <img src="./assets/location_pin.svg" alt="Lokacija" />
+            <h3>Registracija</h3>
+          </div>
+
+          <form class="registration-form">
+            <label for="name">Vardas</label>
+            <input type="text" name="name" id="name" placeholder="Įveskite vardą" />
+
+            <label for="email">El. paštas</label>
+            <input type="email" name="email" id="email" placeholder="Įveskite el. paštą" />
+
+            <label for="travel-date">Kelionės data</label>
+            <input type="date" name="travel-date" id="travel-date" />
+
+            <label for="destination">Pasirinkite kelionės kryptį</label>
+            <select name="destination" id="destination">
+              <option value="traku-pilis">Trakų pilis</option>
+              <option value="nidos-kopos">Nidos kopos</option>
+              <option value="aukstaitijos-ezerai">Aukštaitijos ežerai</option>
+              <option value="cepkeliu-raistas">Čepkelių raistas</option>
+              <option value="anyksciu-silelis">Anykščių šilelis</option>
+              <option value="vilniaus-senamiestis">Vilniaus senamiestis</option>
+            </select>
+
+            <div class="travel-group">
+              <p class="travel-group-title">Kaip keliausite?</p>
+
+              <div class="travel-options">
+                <label for="alone">
+                  <input type="radio" name="travel-group" id="alone" value="alone" />
+                  Vienas
+                </label>
+
+                <label for="friends">
+                  <input type="radio" name="travel-group" id="friends" value="friends" />
+                  Su draugais
+                </label>
+
+                <label for="family">
+                  <input type="radio" name="travel-group" id="family" value="family" />
+                  Su šeima
+                </label>
+
+                <label for="pet">
+                  <input type="radio" name="travel-group" id="pet" value="pet" />
+                  Su augintiniu
+                </label>
+
+                <label for="guide">
+                  <input type="radio" name="travel-group" id="guide" value="guide" />
+                  Su gidu
+                </label>
+
+                <label for="group">
+                  <input type="radio" name="travel-group" id="group" value="group" />
+                  Su grupe
+                </label>
+              </div>
+            </div>
+
+            <label class="newsletter-option" for="newsletter">
+              <input type="checkbox" name="newsletter" id="newsletter" value="yes" />
+              Taip, noriu gauti naujienas el. paštu
+            </label>
+
+            <button class="registration-button" type="submit">Registruotis</button>
+          </form>
+        </section>
+        <section class="form-footer">
+          <hr />
+          <div class="form-footer-content">
+            <img src="./assets/leaf.svg" alt="Lapas" />
+            <p>Lietuva - gražesnė, kai ją atrandame kartu.</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+    <!-- MAIN END -->
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/logo.svg" alt="Logo" />
+        <div class="footer-text">
+          <p class="footer-title">Atrask Lietuvą</p>
+          <p class="footer-subtitle">Gamta · Kelionės · Įspūdžiai</p>
+        </div>
+      </div>
+      <p class="footer-moto">Lietuva įkvėpia keliauti</p>
+      <div class="footer-info">
+        <div class="icons-container">
+          <a class="social-icon" href="#"><img src="../../assets/youtube.svg" alt="Youtube" /></a>
+          <a class="social-icon" href="#"><img src="../../assets/facebook.svg" alt="Facebook" /></a>
+          <a class="social-icon" href="#"><img src="../../assets/instagram.svg" alt="Instagram" /></a>
+        </div>
+        <p>&copy; 2026 Visos teisės saugomos</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </body>
+</html>

@@ -1,0 +1,319 @@
+@import "/colors.css";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.content-container {
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: clamp(10rem, 25rem, 40rem);
+}
+
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-title,
+.hero-description {
+  color: var(--color-text-on-primary);
+  text-shadow: 0 0.2rem 0.4rem rgb(0 0 0 / 70%);
+}
+
+.hero-description {
+  font-weight: 600;
+}
+
+.hero-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.hero-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.destinations-grid {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.destination-card {
+  display: flex;
+  gap: 1rem;
+}
+
+.destination-card img {
+  width: clamp(5rem, 30%, 100%);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.destination-card-description {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.routes-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  color: var(--color-text);
+}
+
+.routes-table th,
+.routes-table td {
+  border: 0.1rem solid var(--color-border);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.routes-table th {
+  background-color: var(--color-table-header);
+  font-weight: 600;
+}
+
+.routes-table th:first-child,
+.routes-table td:first-child {
+  text-align: left;
+}
+
+aside {
+  background-color: var(--color-table-header);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+
+.route-plan {
+  display: grid;
+  gap: 0.25rem 0.5rem;
+}
+
+.route-plan-title,
+.registration-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.route-plan-title img,
+.registration-title img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.route-plan-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.route-plan-option p {
+  color: var(--color-text);
+}
+
+.travel-quote {
+  display: none;
+}
+
+.registration {
+  margin: 1rem 0;
+}
+
+.registration-title img {
+  margin-left: -0.2rem;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.registration-form input,
+.registration-form select {
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.travel-group-title {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.travel-group label {
+  font-weight: 500;
+}
+
+.registration-button {
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+hr {
+  border-color: var(--color-border);
+}
+
+.form-footer {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .destinations-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .destinations-grid h2 {
+    grid-column: 1 / -1;
+  }
+
+  .destination-card {
+    flex-direction: column;
+  }
+
+  .destination-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .route-plan-title {
+    grid-column: 1 / -1;
+  }
+
+  .route-plan {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .hero img {
+    height: clamp(20rem, 25vw, 30rem);
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .routes {
+    margin-top: auto;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1.5rem;
+    align-self: stretch;
+  }
+
+  .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .destination-card {
+    margin-bottom: 1rem;
+  }
+
+  .destination-card img {
+    height: clamp(6rem, 9vw, 12rem);
+  }
+
+  .travel-quote {
+    display: block;
+  }
+
+  .travel-quote p {
+    color: var(--color-text);
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+
+  .route-plan {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .travel-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-footer {
+    margin-top: auto;
+    display: block;
+  }
+
+  .form-footer img {
+    max-width: 4rem;
+  }
+
+  .form-footer p {
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .form-footer-content {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .travel-options {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-footer {
+    margin-top: 1rem;
+  }
+}
