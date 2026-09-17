@@ -14,15 +14,15 @@ int main() {
     int n4;
     int n5;
 
-    cout << "Enter first number\n" << endl;
+    cout << "Enter first number" << endl;
     cin >> n1;
-    cout << "Enter second number\n" << endl;
+    cout << "Enter second number" << endl;
     cin >> n2;
-    cout << "Enter third number\n" << endl;
+    cout << "Enter third number" << endl;
     cin >> n3;
-    cout << "Enter fourth number\n" << endl;
+    cout << "Enter fourth number" << endl;
     cin >> n4;
-    cout << "Enter fifth number\n" << endl;
+    cout << "Enter fifth number" << endl;
     cin >> n5;
 
     int avg = (n1 + n2 + n3 + n4 + n5) / 5;

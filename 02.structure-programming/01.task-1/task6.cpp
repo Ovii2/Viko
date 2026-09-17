@@ -12,7 +12,7 @@ int main() {
 
     int number;
 
-    cout << "Enter number\n";
+    cout << "Enter number" << endl;
     cin >> number;
 
     int n1 = number / 10;
