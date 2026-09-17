@@ -16,7 +16,7 @@ int main() {
     int seatCount = 2500;
 
     cout << format("{} was established at {}. Is currently owned by {}. Home arena is {}. Fits around {} persons", team,
-                   established, owner, arena, seatCount);
+                   established, owner, arena, seatCount) << endl;
 
     return 0;
 }

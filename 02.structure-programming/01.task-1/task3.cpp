@@ -15,8 +15,9 @@ int main() {
     double engine = 2.0;
     string color = "pilkos";
 
-    cout << format("Automobilis {} {} yra pagamintas {} metais. Jo motoras yra {}l litrazo. Automobilis yra {} spalvos.",
-                   make, model, year, engine, color);
+    cout << format(
+        "Automobilis {} {} yra pagamintas {} metais. Jo motoras yra {}l litrazo. Automobilis yra {} spalvos.",
+        make, model, year, engine, color) << endl;
 
     return 0;
 }

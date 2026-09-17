@@ -16,7 +16,7 @@ int main() {
     string courseTitle = "software engineering";
 
     cout << format("Student {} {} is {} years old. "
-                   "Is at group {} course {} studying {}", name, lastName, age, group, course, courseTitle);
+                   "Is at group {} course {} studying {}", name, lastName, age, group, course, courseTitle) << endl;
 
     return 0;
 }
