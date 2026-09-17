@@ -25,7 +25,7 @@ int main() {
     cout << "Enter fifth number" << endl;
     cin >> n5;
 
-    int avg = (n1 + n2 + n3 + n4 + n5) / 5;
+    double avg = (n1 + n2 + n3 + n4 + n5) / 5.0;
 
     cout << format("Average is {}", avg) << endl;
 }
