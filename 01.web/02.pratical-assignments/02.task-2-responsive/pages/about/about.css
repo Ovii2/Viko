@@ -4,8 +4,61 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-background);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  line-height: 1.2;
 }
 
 .content-container {
+  margin: 1rem;
   flex: 1;
+}
+
+.content-container p {
+  color: var(--color-text);
+}
+
+.about-intro,
+.about-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-intro-text h2 {
+  color: var(--color-primary);
+}
+
+hr {
+  border-color: var(--color-border);
+  width: 100%;
+}
+
+.explore-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.explore-section-card img {
+  width: 100%;
+  height: clamp(10rem, 20vw, 18rem);
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.features-section-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.features-section-item img {
+  width: clamp(3rem, 6vw, 5rem);
 }
