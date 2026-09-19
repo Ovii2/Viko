@@ -37,7 +37,103 @@
       </div>
     </header>
     <!-- HEADER END -->
-    <div class="content-container"></div>
+    <!-- MAIN START -->
+    <div class="content-container">
+      <section class="survey-text-section">
+        <h1>Kelionių anketa</h1>
+        <p>Pasidalink savo kelionių pomėgiais.</p>
+      </section>
+      <form class="survey-form">
+        <div class="about-you">
+          <h3>Apie Tave</h3>
+          <hr />
+          <div class="about-you-inputs">
+            <div class="form-field">
+              <label for="name">Vardas</label>
+              <input type="text" name="name" id="name" placeholder="Įveskite vardą" />
+            </div>
+
+            <div class="form-field">
+              <label for="email">El. paštas</label>
+              <input type="email" name="email" id="email" placeholder="Įveskite el. paštą" />
+            </div>
+          </div>
+        </div>
+        <div class="travel-hobbies">
+          <h3>Kelionių pomėgiai</h3>
+          <hr />
+          <div class="date-and-frequency">
+            <div class="travel-frequency">
+              <label for="frequency">Kaip dažnai keliauji?</label>
+              <select name="frequency" id="frequency">
+                <option value="everyday">Kasdien</option>
+                <option value="semiweekly">Du kartus į savaitę</option>
+                <option value="monthly">Kartą į mėnesį</option>
+                <option value="yearly">Kartą per metus</option>
+              </select>
+            </div>
+
+            <div class="travel-date">
+              <label for="date">Kada planuoji šitą kelionę?</label>
+              <input type="date" name="date" id="date" />
+            </div>
+          </div>
+
+          <div class="interests-and-companions">
+            <div class="interests">
+              <h4>Kas tave domina?</h4>
+
+              <label for="nature">
+                <input type="checkbox" name="nature" id="nature" />
+                Gamta
+              </label>
+
+              <label for="history">
+                <input type="checkbox" name="history" id="history" />
+                Istorija
+              </label>
+
+              <label for="cities">
+                <input type="checkbox" name="cities" id="cities" />
+                Miestai
+              </label>
+
+              <label for="seaside">
+                <input type="checkbox" name="seaside" id="seaside" />
+                Pajūris
+              </label>
+            </div>
+
+            <div class="travel-companions">
+              <h4>Su kuo dažniausiai keliauji?</h4>
+              <label for="alone">
+                <input type="radio" name="alone" id="alone" />
+                Vienas
+              </label>
+
+              <label for="friends">
+                <input type="radio" name="friends" id="friends" />
+                Su draugais
+              </label>
+
+              <label for="family">
+                <input type="radio" name="family" id="family" />
+                Su šeima
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <section class="suggestions">
+          <h3>Tavo pasiūlymai</h3>
+          <hr />
+          <label for="idea">Kokią Lietuvos vietą norėtum aplankyti?</label>
+          <textarea name="idea" id="idea" placeholder="Parašyk savo idėją..."></textarea>
+        </section>
+        <button class="submit-survey-button" type="submit">Pateikti anketą</button>
+      </form>
+    </div>
+    <!-- MAIN END -->
     <!-- FOOTER START -->
     <footer class="footer">
       <div class="footer-brand">

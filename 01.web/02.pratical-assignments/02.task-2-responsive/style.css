@@ -9,6 +9,10 @@ body {
   line-height: 1.6;
 }
 
+img {
+  border-radius: 0.25rem;
+}
+
 .content-container {
   flex: 1;
   margin: 0.5rem;
@@ -181,12 +185,17 @@ aside {
 }
 
 .registration-button {
+  cursor: pointer;
   border: none;
   border-radius: 0.25rem;
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
   padding: 0.25rem 0.5rem;
   margin-top: 0.5rem;
+}
+
+.registration-button:hover {
+  background-color: var(--color-primary-hover);
 }
 
 hr {

@@ -4,8 +4,165 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-background);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  line-height: 1.2;
+}
+
+hr {
+  border-color: var(--color-border);
+  width: 100%;
+  margin: 0;
+}
+
+label {
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem 0;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--color-border);
+  border-radius: 0.2rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
   flex: 1;
+}
+
+.survey-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.survey-text-section p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.about-you,
+.travel-hobbies,
+.suggestions {
+  display: grid;
+  background-color: var(--color-table-header);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.about-you-inputs {
+  display: grid;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.interests,
+.travel-companions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.interests label,
+.travel-companions label,
+.suggestions label {
+  margin: 0.2rem 0;
+  font-weight: normal;
+}
+
+.date-and-frequency {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.date-and-frequency input,
+.date-and-frequency select {
+  width: 100%;
+}
+
+.interests-and-companions {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions hr {
+  margin-bottom: 0.5rem;
+}
+
+.suggestions textarea {
+  margin: 0.5rem 0;
+}
+
+.submit-survey-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.submit-survey-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+textarea {
+  height: clamp(8rem, 12vw, 30rem);
+}
+
+@media screen and (min-width: 500px) {
+  .about-you-inputs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .interests-and-companions,
+  .date-and-frequency {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .travel-frequency,
+  .travel-date,
+  .interests,
+  .travel-companions {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .travel-frequency,
+  .travel-date {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-and-frequency label {
+    margin-top: 0;
+  }
+
+  .date-and-frequency input,
+  .date-and-frequency select {
+    min-width: 0;
+    margin-top: auto;
+  }
+
+  .interests,
+  .travel-companions {
+    border: 0.1rem solid var(--color-background);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+  }
 }
