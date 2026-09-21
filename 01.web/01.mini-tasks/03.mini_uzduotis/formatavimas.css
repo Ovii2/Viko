@@ -1,0 +1,34 @@
+.person-code {
+  color: gray;
+}
+
+.web,
+.web-alt {
+  font-weight: 600;
+}
+
+.web {
+  text-decoration: line-through;
+}
+
+.web-alt {
+  text-decoration: underline;
+}
+
+.no-email,
+.register {
+  font-weight: 600;
+}
+
+.register {
+  font-size: x-large;
+}
+
+.email {
+  text-decoration: underline;
+}
+
+.vu {
+  text-decoration: underline;
+  text-decoration-style:dotted; 
+}
