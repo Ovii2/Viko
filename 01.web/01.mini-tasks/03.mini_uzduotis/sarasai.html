@@ -17,6 +17,12 @@
         background: teal;
       }
 
+      section {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+      }
+
       header h1 {
         text-align: center;
         font-size: 3em;
@@ -36,9 +42,10 @@
       }
 
       div.list {
-        width: 30%;
+        width: 25%;
         height: 400px;
-        margin-left: 1%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
         margin-bottom: 20px;
         padding: 10px;
         background: white;
@@ -51,6 +58,16 @@
 
       dd {
         margin-bottom: 10px;
+      }
+
+      .list-circle li {
+        list-style-type: circle;
+      }
+
+      .list-circle {
+        list-style-type: circle;
+        background: url("programming-languages.jpeg") no-repeat center;
+        background-size: cover;
       }
     </style>
   </head>
@@ -65,18 +82,21 @@
           <h2>Terminų sąrašas</h2>
           <dl>
             <dt>Saitynas</dt>
-            <dd>Hipertekstinės informacijos visuotinis tinklas, svarbiausias interneto komponentas.</dd>
+            <dd>
+              Hipertekstinės informacijos visuotinis tinklas, svarbiausias
+              interneto komponentas.
+            </dd>
 
             <dt>Sąrašas</dt>
             <dd>
-              Objektų išvardijimas. Sąraše esantys objektai vadinami sąrašo elementais. Dažniausiai jie numeruojami arba
-              kitaip suženklinami.
+              Objektų išvardijimas. Sąraše esantys objektai vadinami sąrašo
+              elementais. Dažniausiai jie numeruojami arba kitaip suženklinami.
             </dd>
 
             <dt>Stilius</dt>
             <dd>
-              Išraiškos vienovė, būdinga dokumentams, programoms, sąsajai ar jų dalims siekiant išlaikyti jų pateikimo
-              formos vienodumą.
+              Išraiškos vienovė, būdinga dokumentams, programoms, sąsajai ar jų
+              dalims siekiant išlaikyti jų pateikimo formos vienodumą.
             </dd>
           </dl>
         </div>
@@ -91,6 +111,13 @@
             <li>Šoklioji gazelė</li>
             <li>Gnu antilopė</li>
           </ol>
+
+          <p>Lėčiausi gyvūnai:</p>
+          <ol start="6">
+            <li>Sraigė</li>
+            <li>Šliužas</li>
+            <li>Vėžlys</li>
+          </ol>
         </div>
 
         <div class="list">
@@ -102,6 +129,18 @@
             <li>PHP</li>
             <li>MySQL</li>
             <li>JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="list list-circle">
+          <h2>Ženklinamasis sąrašas 2</h2>
+          <p>Serverio technologijos</p>
+          <ul>
+            <li>Java</li>
+            <li>PHP</li>
+            <li>Kotlin</li>
+            <li>Python</li>
+            <li>Rust</li>
           </ul>
         </div>
       </section>

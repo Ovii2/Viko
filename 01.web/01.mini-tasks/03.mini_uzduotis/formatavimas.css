@@ -1,29 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .person-code {
   color: gray;
 }
 
-.web,
-.web-alt {
+.bold-600 {
   font-weight: 600;
 }
 
-.web {
-  text-decoration: line-through;
-}
-
-.web-alt {
-  text-decoration: underline;
-}
-
-.no-email,
-.register {
-  font-weight: 600;
-}
-
-.register {
+.font-x-large {
   font-size: x-large;
 }
 
 .email {
   text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+nav {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+ul a {
+  text-decoration: none;
+  color: rgb(11, 82, 189);
 }

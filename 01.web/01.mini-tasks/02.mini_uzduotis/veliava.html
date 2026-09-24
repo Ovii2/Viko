@@ -6,39 +6,61 @@
     <title>Vėliava</title>
     <style>
       body {
+        background-color: bisque;
         margin: 0;
         padding: 0;
-        #veliava {
-          height: 300px;
-          width: 500px;
-          margin: 20pt auto 20pt auto;
-        }
+      }
 
-        #geltona {
-          background-color: #fdb913;
-        }
+      .veliava {
+        height: 300px;
+        width: 500px;
+        margin: 20pt auto 20pt auto;
+      }
 
-        #zalia {
-          background-color: #006a44;
-        }
+      h1 {
+        text-align: center;
+      }
 
-        #raudona {
-          background-color: #c1272d;
-        }
+      #geltona {
+        background-color: #fdb913;
+      }
 
-        #geltona,
-        #zalia,
-        #raudona {
-          height: 100px;
-        }
+      #zalia {
+        background-color: #006a44;
+      }
+
+      #raudona {
+        background-color: #c1272d;
+      }
+
+      #balta {
+        background-color: #ffffff;
+      }
+
+      #geltona,
+      #zalia,
+      #raudona {
+        height: 100px;
+      }
+
+      .indonezija #balta,
+      .indonezija #raudona {
+        height: 150px;
       }
     </style>
   </head>
   <body>
-    <div id="veliava">
+    <h1>Lietuva</h1>
+    <div class="veliava">
       <div id="geltona"></div>
       <div id="zalia"></div>
       <div id="raudona"></div>
+    </div>
+
+    <h1>Indonezija</h1>
+    <div class="veliava indonezija">
+      <div id="raudona"></div>
+      <div id="balta"></div>
     </div>
   </body>
 </html>
