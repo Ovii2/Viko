@@ -9,6 +9,11 @@
       body {
         font-family: arial, serif;
       }
+
+      img {
+        max-width: 100%;
+      }
+
       #wrapper {
         width: 90%;
         margin-left: auto;
@@ -64,10 +69,8 @@
         list-style-type: circle;
       }
 
-      .list-circle {
-        list-style-type: circle;
-        background: url("programming-languages.jpeg") no-repeat center;
-        background-size: cover;
+      div.list-circle {
+        background: url("/programming-languages.jpeg") no-repeat center / cover;
       }
     </style>
   </head>
@@ -82,21 +85,18 @@
           <h2>Terminų sąrašas</h2>
           <dl>
             <dt>Saitynas</dt>
-            <dd>
-              Hipertekstinės informacijos visuotinis tinklas, svarbiausias
-              interneto komponentas.
-            </dd>
+            <dd>Hipertekstinės informacijos visuotinis tinklas, svarbiausias interneto komponentas.</dd>
 
             <dt>Sąrašas</dt>
             <dd>
-              Objektų išvardijimas. Sąraše esantys objektai vadinami sąrašo
-              elementais. Dažniausiai jie numeruojami arba kitaip suženklinami.
+              Objektų išvardijimas. Sąraše esantys objektai vadinami sąrašo elementais. Dažniausiai jie numeruojami arba
+              kitaip suženklinami.
             </dd>
 
             <dt>Stilius</dt>
             <dd>
-              Išraiškos vienovė, būdinga dokumentams, programoms, sąsajai ar jų
-              dalims siekiant išlaikyti jų pateikimo formos vienodumą.
+              Išraiškos vienovė, būdinga dokumentams, programoms, sąsajai ar jų dalims siekiant išlaikyti jų pateikimo
+              formos vienodumą.
             </dd>
           </dl>
         </div>
@@ -133,6 +133,7 @@
         </div>
 
         <div class="list list-circle">
+          <!-- <img src="./programming-languages.jpeg" alt="Programavimo kalbos" /> -->
           <h2>Ženklinamasis sąrašas 2</h2>
           <p>Serverio technologijos</p>
           <ul>
