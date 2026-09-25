@@ -13,7 +13,7 @@
 }
 
 .header-logo {
-  width: 4rem;
+  width: 5rem;
   flex-shrink: 0;
 }
 
@@ -24,10 +24,11 @@
 
 .header-title {
   font-size: x-large;
+  text-align: center;
 }
 
 .header-subtitle {
-  font-size: small;
+  font-size: medium;
   white-space: nowrap;
 }
 

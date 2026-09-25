@@ -21,16 +21,18 @@
 }
 
 .footer-logo {
-  width: 4rem;
+  width: 5rem;
   flex-shrink: 0;
 }
 
 .footer-title {
   font-size: x-large;
+  text-align: center;
 }
 
 .footer-subtitle {
-  font-size: small;
+  font-size: medium;
+  white-space: nowrap;
 }
 
 .footer-moto {
