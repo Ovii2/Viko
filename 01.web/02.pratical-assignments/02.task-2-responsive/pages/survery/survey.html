@@ -50,12 +50,19 @@
           <div class="about-you-inputs">
             <div class="form-field">
               <label for="name">Vardas</label>
-              <input type="text" name="name" id="name" placeholder="Įveskite vardą" />
+              <input type="text" name="name" id="name" minlength="5" maxlength="50" placeholder="Įveskite vardą" />
             </div>
 
             <div class="form-field">
               <label for="email">El. paštas</label>
-              <input type="email" name="email" id="email" placeholder="Įveskite el. paštą" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                minlength="5"
+                maxlength="50"
+                placeholder="Įveskite el. paštą"
+              />
             </div>
           </div>
         </div>
@@ -128,7 +135,7 @@
           <h3>Tavo pasiūlymai</h3>
           <hr />
           <label for="idea">Kokią Lietuvos vietą norėtum aplankyti?</label>
-          <textarea name="idea" id="idea" placeholder="Parašyk savo idėją..."></textarea>
+          <textarea name="idea" id="idea" maxlength="500" placeholder="Parašyk savo idėją..."></textarea>
         </section>
         <button class="submit-survey-button" type="submit">Pateikti anketą</button>
       </form>
