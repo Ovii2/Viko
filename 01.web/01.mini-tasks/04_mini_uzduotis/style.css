@@ -1,0 +1,80 @@
+html {
+  background: url("/images/dark-blue-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  color: white;
+  font-family: tahoma, serif;
+  width: 50%;
+  border: 36px solid transparent;
+  border-image: url("/images/border.png") 36 36 round;
+  margin: 0;
+  min-height: 125vh;
+}
+
+header {
+  text-align: center;
+}
+
+hr {
+  background: url("/images/snowflake-row.png") 100% no-repeat;
+  height: 63px;
+  width: 500px;
+  border: 0;
+  margin: 0 auto;
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+}
+
+h1::before {
+  content: url("/images/xmas-tree.png");
+}
+
+h1::after {
+  content: url("/images//xmas-bells.png");
+}
+
+#santa {
+  border: 3px double white;
+  float: right;
+  margin-left: 10px;
+}
+
+p {
+  text-align: justify;
+}
+
+#tree {
+  border: 1px solid white;
+  padding: 1px;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.symbols2::after {
+  margin-bottom: 10px;
+  content: url("/images/xmas-tree.png");
+}
+
+.symbols2::before {
+  content: url("/images//xmas-bells.png");
+}
+
+.symbols2 {
+  text-align: center;
+  clear: both;
+  margin-top: 100px;
+}
+
+#deer {
+  width: 30%;
+  border: 1px solid white;
+  float: right;
+  padding: 1px;
+  margin: 0 0 50px 10px;
+}
