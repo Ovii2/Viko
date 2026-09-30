@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fc6;
+      }
+
+      #page {
+        background: #f86;
+        margin: 0 auto;
+        width: 600px;
+      }
+
+      #header,
+      #footer {
+        text-align: center;
+        width: 100%;
+      }
+
+      #header {
+        background: #fc6;
+      }
+
+      #header h1 {
+        padding: 10px;
+      }
+
+      #subhead {
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+        padding: 0 10px;
+        text-align: right;
+      }
+
+      #footer {
+        background: #fff166;
+        border: 1px solid #000;
+        padding: 10px 0;
+      }
+
+      #menu {
+        background: #f86;
+        float: left;
+        padding: 0 10px;
+      }
+
+      #menu ul {
+        list-style: none;
+      }
+
+      #content {
+        background: #fff;
+        float: right;
+        min-height: 500px;
+        padding: 0 10px;
+        width: 70%;
+      }
+
+      #content h2 {
+        margin: 10px 0;
+      }
+
+      #header,
+      #footer {
+        clear: both;
+        text-align: center;
+        width: 100%;
+      }
+
+      .atstumai {
+        width: 100%;
+        font-size: 0.75rem;
+        border: 0.35rem ridge gray;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .atstumai th,
+      .atstumai td {
+        border: 0.05rem dotted gray;
+        padding: 0.2rem 0.25rem;
+      }
+
+      .atstumai th {
+        background-color: green;
+        color: white;
+        font-weight: normal;
+      }
+
+      .atstumai .pavadinimas {
+        font-weight: bold;
+      }
+
+      .atstumai .miestas {
+        background-color: black;
+        vertical-align: bottom;
+      }
+
+      .atstumai caption {
+        caption-side: bottom;
+        text-align: left;
+        font-style: italic;
+        padding-top: 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <header id="header">
+        <h1>Puslapio pavadinimas</h1>
+        <div id="subhead">Puslapio šūkis</div>
+      </header>
+      <div id="menu">
+        <h2>Meniu</h2>
+        <ul>
+          <li>Pirmas punktas</li>
+          <li>Antras punktas</li>
+          <li>Trečias punktas</li>
+        </ul>
+      </div>
+      <div id="content">
+        <h2>Puslapio tekstas</h2>
+        <p>Daug teksto</p>
+        <table class="atstumai">
+          <caption>
+            1 lentelė. Atstumai tarp Lietuvos miestų
+          </caption>
+          <thead>
+            <tr>
+              <th class="miestas" rowspan="2" scope="col">Miestas</th>
+              <th class="pavadinimas" colspan="5" scope="colgroup">Atstumai kilometrais</th>
+            </tr>
+            <tr>
+              <th scope="col">Alytus</th>
+              <th scope="col">Druskininkai</th>
+              <th scope="col">Kaunas</th>
+              <th scope="col">Palanga</th>
+              <th scope="col">Vilnius</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Alytus</th>
+              <td>---</td>
+              <td>57</td>
+              <td>66</td>
+              <td>301</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <th scope="row">Druskininkai</th>
+              <td>57</td>
+              <td>---</td>
+              <td>119</td>
+              <td>341</td>
+              <td>128</td>
+            </tr>
+            <tr>
+              <th scope="row">Kaunas</th>
+              <td>66</td>
+              <td>119</td>
+              <td>---</td>
+              <td>236</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <th scope="row">Palanga</th>
+              <td>301</td>
+              <td>341</td>
+              <td>236</td>
+              <td>---</td>
+              <td>331</td>
+            </tr>
+            <tr>
+              <th scope="row">Vilnius</th>
+              <td>101</td>
+              <td>128</td>
+              <td>101</td>
+              <td>331</td>
+              <td>---</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer id="footer">Autorinės teisės ir kiti ribojimai</footer>
+    </div>
+  </body>
+</html>
