@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main() {
     const double INR_Parduoti = 107.8546;
 
     int input;
+    int currency;
 
     do {
         cout << "----MENU---\n"
@@ -30,7 +32,6 @@ int main() {
 
         switch (input) {
             case 1:
-                int currency;
                 cout << "\nPasirinkote valiutos kurso palyginima su euru.\n";
 
                 cout << "---Pasirinkite norima valiuta---\n"
@@ -52,7 +53,43 @@ int main() {
                 }
                 break;
             case 2:
-                cout << "\nPasirinkote valiutos pirkimas (EUR -> pasirinkta valiuta).\n";
+                double usdAmount;
+
+                cout << "\nPasirinkote valiutos pirkima (EUR -> pasirinkta valiuta).\n";
+                cout << "---Pasirinkite norima valiuta---\n"
+                        << "1. EUR -> USD\n"
+                        << "2. EUR -> GBP\n"
+                        << "3. EUR -> INR\n";
+
+                cin >> currency;
+
+                if (currency == 1) {
+                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
+                    cin >> usdAmount;
+
+                    cout << format("Jus nusipirkote {} USD uz {:.2f} EUR", usdAmount,
+                                   usdAmount * USD_Pirkti) << endl;
+                } else if (currency == 2) {
+                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
+
+                    double gbpAmount;
+                    cin >> gbpAmount;
+
+                    cout << format("Jus nusipirkote {} GBP uz {:.2f} EUR", gbpAmount,
+                                   gbpAmount * GBP_Pirkti) << endl;
+                } else if (currency == 3) {
+                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
+
+                    double inrAmount;
+                    cin >> inrAmount;
+
+                    cout << format("Jus nusipirkote {} INR uz {:.2f} EUR", inrAmount,
+                                   inrAmount * INR_Pirkti) << endl;
+                } else {
+                    cout << "Blogas pasirinkimas\n"
+                            << "Galimi pasirinkimai : 1, 2, 3\n";
+                }
+                cout << endl;
                 break;
             case 3:
                 cout << "\nPasirinkote valiutos pardavima (pasirinkta valiuta -> EUR).\n";
