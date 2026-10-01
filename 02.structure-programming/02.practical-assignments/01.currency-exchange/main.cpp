@@ -42,19 +42,17 @@ int main() {
                 cin >> currency;
 
                 if (currency == 1) {
-                    cout << "1 USD = " << USD_Bendras << " EUR\n";
+                    cout << "1 USD = " << USD_Bendras << " EUR" << endl;
                 } else if (currency == 2) {
-                    cout << "1 GBP = " << GBP_Bendras << " EUR\n";
+                    cout << "1 GBP = " << GBP_Bendras << " EUR" << endl;
                 } else if (currency == 3) {
-                    cout << "1 INR = " << INR_Bendras << " EUR\n";
+                    cout << "1 INR = " << INR_Bendras << " EUR" << endl;
                 } else {
-                    cout << "Blogas pasirinkimas\n"
-                            << "Galimi pasirinkimai : 1, 2, 3\n";
+                    cout << "Blogas pasirinkimas" << endl
+                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
                 }
                 break;
             case 2:
-                double usdAmount;
-
                 cout << "\nPasirinkote valiutos pirkima (EUR -> pasirinkta valiuta).\n";
                 cout << "---Pasirinkite norima valiuta---\n"
                         << "1. EUR -> USD\n"
@@ -65,13 +63,13 @@ int main() {
 
                 if (currency == 1) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
+                    double usdAmount;
                     cin >> usdAmount;
 
                     cout << format("Jus nusipirkote {} USD uz {:.2f} EUR", usdAmount,
                                    usdAmount * USD_Pirkti) << endl;
                 } else if (currency == 2) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-
                     double gbpAmount;
                     cin >> gbpAmount;
 
@@ -79,20 +77,53 @@ int main() {
                                    gbpAmount * GBP_Pirkti) << endl;
                 } else if (currency == 3) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-
                     double inrAmount;
                     cin >> inrAmount;
 
                     cout << format("Jus nusipirkote {} INR uz {:.2f} EUR", inrAmount,
                                    inrAmount * INR_Pirkti) << endl;
                 } else {
-                    cout << "Blogas pasirinkimas\n"
-                            << "Galimi pasirinkimai : 1, 2, 3\n";
+                    cout << "Blogas pasirinkimas" << endl
+                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
                 }
                 cout << endl;
                 break;
             case 3:
                 cout << "\nPasirinkote valiutos pardavima (pasirinkta valiuta -> EUR).\n";
+                cout << "---Pasirinkite norima valiuta---\n"
+                        << "1. USD -> EUR\n"
+                        << "2. GBP -> EUR\n"
+                        << "3. INR -> EUR\n";
+
+                cin >> currency;
+
+                if (currency == 1) {
+                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
+                    double usdAmount;
+                    cin >> usdAmount;
+
+                    cout << format("Jus pardavete {} USD uz {:.2f} EUR", usdAmount,
+                                   usdAmount / USD_Parduoti) << endl;
+                } else if (currency == 2) {
+                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
+                    double gbpAmount;
+                    cin >> gbpAmount;
+
+                    cout << format("Jus pardavete {} GBP uz {:.2f} EUR", gbpAmount,
+                                   gbpAmount / GBP_Parduoti) << endl;
+                } else if (currency == 3) {
+                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
+                    double inrAmount;
+                    cin >> inrAmount;
+
+                    cout << format("Jus pardavete {} INR uz {:.2f} EUR", inrAmount,
+                                   inrAmount / INR_Parduoti) << endl;
+                } else {
+                    cout << "Blogas pasirinkimas" << endl
+                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
+                }
+
+                cout << endl;
                 break;
             case 4:
                 cout << "\nViso gero!\n";
