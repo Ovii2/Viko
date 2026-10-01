@@ -1,10 +1,14 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <locale>
+#include <format>
 
 using namespace std;
 
 int main() {
+    locale::global(locale("en_US.UTF-8"));
+
     const double GBP_Bendras = 0.8729;
     const double GBP_Pirkti = 0.8600;
     const double GBP_Parduoti = 0.9220;
@@ -19,6 +23,7 @@ int main() {
 
     int input;
     int currency;
+    double eurAmount;
 
     do {
         cout << "----MENU---\n"
@@ -63,25 +68,22 @@ int main() {
 
                 if (currency == 1) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    double usdAmount;
-                    cin >> usdAmount;
+                    cin >> eurAmount;
 
-                    cout << format("Jus nusipirkote {} USD uz {:.2f} EUR", usdAmount,
-                                   usdAmount * USD_Pirkti) << endl;
+                    cout << format("Jus nusipirkote {:.2Lf} USD uz {:.2Lf} EUR",
+                                   eurAmount * USD_Pirkti, eurAmount) << endl;
                 } else if (currency == 2) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    double gbpAmount;
-                    cin >> gbpAmount;
+                    cin >> eurAmount;
 
-                    cout << format("Jus nusipirkote {} GBP uz {:.2f} EUR", gbpAmount,
-                                   gbpAmount * GBP_Pirkti) << endl;
+                    cout << format("Jus nusipirkote {:.2Lf} GBP uz {:.2Lf} EUR",
+                                   eurAmount * GBP_Pirkti, eurAmount) << endl;
                 } else if (currency == 3) {
                     cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    double inrAmount;
-                    cin >> inrAmount;
+                    cin >> eurAmount;
 
-                    cout << format("Jus nusipirkote {} INR uz {:.2f} EUR", inrAmount,
-                                   inrAmount * INR_Pirkti) << endl;
+                    cout << format("Jus nusipirkote {:.2Lf} INR uz {:.2Lf} EUR",
+                                   eurAmount * INR_Pirkti, eurAmount) << endl;
                 } else {
                     cout << "Blogas pasirinkimas" << endl
                             << "Galimi pasirinkimai : 1, 2, 3" << endl;
@@ -102,21 +104,21 @@ int main() {
                     double usdAmount;
                     cin >> usdAmount;
 
-                    cout << format("Jus pardavete {} USD uz {:.2f} EUR", usdAmount,
+                    cout << format("Jus pardavete {:.2Lf} USD uz {:.2Lf} EUR", usdAmount,
                                    usdAmount / USD_Parduoti) << endl;
                 } else if (currency == 2) {
                     cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
                     double gbpAmount;
                     cin >> gbpAmount;
 
-                    cout << format("Jus pardavete {} GBP uz {:.2f} EUR", gbpAmount,
+                    cout << format("Jus pardavete {:.2Lf} GBP uz {:.2Lf} EUR", gbpAmount,
                                    gbpAmount / GBP_Parduoti) << endl;
                 } else if (currency == 3) {
                     cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
                     double inrAmount;
                     cin >> inrAmount;
 
-                    cout << format("Jus pardavete {} INR uz {:.2f} EUR", inrAmount,
+                    cout << format("Jus pardavete {:.2Lf} INR uz {:.2Lf} EUR", inrAmount,
                                    inrAmount / INR_Parduoti) << endl;
                 } else {
                     cout << "Blogas pasirinkimas" << endl
