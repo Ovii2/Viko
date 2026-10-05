@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
       #page {
         background: #f86;
         margin: 0 auto;
-        width: 600px;
+        width: 1200px;
       }
 
       #header,
@@ -62,7 +62,7 @@
         float: right;
         min-height: 500px;
         padding: 0 10px;
-        width: 70%;
+        width: 81%;
       }
 
       #content h2 {
@@ -115,6 +115,49 @@
         font-style: italic;
         padding-top: 0.2rem;
       }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(109, 66, 17);
+        font-weight: 600;
+      }
+
+      .nav-button {
+        width: 100%;
+        background-color: rgb(207, 191, 118);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .nav-button:hover {
+        background-color: rgb(158, 173, 71);
+      }
+
+      .atstumai .no-border-right {
+        border-right: none;
+      }
+
+      .atstumai .no-border-left {
+        border-left: none;
+      }
+
+      .atstumai .no-border-top {
+        border-top: none;
+      }
+
+      .atstumai .no-border-bottom {
+        border-bottom: none;
+      }
     </style>
   </head>
   <body>
@@ -127,17 +170,27 @@
         <h2>Meniu</h2>
         <nav>
           <ul>
-            <li><a href="#">Pirmas punktas</a></li>
-            <li><a href="#">Antras punktas</a></li>
-            <li><a href="#">Trečias punktas</a></li>
+            <li class="nav-button"><a href="#">Pirmas punktas</a></li>
+            <li class="nav-button"><a href="#">Antras punktas</a></li>
+            <li class="nav-button"><a href="#">Trečias punktas</a></li>
           </ul>
         </nav>
       </div>
       <div id="content">
         <h2>Puslapio tekstas</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tempore iste ex iusto minima asperiores
-          provident voluptatibus, aut neque mollitia?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
+          Temporibus a sit omnis soluta adipisci, eius libero, necessitatibus,
+          blanditiis nulla eaque ratione harum. Dicta, corrupti provident totam,
+          reiciendis magni blanditiis ducimus, eos exercitationem dolorem
+          corporis praesentium ullam assumenda dolor explicabo dolorum
+          consequuntur voluptatibus nihil aliquid atque. Illo dolores sunt velit
+          minima, modi explicabo inventore, fuga eos reprehenderit quod nam
+          quibusdam hic magni repellat temporibus debitis aperiam consectetur
+          commodi perferendis necessitatibus eveniet reiciendis, tempore ab.
+          Illum, odit? Quis, nulla porro! Ipsam laborum atque, quae sed,
+          corporis, maiores laboriosam odio tempora blanditiis accusamus
+          repellat? Rem cum minima eius nobis vel earum.
         </p>
         <table class="atstumai">
           <caption>
@@ -146,7 +199,9 @@
           <thead>
             <tr>
               <th class="miestas" rowspan="2" scope="col">Miestas</th>
-              <th class="pavadinimas" colspan="5" scope="colgroup">Atstumai kilometrais</th>
+              <th class="pavadinimas" colspan="5" scope="colgroup">
+                Atstumai kilometrais
+              </th>
             </tr>
             <tr>
               <th scope="col">Alytus</th>
@@ -161,8 +216,8 @@
               <th scope="row">Alytus</th>
               <td>---</td>
               <td>57</td>
-              <td>66</td>
-              <td>301</td>
+              <td class="no-border-right">66</td>
+              <td class="no-border-left">301</td>
               <td>101</td>
             </tr>
             <tr>
@@ -178,7 +233,7 @@
               <td>66</td>
               <td>119</td>
               <td>---</td>
-              <td>236</td>
+              <td class="no-border-bottom">236</td>
               <td>101</td>
             </tr>
             <tr>
@@ -186,7 +241,7 @@
               <td>301</td>
               <td>341</td>
               <td>236</td>
-              <td>---</td>
+              <td class="no-border-top">---</td>
               <td>331</td>
             </tr>
             <tr>
