@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <locale>
 #include <format>
+#include <limits>
 
 using namespace std;
 
@@ -21,9 +22,9 @@ int main() {
     const double INR_Pirkti = 101.3862;
     const double INR_Parduoti = 107.8546;
 
-    int input;
-    int currency;
-    double eurAmount;
+    int input = 0;
+    int currency = 0;
+    double amount = 0;
 
     do {
         cout << "----MENU---\n"
@@ -34,107 +35,150 @@ int main() {
                 << "Pasirinkite veiksma:\n";
 
         cin >> input;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            input = 0;
+            cout << "Blogas pasirinkimas\n\n";
+            continue;
+        }
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         switch (input) {
             case 1:
                 cout << "\nPasirinkote valiutos kurso palyginima su euru.\n";
 
-                cout << "---Pasirinkite norima valiuta---\n"
-                        << "1. USD\n"
-                        << "2. GBP\n"
-                        << "3. INR\n";
+                do {
+                    cout << "---Pasirinkite norima valiuta---\n"
+                            << "1. USD\n"
+                            << "2. GBP\n"
+                            << "3. INR\n";
 
-                cin >> currency;
+                    cin >> currency;
+                    if (cin.fail()) {
+                        cin.clear();
+                        currency = 0;
+                    }
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (currency < 1 || currency > 3) {
+                        cout << "Blogas pasirinkimas" << endl
+                                << "Galimi pasirinkimai : 1, 2, 3" << endl << endl;
+                    }
+                } while (currency < 1 || currency > 3);
 
                 if (currency == 1) {
                     cout << "1 USD = " << USD_Bendras << " EUR" << endl;
                 } else if (currency == 2) {
                     cout << "1 GBP = " << GBP_Bendras << " EUR" << endl;
-                } else if (currency == 3) {
-                    cout << "1 INR = " << INR_Bendras << " EUR" << endl;
                 } else {
-                    cout << "Blogas pasirinkimas" << endl
-                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
+                    cout << "1 INR = " << INR_Bendras << " EUR" << endl;
                 }
+                cout << endl;
                 break;
             case 2:
                 cout << "\nPasirinkote valiutos pirkima (EUR -> pasirinkta valiuta).\n";
-                cout << "---Pasirinkite norima valiuta---\n"
-                        << "1. EUR -> USD\n"
-                        << "2. EUR -> GBP\n"
-                        << "3. EUR -> INR\n";
 
-                cin >> currency;
+                do {
+                    cout << "---Pasirinkite norima valiuta---\n"
+                            << "1. EUR -> USD\n"
+                            << "2. EUR -> GBP\n"
+                            << "3. EUR -> INR\n";
+
+                    cin >> currency;
+                    if (cin.fail()) {
+                        cin.clear();
+                        currency = 0;
+                    }
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (currency < 1 || currency > 3) {
+                        cout << "Blogas pasirinkimas" << endl
+                                << "Galimi pasirinkimai : 1, 2, 3" << endl << endl;
+                    }
+                } while (currency < 1 || currency > 3);
+
+                do {
+                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
+                    cin >> amount;
+                    if (cin.fail()) {
+                        cin.clear();
+                        amount = 0;
+                    }
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (amount <= 0) {
+                        cout << "Blogas kiekis" << endl << endl;
+                    }
+                } while (amount <= 0);
 
                 if (currency == 1) {
-                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    cin >> eurAmount;
-
                     cout << format("Jus nusipirkote {:.2Lf} USD uz {:.2Lf} EUR",
-                                   eurAmount * USD_Pirkti, eurAmount) << endl;
+                                   amount * USD_Pirkti, amount) << endl;
                 } else if (currency == 2) {
-                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    cin >> eurAmount;
-
                     cout << format("Jus nusipirkote {:.2Lf} GBP uz {:.2Lf} EUR",
-                                   eurAmount * GBP_Pirkti, eurAmount) << endl;
-                } else if (currency == 3) {
-                    cout << "Iveskite norima kieki (10, 150, 4200...)" << endl;
-                    cin >> eurAmount;
-
-                    cout << format("Jus nusipirkote {:.2Lf} INR uz {:.2Lf} EUR",
-                                   eurAmount * INR_Pirkti, eurAmount) << endl;
+                                   amount * GBP_Pirkti, amount) << endl;
                 } else {
-                    cout << "Blogas pasirinkimas" << endl
-                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
+                    cout << format("Jus nusipirkote {:.2Lf} INR uz {:.2Lf} EUR",
+                                   amount * INR_Pirkti, amount) << endl;
                 }
                 cout << endl;
                 break;
             case 3:
                 cout << "\nPasirinkote valiutos pardavima (pasirinkta valiuta -> EUR).\n";
-                cout << "---Pasirinkite norima valiuta---\n"
-                        << "1. USD -> EUR\n"
-                        << "2. GBP -> EUR\n"
-                        << "3. INR -> EUR\n";
 
-                cin >> currency;
+                do {
+                    cout << "---Pasirinkite norima valiuta---\n"
+                            << "1. USD -> EUR\n"
+                            << "2. GBP -> EUR\n"
+                            << "3. INR -> EUR\n";
+
+                    cin >> currency;
+                    if (cin.fail()) {
+                        cin.clear();
+                        currency = 0;
+                    }
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (currency < 1 || currency > 3) {
+                        cout << "Blogas pasirinkimas" << endl
+                                << "Galimi pasirinkimai : 1, 2, 3" << endl << endl;
+                    }
+                } while (currency < 1 || currency > 3);
+
+                do {
+                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
+                    cin >> amount;
+                    if (cin.fail()) {
+                        cin.clear();
+                        amount = 0;
+                    }
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (amount <= 0) {
+                        cout << "Blogas kiekis" << endl << endl;
+                    }
+                } while (amount <= 0);
 
                 if (currency == 1) {
-                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
-                    double usdAmount;
-                    cin >> usdAmount;
-
-                    cout << format("Jus pardavete {:.2Lf} USD uz {:.2Lf} EUR", usdAmount,
-                                   usdAmount / USD_Parduoti) << endl;
+                    cout << format("Jus pardavete {:.2Lf} USD uz {:.2Lf} EUR", amount,
+                                   amount / USD_Parduoti) << endl;
                 } else if (currency == 2) {
-                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
-                    double gbpAmount;
-                    cin >> gbpAmount;
-
-                    cout << format("Jus pardavete {:.2Lf} GBP uz {:.2Lf} EUR", gbpAmount,
-                                   gbpAmount / GBP_Parduoti) << endl;
-                } else if (currency == 3) {
-                    cout << "Iveskite norima kieki (15, 400, 1024...)" << endl;
-                    double inrAmount;
-                    cin >> inrAmount;
-
-                    cout << format("Jus pardavete {:.2Lf} INR uz {:.2Lf} EUR", inrAmount,
-                                   inrAmount / INR_Parduoti) << endl;
+                    cout << format("Jus pardavete {:.2Lf} GBP uz {:.2Lf} EUR", amount,
+                                   amount / GBP_Parduoti) << endl;
                 } else {
-                    cout << "Blogas pasirinkimas" << endl
-                            << "Galimi pasirinkimai : 1, 2, 3" << endl;
+                    cout << format("Jus pardavete {:.2Lf} INR uz {:.2Lf} EUR", amount,
+                                   amount / INR_Parduoti) << endl;
                 }
-
                 cout << endl;
                 break;
             case 4:
                 cout << "\nViso gero!\n";
                 break;
             default:
-                cout << "Blogas pasirinkimas\n";
+                cout << "Blogas pasirinkimas\n\n";
         }
     } while (input != 4);
-
 
     return 0;
 }
