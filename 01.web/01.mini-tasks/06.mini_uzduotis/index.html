@@ -35,9 +35,11 @@
       }
 
       #subhead {
+        display: flex;
+        justify-content: space-between;
         border-bottom: 1px solid #000;
         border-top: 1px solid #000;
-        padding: 0 10px;
+        padding: 5px 10px;
         text-align: right;
       }
 
@@ -81,7 +83,6 @@
         background: #fff166;
         min-height: 500px;
         padding: 10px 30px;
-        width: 60rem;
       }
 
       ul {
@@ -112,7 +113,8 @@
       }
 
       .main {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
       }
 
       .flex-column {
@@ -122,7 +124,7 @@
         margin: 0.5rem 0;
       }
 
-      form {
+      .registration-form {
         width: 50%;
       }
 
@@ -182,13 +184,44 @@
         margin: 0 0 0.5rem 6.2rem;
         align-items: center;
       }
+
+      #subhead button {
+        cursor: pointer;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.1rem;
+      }
+
+      .search-bar {
+        text-indent: 0.2rem;
+        height: 1.5rem;
+      }
+
+      #subhead button:hover {
+        background-color: #f86;
+        color: #fff;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 0.5rem;
+      }
     </style>
   </head>
   <body>
     <div id="page">
       <header id="header">
         <h1>Puslapio pavadinimas</h1>
-        <div id="subhead">Puslapio šūkis</div>
+        <div id="subhead">
+          <form class="search" action="" method="post">
+            <input class="search-bar" type="text" placeholder="Ieškoti..." />
+            <button type="button">Pradėti</button>
+          </form>
+          <div class="auth-buttons">
+            <button type="button">Prisijungti</button>
+            <button type="button">Registruotis</button>
+          </div>
+        </div>
       </header>
       <main class="main">
         <div id="menu">
@@ -204,16 +237,24 @@
         <div id="content">
           <h2>Puslapio tekstas</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere? Temporibus a sit omnis soluta adipisci,
-            eius libero, necessitatibus, blanditiis nulla eaque ratione harum. Dicta, corrupti provident totam,
-            reiciendis magni blanditiis ducimus, eos exercitationem dolorem corporis praesentium ullam assumenda dolor
-            explicabo dolorum consequuntur voluptatibus nihil aliquid atque. Illo dolores sunt velit minima, modi
-            explicabo inventore, fuga eos reprehenderit quod nam quibusdam hic magni repellat temporibus debitis aperiam
-            consectetur commodi perferendis necessitatibus eveniet reiciendis, tempore ab. Illum, odit? Quis, nulla
-            porro! Ipsam laborum atque, quae sed, corporis, maiores laboriosam odio tempora blanditiis accusamus
-            repellat? Rem cum minima eius nobis vel earum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
+            Temporibus a sit omnis soluta adipisci, eius libero, necessitatibus,
+            blanditiis nulla eaque ratione harum. Dicta, corrupti provident
+            totam, reiciendis magni blanditiis ducimus, eos exercitationem
+            dolorem corporis praesentium ullam assumenda dolor explicabo dolorum
+            consequuntur voluptatibus nihil aliquid atque. Illo dolores sunt
+            velit minima, modi explicabo inventore, fuga eos reprehenderit quod
+            nam quibusdam hic magni repellat temporibus debitis aperiam
+            consectetur commodi perferendis necessitatibus eveniet reiciendis,
+            tempore ab. Illum, odit? Quis, nulla porro! Ipsam laborum atque,
+            quae sed, corporis, maiores laboriosam odio tempora blanditiis
+            accusamus repellat? Rem cum minima eius nobis vel earum.
           </p>
-          <form action="registracija.php" method="post">
+          <form
+            class="registration-form"
+            action="registracija.php"
+            method="post"
+          >
             <fieldset class="personal-info flex-column">
               <legend>Asmeninė informacija</legend>
 
@@ -285,9 +326,11 @@
         </div>
         <div id="rightside">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa delectus officiis reprehenderit eum, numquam
-            suscipit perferendis cupiditate fugiat repellendus in illo totam laboriosam dolor sapiente. Animi quis odio
-            rem nulla. Ipsum officia, unde alias nam harum sint. Deleniti possimus voluptatibus dicta ad illo. Molestiae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+            delectus officiis reprehenderit eum, numquam suscipit perferendis
+            cupiditate fugiat repellendus in illo totam laboriosam dolor
+            sapiente. Animi quis odio rem nulla. Ipsum officia, unde alias nam
+            harum sint. Deleniti possimus voluptatibus dicta ad illo. Molestiae
             laboriosam temporibus minima iste veritatis nihil!
           </p>
         </div>
