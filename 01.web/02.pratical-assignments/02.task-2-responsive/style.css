@@ -208,6 +208,11 @@ aside {
   font-weight: 500;
 }
 
+.travel-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .registration-button {
   cursor: pointer;
   border: none;
@@ -310,14 +315,13 @@ hr {
     font-size: 1.5rem;
   }
 
+  .travel-options {
+    grid-template-columns: 1fr;
+  }
+
   .route-plan {
     grid-template-columns: 1fr;
     align-items: start;
-  }
-
-  .travel-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 
   .form-footer {
@@ -342,11 +346,6 @@ hr {
 }
 
 @media screen and (min-width: 1440px) {
-  .travel-options {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
   .form-footer {
     margin-top: 1rem;
   }
