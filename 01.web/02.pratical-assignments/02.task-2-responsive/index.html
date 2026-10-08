@@ -28,10 +28,18 @@
         </button>
         <nav class="navigation">
           <ul>
-            <li><a class="nav-item active" href="../../index.html">Pagrindinis</a></li>
+            <li>
+              <a class="nav-item active" href="../../index.html">Pagrindinis</a>
+            </li>
             <li><a class="nav-item" href="/pages/about/about.html">Apie</a></li>
-            <li><a class="nav-item" href="/pages/gallery/gallery.html">Galerija</a></li>
-            <li><a class="nav-item" href="/pages/survery/survey.html">Anketa</a></li>
+            <li>
+              <a class="nav-item" href="/pages/gallery/gallery.html"
+                >Galerija</a
+              >
+            </li>
+            <li>
+              <a class="nav-item" href="/pages/survery/survey.html">Anketa</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -44,7 +52,10 @@
           <img src="./assets/sartu-parkas.jpg" alt="Sartų regionins parkas" />
           <div class="hero-content">
             <h1 class="hero-title">Atrask Lietuvą</h1>
-            <p class="hero-description">Ežerai, miškai, miesteliai ir unikali gamta laukia tavęs visai čia pat.</p>
+            <p class="hero-description">
+              Ežerai, miškai, miesteliai ir unikali gamta laukia tavęs visai čia
+              pat.
+            </p>
             <button class="hero-button" type="button">Planuok kelionę ➝</button>
           </div>
         </section>
@@ -65,7 +76,10 @@
             </div>
           </article>
           <article class="destination-card">
-            <img src="./assets/aukstaitijos-ezerai.jpeg" alt="Aukštaitijos Ežerai" />
+            <img
+              src="./assets/aukstaitijos-ezerai.jpeg"
+              alt="Aukštaitijos Ežerai"
+            />
             <div class="destination-card-text">
               <h3 class="destination-card-title">Aukštaitijos Ežerai</h3>
               <p class="destination-card-description">Ramybės oazė</p>
@@ -86,7 +100,10 @@
             </div>
           </article>
           <article class="destination-card">
-            <img src="./assets/vilniaus-senamiestis.jpg" alt="Vilniaus senamiestis" />
+            <img
+              src="./assets/vilniaus-senamiestis.jpg"
+              alt="Vilniaus senamiestis"
+            />
             <div class="destination-card-text">
               <h3 class="destination-card-title">Vilniaus senamiestis</h3>
               <p class="destination-card-description">Kultūra ir atmosfera</p>
@@ -126,27 +143,51 @@
             <h3>Kelionės planas</h3>
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             <p>Pasirink maršrutą</p>
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             Susidėk daiktus
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             Įkrauk prietaisus
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             Patikrink orus
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             Gerbk gamtą ir kitus
           </div>
           <div class="route-plan-option">
-            <img class="aside-check-circle" src="./assets/check_circle.svg" alt="Atlikta" />
+            <img
+              class="aside-check-circle"
+              src="./assets/check_circle.svg"
+              alt="Atlikta"
+            />
             Rink įspūdžius
           </div>
         </div>
@@ -165,10 +206,26 @@
 
           <form class="registration-form">
             <label for="name">Vardas</label>
-            <input type="text" name="name" id="name" minlength="5" maxlength="50" placeholder="Įveskite vardą" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              minlength="5"
+              maxlength="50"
+              placeholder="Įveskite vardą"
+              required
+            />
 
             <label for="email">El. paštas</label>
-            <input type="email" name="email" id="email" minlength="5" maxlength="50" placeholder="Įveskite el. paštą" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              minlength="5"
+              maxlength="50"
+              placeholder="Įveskite el. paštą"
+              required
+            />
 
             <label for="travel-date">Kelionės data</label>
             <input type="date" name="travel-date" id="travel-date" />
@@ -188,43 +245,80 @@
 
               <div class="travel-options">
                 <label for="alone">
-                  <input type="radio" name="travel-group" id="alone" value="alone" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="alone"
+                    value="alone"
+                  />
                   Vienas
                 </label>
 
                 <label for="friends">
-                  <input type="radio" name="travel-group" id="friends" value="friends" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="friends"
+                    value="friends"
+                  />
                   Su draugais
                 </label>
 
                 <label for="family">
-                  <input type="radio" name="travel-group" id="family" value="family" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="family"
+                    value="family"
+                  />
                   Su šeima
                 </label>
 
                 <label for="pet">
-                  <input type="radio" name="travel-group" id="pet" value="pet" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="pet"
+                    value="pet"
+                  />
                   Su augintiniu
                 </label>
 
                 <label for="guide">
-                  <input type="radio" name="travel-group" id="guide" value="guide" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="guide"
+                    value="guide"
+                  />
                   Su gidu
                 </label>
 
                 <label for="group">
-                  <input type="radio" name="travel-group" id="group" value="group" />
+                  <input
+                    type="radio"
+                    name="travel-group"
+                    id="group"
+                    value="group"
+                  />
                   Su grupe
                 </label>
               </div>
             </div>
 
             <label class="newsletter-option" for="newsletter">
-              <input type="checkbox" name="newsletter" id="newsletter" value="yes" />
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                value="yes"
+              />
               Taip, noriu gauti naujienas el. paštu
             </label>
 
-            <button class="registration-button" type="submit">Registruotis</button>
+            <button class="registration-button" type="submit">
+              Registruotis
+            </button>
           </form>
         </section>
         <section class="form-footer">
@@ -249,9 +343,15 @@
       <p class="footer-moto">Lietuva įkvėpia keliauti</p>
       <div class="footer-info">
         <div class="icons-container">
-          <a class="social-icon" href="#"><img src="../../assets/youtube.svg" alt="Youtube" /></a>
-          <a class="social-icon" href="#"><img src="../../assets/facebook.svg" alt="Facebook" /></a>
-          <a class="social-icon" href="#"><img src="../../assets/instagram.svg" alt="Instagram" /></a>
+          <a class="social-icon" href="#"
+            ><img src="../../assets/youtube.svg" alt="Youtube"
+          /></a>
+          <a class="social-icon" href="#"
+            ><img src="../../assets/facebook.svg" alt="Facebook"
+          /></a>
+          <a class="social-icon" href="#"
+            ><img src="../../assets/instagram.svg" alt="Instagram"
+          /></a>
         </div>
         <p>&copy; 2026 Visos teisės saugomos</p>
       </div>
