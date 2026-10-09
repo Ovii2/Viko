@@ -134,6 +134,53 @@ img {
   max-width: clamp(1rem, 3vw, 4rem);
 }
 
+.reviews {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.review-card {
+  background-color: var(--color-table-header);
+  padding: 1rem;
+  border-radius: 0.2rem;
+}
+
+.review-card > p {
+  color: var(--color-text);
+}
+
+.reviewer-name {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.review-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-rating {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer-rating > img {
+  margin-bottom: 0.1rem;
+  max-width: clamp(1rem, 3vw, 4rem);
+}
+
+.review-destination {
+  color: var(--color-text-muted);
+}
+
+.review {
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
 .routes-table {
   width: 100%;
   margin-top: 1rem;
@@ -309,6 +356,13 @@ hr {
   .route-plan {
     grid-template-columns: 1fr 1fr;
     align-items: start;
+  }
+
+  .reviews h2 {
+    grid-column: 1 / -1;
+  }
+  .reviews {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
