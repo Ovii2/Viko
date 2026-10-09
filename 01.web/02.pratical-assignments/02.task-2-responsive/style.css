@@ -12,6 +12,10 @@ img {
   border-radius: 0.25rem;
 }
 
+input:focus {
+  outline: 0.18rem solid var(--color-primary);
+}
+
 .search-bar-container {
   display: flex;
   gap: 1rem;
