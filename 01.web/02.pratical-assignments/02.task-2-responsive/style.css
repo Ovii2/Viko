@@ -6,7 +6,6 @@ body {
   flex-direction: column;
   background-color: var(--color-background);
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-  line-height: 1.6;
 }
 
 img {
@@ -231,6 +230,29 @@ aside {
   border-radius: 0.25rem;
 }
 
+.interesting-facts {
+  margin: 2rem 0;
+}
+
+.interesting-facts-title {
+  display: flex;
+  align-items: center;
+}
+
+.interesting-facts-title > img {
+  width: clamp(1rem, 5vw, 3rem);
+}
+
+.interesting-facts li {
+  list-style-type: disc;
+  cursor: default;
+  color: var(--color-text);
+}
+
+.interesting-facts li::marker {
+  color: var(--color-primary);
+}
+
 .route-plan {
   display: grid;
   gap: 0.25rem 0.5rem;
@@ -244,7 +266,8 @@ aside {
 }
 
 .route-plan-title img,
-.registration-title img {
+.registration-title img,
+.interesting-facts img {
   width: 3rem;
 }
 
@@ -309,7 +332,7 @@ aside {
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
   padding: 0.25rem 0.5rem;
-  margin-top: 0.5rem;
+  margin: 1rem 0;
 }
 
 .registration-button:hover {
