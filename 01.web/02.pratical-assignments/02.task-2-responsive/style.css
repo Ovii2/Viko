@@ -97,11 +97,12 @@ img {
   gap: 1rem;
 }
 
-.destination-card img {
+.destination-card-image {
+  position: relative;
   width: clamp(5rem, 30%, 100%);
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   flex-shrink: 0;
+  aspect-ratio: 4 / 3;
 }
 
 .destination-card-description {
@@ -109,6 +110,27 @@ img {
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
+}
+
+.destination-rating {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.6rem;
+}
+
+.destination-rating > p {
+  font-weight: 600;
+}
+
+.destination-rating img {
+  margin-bottom: clamp(0.1rem, 0.15rem, 0.3rem);
+  max-width: clamp(1rem, 3vw, 4rem);
 }
 
 .routes-table {
@@ -248,9 +270,16 @@ hr {
     flex-direction: column;
   }
 
-  .destination-card img {
+  .destination-card-image > img {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .destination-card-image {
+    width: 100%;
+    aspect-ratio: auto;
   }
 
   .route-plan-title {
@@ -301,7 +330,7 @@ hr {
     margin-bottom: 1rem;
   }
 
-  .destination-card img {
+  .destination-card > img {
     height: clamp(6rem, 9vw, 12rem);
   }
 
