@@ -6,7 +6,6 @@ body {
   flex-direction: column;
   background-color: var(--color-background);
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-  line-height: 1.2;
 }
 
 .content-container {
