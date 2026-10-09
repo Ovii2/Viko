@@ -268,40 +268,48 @@
           </div>
 
           <form class="registration-form">
-            <label for="name">Vardas</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              minlength="5"
-              maxlength="50"
-              placeholder="Įveskite vardą"
-              required
-            />
+            <div class="registration-field">
+              <label for="name">Vardas</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                minlength="5"
+                maxlength="50"
+                placeholder="Įveskite vardą"
+                required
+              />
+            </div>
 
-            <label for="email">El. paštas</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              minlength="5"
-              maxlength="50"
-              placeholder="Įveskite el. paštą"
-              required
-            />
+            <div class="registration-field">
+              <label for="email">El. paštas</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                minlength="5"
+                maxlength="50"
+                placeholder="Įveskite el. paštą"
+                required
+              />
+            </div>
 
-            <label for="travel-date">Kelionės data</label>
-            <input type="date" name="travel-date" id="travel-date" />
+            <div class="registration-field">
+              <label for="travel-date">Kelionės data</label>
+              <input type="date" name="travel-date" id="travel-date" />
+            </div>
 
-            <label for="destination">Pasirinkite kelionės kryptį</label>
-            <select name="destination" id="destination">
-              <option value="traku-pilis">Trakų pilis</option>
-              <option value="nidos-kopos">Nidos kopos</option>
-              <option value="aukstaitijos-ezerai">Aukštaitijos ežerai</option>
-              <option value="cepkeliu-raistas">Čepkelių raistas</option>
-              <option value="anyksciu-silelis">Anykščių šilelis</option>
-              <option value="vilniaus-senamiestis">Vilniaus senamiestis</option>
-            </select>
+            <div class="registration-field">
+              <label for="destination">Kryptis</label>
+              <select name="destination" id="destination">
+                <option value="traku-pilis">Trakų pilis</option>
+                <option value="nidos-kopos">Nidos kopos</option>
+                <option value="aukstaitijos-ezerai">Aukštaitijos ežerai</option>
+                <option value="cepkeliu-raistas">Čepkelių raistas</option>
+                <option value="anyksciu-silelis">Anykščių šilelis</option>
+                <option value="vilniaus-senamiestis">Vilniaus senamiestis</option>
+              </select>
+            </div>
 
             <div class="travel-group">
               <p class="travel-group-title">Kaip keliausite?</p>
@@ -353,6 +361,8 @@
             </div>
             <ul>
               <li>Trakų pilis stovi Galvės ežero saloje.</li>
+              <li>Vilnius įkurtas prie Neries ir Vilnios upių santakos.</li>
+              <li>Trakai kadaise buvo Lietuvos Didžiosios Kunigaikštystės sostinė.</li>
               <li>Kuršių nerija skiria Kuršių marias nuo Baltijos jūros.</li>
               <li>Anykščių medžių lajų takas leidžia pasivaikščioti medžių viršūnių aukštyje.</li>
             </ul>
