@@ -94,6 +94,10 @@ hr {
   font-weight: 600;
 }
 
+.aside-link:hover {
+  background-color: var(--color-primary-hover);
+}
+
 .slogan {
   display: flex;
   align-items: center;

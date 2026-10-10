@@ -33,6 +33,10 @@ input:focus {
   cursor: pointer;
 }
 
+.search-bar-container button:hover {
+  background-color: var(--color-primary-hover);
+}
+
 .search-bar {
   flex: 1;
   min-width: 0;
