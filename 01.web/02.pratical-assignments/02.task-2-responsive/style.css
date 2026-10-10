@@ -109,15 +109,20 @@ input:focus {
 }
 
 .destination-card-text {
-  padding: 0 0.25rem;
+  padding: 0.25rem;
 }
 
 .destination-card-image {
   position: relative;
   width: clamp(5rem, 30%, 100%);
-  object-fit: cover;
   flex-shrink: 0;
+}
+
+.destination-card-image > img {
+  display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .destination-card-description {
