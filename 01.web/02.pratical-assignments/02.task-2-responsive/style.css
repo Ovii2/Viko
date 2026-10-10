@@ -98,7 +98,18 @@ input:focus {
 
 .destination-card {
   display: flex;
+  border-radius: 0.5rem;
   gap: 1rem;
+  transition: ease-in-out 0.3s;
+}
+
+.destination-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.8rem var(--color-card-shadow);
+}
+
+.destination-card-text {
+  padding: 0 0.25rem;
 }
 
 .destination-card-image {
