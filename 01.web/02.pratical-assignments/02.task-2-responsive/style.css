@@ -94,6 +94,7 @@ input:focus {
   display: grid;
   gap: 0.5rem;
   margin: 1rem 0;
+  perspective: 60rem;
 }
 
 .destination-card {
@@ -105,7 +106,8 @@ input:focus {
 
 .destination-card:hover {
   cursor: pointer;
-  box-shadow: 0 0.1rem 0.8rem var(--color-card-shadow);
+  box-shadow: 0 0.1rem 0.8rem var(--color-primary-hover);
+  transform: translateZ(1rem);
 }
 
 .destination-card-text {
