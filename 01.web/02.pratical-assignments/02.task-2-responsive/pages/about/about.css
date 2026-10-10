@@ -113,10 +113,6 @@ figure > figcaption {
   margin: 0.2rem 0 0.5rem 0;
 }
 
-aside hr {
-  margin-top: clamp(1rem, 2vw, 3rem);
-}
-
 .aside-links {
   display: flex;
   flex-direction: column;

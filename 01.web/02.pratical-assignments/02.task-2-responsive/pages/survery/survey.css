@@ -27,14 +27,11 @@ textarea {
   padding: 0.25rem 0.5rem;
 }
 
-input:focus {
-  outline: 0.18rem solid var(--color-primary);
-}
-
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  gap: 1rem;
   margin: 1rem;
   flex: 1;
 }
@@ -49,6 +46,11 @@ input:focus {
 .survey-text-section p {
   color: var(--color-text);
   margin-bottom: 1rem;
+}
+
+.survey-text-section {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .about-you,
@@ -90,6 +92,11 @@ input:focus {
   margin-top: 1rem;
 }
 
+.travel-frequency select,
+.travel-date input[type="date"] {
+  height: 2.25rem;
+}
+
 .date-and-frequency input,
 .date-and-frequency select {
   width: 100%;
@@ -124,6 +131,86 @@ input:focus {
 
 textarea {
   height: clamp(8rem, 12vw, 30rem);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: var(--color-table-header);
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.aside-header {
+  text-align: center;
+}
+
+.aside-header > img {
+  width: clamp(4rem, 7vw, 8rem);
+  margin: 0 auto;
+}
+
+aside p {
+  color: var(--color-text);
+}
+
+.aside-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.aside-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-tip-background);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.2rem;
+}
+
+.aside-card img {
+  width: 2rem;
+}
+
+.aside-card p {
+  font-weight: 400;
+}
+
+.gallery-invitation {
+  margin: 0 0 1rem 0;
+}
+
+.gallery-invitation a {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: 0.6rem 2rem;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}
+
+.gallery-invitation a:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+
+.slogan > img {
+  width: clamp(3rem, 4vw, 4rem);
+}
+
+.slogan p {
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 @media screen and (min-width: 500px) {
@@ -167,5 +254,20 @@ textarea {
     border: 0.1rem solid var(--color-background);
     border-radius: 0.25rem;
     padding: 0.75rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .content-container {
+      flex-direction: row;
+    }
+
+    main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    aside {
+      margin: 0;
+    }
   }
 }

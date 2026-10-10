@@ -73,11 +73,6 @@ aside p {
   max-width: 80%;
 }
 
-hr {
-  border-color: var(--color-border);
-  margin: 1.5rem 0;
-}
-
 .your-discoveries {
   display: flex;
   flex-direction: column;
