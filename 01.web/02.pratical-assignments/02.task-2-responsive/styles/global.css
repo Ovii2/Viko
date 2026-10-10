@@ -1,0 +1,22 @@
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("../../assets/icons/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+}
+
+aside hr {
+  border-color: var(--color-border);
+  margin: 1.5rem 0;
+}
+
+input:focus {
+  outline: 0.18rem solid var(--color-primary);
+}
