@@ -1,9 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 body {
+  font-family: "Nunito Sans", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: var(--color-background);
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.header-title,
+.footer-title {
+  font-family: "Lora", serif;
 }
 
 input[type="checkbox"],
