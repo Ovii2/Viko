@@ -200,6 +200,7 @@ img {
   margin-top: 1rem;
   border-collapse: collapse;
   color: var(--color-text);
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
 }
 
 .routes-table th,
@@ -221,8 +222,8 @@ img {
 
 .difficulty {
   display: inline-block;
-  width: clamp(5.5rem, 7vw, 8rem);
-  padding: 0.25rem 0.5rem;
+  width: 90%;
+  padding: 0.25rem 0;
   border-radius: 0.4rem;
 }
 
