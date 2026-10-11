@@ -11,6 +11,12 @@ label {
   margin: 0.75rem 0 0.25rem 0;
 }
 
+aside a:focus,
+form a:focus {
+  outline: var(--color-focus);
+  outline-offset: 0.1rem;
+}
+
 input,
 select,
 textarea {

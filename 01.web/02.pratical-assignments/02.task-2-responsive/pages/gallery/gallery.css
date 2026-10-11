@@ -49,6 +49,11 @@ aside p {
   color: var(--color-text);
 }
 
+aside a:focus {
+  outline: var(--color-focus);
+  outline-offset: 0.1rem;
+}
+
 .tip-card-container {
   display: flex;
   flex-direction: column;

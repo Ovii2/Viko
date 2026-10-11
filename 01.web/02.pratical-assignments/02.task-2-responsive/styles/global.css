@@ -41,6 +41,13 @@ aside hr {
 }
 
 input:focus,
-textarea:focus {
-  outline: 0.18rem solid var(--color-primary);
+textarea:focus,
+select:focus {
+  outline: 0.2rem solid var(--color-primary);
+  outline-offset: 0.1rem;
+}
+
+button:focus {
+  outline: 0.3rem solid var(--color-focus);
+  outline-offset: 0.1rem;
 }
