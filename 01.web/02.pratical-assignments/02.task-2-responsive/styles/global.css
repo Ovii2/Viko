@@ -1,3 +1,11 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   accent-color: var(--color-primary);

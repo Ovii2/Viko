@@ -1,13 +1,5 @@
 @import "../../colors.css";
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-background);
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-}
-
 hr {
   border-color: var(--color-border);
   width: 100%;
@@ -173,7 +165,7 @@ aside p {
 }
 
 .aside-card img {
-  width: 2rem;
+  width: clamp(2rem, 5vw, 2.5rem);
 }
 
 .aside-card p {
@@ -259,6 +251,44 @@ aside p {
   @media screen and (min-width: 1000px) {
     .content-container {
       flex-direction: row;
+      width: calc(100% - 2rem);
+      max-width: 80rem;
+      margin: 1rem auto;
+    }
+
+    .about-you-inputs {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .date-and-frequency {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .form-field {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .form-field > label {
+      width: 10rem;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .form-field > input,
+    .form-field > select {
+      flex: 1;
+      min-width: 0;
+      width: auto;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .about-you hr {
+      margin-bottom: 1rem;
     }
 
     main {
