@@ -25,7 +25,7 @@ img {
   background-color: var(--color-primary-hover);
 }
 
-.search-bar {
+#search {
   flex: 1;
   min-width: 0;
   border-radius: 0.25rem;
@@ -49,6 +49,7 @@ img {
   left: 1rem;
   right: 1rem;
   max-width: clamp(10rem, 25rem, 40rem);
+  color: var(--color-text-on-primary);
 }
 
 .hero img {
@@ -72,7 +73,7 @@ img {
   border: none;
   border-radius: 0.25rem;
   background-color: var(--color-primary);
-  color: var(--color-text-on-primary);
+  color: inherit;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -337,6 +338,10 @@ aside {
 .travel-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.newsletter-option {
+  font-weight: 400 !important;
 }
 
 .registration-button {
