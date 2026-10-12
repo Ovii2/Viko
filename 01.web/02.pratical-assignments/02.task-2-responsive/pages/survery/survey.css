@@ -146,7 +146,8 @@ aside {
 }
 
 .aside-header > img {
-  width: clamp(4rem, 7vw, 8rem);
+  /* width: clamp(4rem, 7vw, 8rem); */
+  width: clamp(3rem, 6vw, 6rem);
   margin: 0 auto;
 }
 
@@ -256,10 +257,12 @@ aside p {
 
   @media screen and (min-width: 1000px) {
     .content-container {
-      flex-direction: row;
-      width: calc(100% - 2rem);
-      max-width: 80rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
+      gap: 1rem;
       margin: 1rem auto;
+      max-width: 80rem;
+      width: calc(100% - 2rem);
     }
 
     .about-you-inputs {

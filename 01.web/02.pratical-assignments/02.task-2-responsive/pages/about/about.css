@@ -18,10 +18,6 @@
   gap: 0.5rem;
 }
 
-.about-intro-text h1 {
-  margin-bottom: 1rem;
-}
-
 .about-intro img {
   width: 100%;
   object-fit: cover;
@@ -35,6 +31,12 @@
 hr {
   border-color: var(--color-border);
   width: 100%;
+}
+
+.about-title {
+  display: flex;
+  flex-direction: column;
+  margin-right: clamp(0rem, 2vw, 1rem);
 }
 
 .explore-section {
@@ -94,6 +96,10 @@ aside .aside-eyebrow {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.15rem;
+}
+
+.compass {
+  width: clamp(3rem, 4vw, 4rem);
 }
 
 figure > img {
@@ -159,7 +165,8 @@ figure > figcaption {
 
 @media screen and (min-width: 1000px) {
   .content-container {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
     gap: 1rem;
   }
 
@@ -184,10 +191,6 @@ figure > figcaption {
   .about-intro-text {
     justify-content: space-around;
     gap: 0;
-  }
-
-  .about-intro hr {
-    grid-column: 1 / -1;
   }
 
   .about-intro-text h2:nth-of-type(2) {

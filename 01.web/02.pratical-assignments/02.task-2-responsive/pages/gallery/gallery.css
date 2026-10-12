@@ -116,11 +116,8 @@ aside a:focus {
   }
 
   .content-container {
-    flex-direction: row;
-  }
-
-  aside {
-    width: 25rem;
-    flex-shrink: 0;
-  }
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
+    gap: 1rem;
+  } 
 }

@@ -417,13 +417,13 @@ hr {
 @media screen and (min-width: 1024px) {
   .content-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
     gap: 1rem;
     align-items: start;
   }
 
   .hero img {
-    height: clamp(20rem, 25vw, 30rem);
+    height: clamp(30rem, 25vw, 30rem);
   }
 
   .main {
@@ -439,7 +439,7 @@ hr {
   aside {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0;   
     gap: 1.5rem;
     align-self: stretch;
   }
