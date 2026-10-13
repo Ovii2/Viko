@@ -8,7 +8,7 @@ bool checkGrade(int grade) {
 
 void showMenu() {
     cout << "\n";
-    cout << "-----MENIU-----\n";
+    cout << "----------MENIU----------\n";
     cout << "1.Įvesti mokinį ir jo pažymius.\n";
     cout << "2.Peržiūrėti visų mokinių pažymius.\n";
     cout << "3.Peržiūrėti konkretaus mokinio pažymius.\n";
@@ -68,6 +68,20 @@ int main() {
                 studentCount++;
                 break;
             case 2:
+                if (studentCount == 0) {
+                    cout << "Mokinių sąrašas tuščias.\n";
+                    break;
+                }
+
+                cout << "----------\n";
+                for (int i = 0; i < studentCount; ++i) {
+                    cout << i + 1 << ". " << names[i];
+                    for (int j = 0; j < gradesCount[i]; ++j) {
+                        cout << " " << grades[i][j];
+                    }
+                    cout << "\n";
+                }
+                cout << "----------\n";
                 break;
             case 3:
                 break;
