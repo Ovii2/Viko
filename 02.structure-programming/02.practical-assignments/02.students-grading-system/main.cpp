@@ -30,6 +30,16 @@ int inputGrade(int gradeNumber) {
     return grade;
 }
 
+bool checkNumberInput() {
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Įveskite skaičių!\n";
+        return false;
+    }
+    return true;
+}
+
 int main() {
     string names[100];
     int grades[100][10];
@@ -42,6 +52,10 @@ int main() {
         showMenu();
 
         cin >> input;
+        if (!checkNumberInput()) {
+            input = 0;
+            continue;
+        }
 
         switch (input) {
             case 1:
@@ -95,7 +109,7 @@ int main() {
                 cout << "Viso gero!\n";
                 break;
             default:
-                cout << "Blogas pasirinkimas!";
+                cout << "Blogas pasirinkimas!\n";
         }
     } while (input != 7);
 }
