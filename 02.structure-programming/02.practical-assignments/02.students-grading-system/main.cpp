@@ -74,6 +74,7 @@ int main() {
     int grades[100][10];
     int studentCount = 0;
     int gradesCount[100] = {};
+    int studentNumber;
 
     int input;
 
@@ -127,6 +128,24 @@ int main() {
                 printSymbols('-', 20);
                 break;
             case 3:
+                if (studentCount == 0) {
+                    cout << "Mokinių sąrašas tuščias.\n";
+                    break;
+                }
+                cout << "Šiuo metu yra mokinių: " << studentCount << "\n";
+
+                do {
+                    cout << "Įveskite mokinio numerį.\n";
+                    cin >> studentNumber;
+                } while (studentNumber < 1 || studentNumber > studentCount);
+
+                printSymbols('-', 20);
+                cout << studentNumber << ". " << names[studentNumber - 1] << " ";
+                for (int i = 0; i < gradesCount[studentNumber - 1]; ++i) {
+                    cout << grades[studentNumber - 1][i] << " ";
+                }
+                cout << "\n";
+                printSymbols('-', 20);
                 break;
             case 4:
                 break;
