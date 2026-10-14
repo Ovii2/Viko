@@ -231,6 +231,23 @@ int main() {
                 break;
             }
             case 6:
+                if (!checkStudentsCount(studentCount)) {
+                    break;
+                }
+
+                studentNumber = inputStudentNumber(studentCount);
+
+                for (int i = studentNumber - 1; i < studentCount - 1; ++i) {
+                    names[i] = names[i + 1];
+                    gradesCount[i] = gradesCount[i + 1];
+
+                    for (int j = 0; j < gradesCount[i]; ++j) {
+                        grades[i][j] = grades[i + 1][j];
+                    }
+                }
+
+                studentCount--;
+                cout << "Mokinys pašalintas.\n";
                 break;
             case 7:
                 cout << "Viso gero!\n";
