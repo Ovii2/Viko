@@ -29,23 +29,6 @@ void showMenu() {
 }
 
 /**
- * @brief Prašo įvesti pažymį, kol jo reikšmė yra nuo 1 iki 10.
- * @param gradeNumber Įvedamo pažymio eilės numeris.
- * @return Įvestas tinkamas pažymys.
- */
-int inputGrade(int gradeNumber) {
-    int grade;
-    do {
-        cout << "Įveskite " << gradeNumber << " pažymį:\n";
-        cin >> grade;
-        if (!checkGrade(grade)) {
-            cout << "Pažymys turi būti nuo 1 iki 10!\n";
-        }
-    } while (!checkGrade(grade));
-    return grade;
-}
-
-/**
  * @brief Patikrina įvestį ir išvalo cin klaidą.
  * @return true, jei įvestis tinkama; false, jei nepavyko nuskaityti.
  */
@@ -57,6 +40,27 @@ bool checkUserNumberInput() {
         return false;
     }
     return true;
+}
+
+/**
+ * @brief Prašo įvesti pažymį, kol jo reikšmė yra nuo 1 iki 10.
+ * @param gradeNumber Įvedamo pažymio eilės numeris.
+ * @return Įvestas tinkamas pažymys.
+ */
+int inputGrade(int gradeNumber) {
+    int grade = 0;
+    do {
+        cout << "Įveskite " << gradeNumber << " pažymį:\n";
+        cin >> grade;
+
+        if (!checkUserNumberInput()) {
+            grade = 0;
+        } else if (!checkGrade(grade)) {
+            cout << "Pažymys turi būti nuo 1 iki 10!\n";
+        }
+    } while (!checkGrade(grade));
+
+    return grade;
 }
 
 /**
@@ -107,15 +111,33 @@ void printStudentNameAndGrades(string names[100], int grades[100][10], int grade
  * @return Tinkamas mokinio numeris.
  */
 int inputStudentNumber(int studentCount) {
-    int studentNumber;
+    int studentNumber = 0;
+
     do {
         cout << "Įveskite mokinio numerį.\n";
         cin >> studentNumber;
+
         if (!checkUserNumberInput()) {
             studentNumber = 0;
+        } else if (studentNumber < 1 || studentNumber > studentCount) {
+            cout << "Neteisingas mokinio numeris. Įveskite nuo 1 iki " << studentCount << ".\n";
         }
     } while (studentNumber < 1 || studentNumber > studentCount);
+
     return studentNumber;
+}
+
+/**
+ * @brief Patikrina, ar mokinys turi pažymių. Jei neturi, išveda pranešimą.
+ * @param count Mokinio pažymių kiekis.
+ * @return true, jei pažymių yra; false, jei nėra.
+ */
+bool checkGradesCount(int count) {
+    if (count == 0) {
+        cout << "Mokinys pažymių neturi.\n";
+        return false;
+    }
+    return true;
 }
 
 int main() {
@@ -151,7 +173,10 @@ int main() {
                 do {
                     cout << "Įveskite mokinio " << names[studentCount] << " pažymių skaičių (0–10):\n";
                     cin >> gradesCount[studentCount];
-                    if (gradesCount[studentCount] < 0 || gradesCount[studentCount] > 10) {
+
+                    if (!checkUserNumberInput()) {
+                        gradesCount[studentCount] = -1;
+                    } else if (gradesCount[studentCount] < 0 || gradesCount[studentCount] > 10) {
                         cout << "Pažymių kiekis turi būti nuo 0 iki 10!\n";
                     }
                 } while (gradesCount[studentCount] < 0 || gradesCount[studentCount] > 10);
@@ -194,8 +219,7 @@ int main() {
                 studentNumber = inputStudentNumber(studentCount);
                 cout << "Jūs pasirinkote mokinį nr " << studentNumber << ".\n";
 
-                if (gradesCount[studentNumber - 1] == 0) {
-                    cout << "Mokinys pažymių neturi.\n";
+                if (!checkGradesCount(gradesCount[studentNumber - 1])) {
                     break;
                 }
 
@@ -209,6 +233,9 @@ int main() {
                     cin >> gradeNumber;
                     if (!checkUserNumberInput()) {
                         gradeNumber = 0;
+                    } else if (gradeNumber < 1 || gradeNumber > gradesCount[studentNumber - 1]) {
+                        cout << "Neteisingas pažymio numeris. Įveskite nuo 1 iki " << gradesCount[studentNumber - 1] <<
+                                ".\n";
                     }
                 } while (gradeNumber < 1 || gradeNumber > gradesCount[studentNumber - 1]);
 
@@ -221,6 +248,9 @@ int main() {
                     break;
                 }
                 studentNumber = inputStudentNumber(studentCount);
+                if (!checkGradesCount(gradesCount[studentNumber - 1])) {
+                    break;
+                }
                 double sum = 0;
 
                 for (int i = 0; i < gradesCount[studentNumber - 1]; ++i) {
