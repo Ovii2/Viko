@@ -47,7 +47,7 @@ int inputGrade(int gradeNumber) {
  * @brief Patikrina įvestį ir išvalo cin klaidą.
  * @return true, jei įvestis tinkama; false, jei nepavyko nuskaityti.
  */
-bool checkNumberInput() {
+bool checkUserNumberInput() {
     if (cin.fail()) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -82,12 +82,48 @@ bool checkStudentsCount(int studentCount) {
     return true;
 }
 
+/**
+ * @brief Išveda mokinio numerį, vardą ir pažymius.
+ * @param names Mokinių vardų masyvas.
+ * @param grades Mokinių pažymių masyvas.
+ * @param gradesCount Kiekvieno mokinio pažymių kiekis.
+ * @param studentNumber Mokinio numeris, skaičiuojamas nuo 1.
+ */
+void printStudentNameAndGrades(string names[100], int grades[100][10], int gradesCount[100], int studentNumber) {
+    printSymbols('-', 20);
+    cout << studentNumber << ". " << names[studentNumber - 1] << " ";
+    for (int i = 0; i < gradesCount[studentNumber - 1]; ++i) {
+        cout << grades[studentNumber - 1][i] << " ";
+    }
+    cout << "\n";
+    printSymbols('-', 20);
+}
+
+/**
+ * @brief Prašo mokinio numerio, kol įvedamas numeris nuo 1 iki studentCount.
+ * @param studentCount Esamas mokinių skaičius.
+ * @return Tinkamas mokinio numeris.
+ */
+int inputStudentNumber(int studentCount) {
+    int studentNumber;
+    do {
+        cout << "Įveskite mokinio numerį.\n";
+        cin >> studentNumber;
+        if (!checkUserNumberInput()) {
+            studentNumber = 0;
+        }
+    } while (studentNumber < 1 || studentNumber > studentCount);
+    return studentNumber;
+}
+
 int main() {
     string names[100];
     int grades[100][10];
     int studentCount = 0;
     int gradesCount[100] = {};
+
     int studentNumber;
+    int gradeNumber;
 
     int input;
 
@@ -95,7 +131,7 @@ int main() {
         showMenu();
 
         cin >> input;
-        if (!checkNumberInput()) {
+        if (!checkUserNumberInput()) {
             input = 0;
             continue;
         }
@@ -145,24 +181,38 @@ int main() {
                 }
 
                 cout << "Šiuo metu yra mokinių: " << studentCount << "\n";
+                studentNumber = inputStudentNumber(studentCount);
+                printStudentNameAndGrades(names, grades, gradesCount, studentNumber);
+                break;
+            case 4:
+                if (!checkStudentsCount(studentCount)) {
+                    break;
+                }
 
-                do {
-                    cout << "Įveskite mokinio numerį.\n";
-                    cin >> studentNumber;
-                    if (!checkNumberInput()) {
-                        studentNumber = 0;
-                    }
-                } while (studentNumber < 1 || studentNumber > studentCount);
+                studentNumber = inputStudentNumber(studentCount);
+                cout << "Jūs pasirinkote mokinį nr " << studentNumber << ".\n";
 
-                printSymbols('-', 20);
-                cout << studentNumber << ". " << names[studentNumber - 1] << " ";
+                if (gradesCount[studentNumber - 1] == 0) {
+                    cout << "Mokinys pažymių neturi.\n";
+                    break;
+                }
+
+                cout << "Dabartiniai pažymiai: ";
                 for (int i = 0; i < gradesCount[studentNumber - 1]; ++i) {
                     cout << grades[studentNumber - 1][i] << " ";
                 }
-                cout << "\n";
-                printSymbols('-', 20);
-                break;
-            case 4:
+
+                do {
+                    cout << "\nĮveskite pažymio eilės numerį (nuo 1 iki " << gradesCount[studentNumber - 1] << "):\n";
+                    cin >> gradeNumber;
+                    if (!checkUserNumberInput()) {
+                        gradeNumber = 0;
+                    }
+                } while (gradeNumber < 1 || gradeNumber > gradesCount[studentNumber - 1]);
+
+                grades[studentNumber - 1][gradeNumber - 1] = inputGrade(gradeNumber);
+                cout << "Pažymys sėkmingai atnaujintas\n";
+                printStudentNameAndGrades(names, grades, gradesCount, studentNumber);
                 break;
             case 5:
                 break;
