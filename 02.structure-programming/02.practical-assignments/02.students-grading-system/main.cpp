@@ -2,10 +2,18 @@
 
 using namespace std;
 
+/**
+ * @brief Patikrina, ar pažymys yra nuo 1 iki 10.
+ * @param grade Tikrinamas pažymys.
+ * @return true, jei pažymys tinkamas; kitu atveju false.
+ */
 bool checkGrade(int grade) {
     return grade >= 1 && grade <= 10;
 }
 
+/**
+ * @brief Išveda pagrindinį meniu.
+ */
 void showMenu() {
     cout << "\n";
     cout << "----------MENIU----------\n";
@@ -18,6 +26,11 @@ void showMenu() {
     cout << "7.Išeiti.\n";
 }
 
+/**
+ * @brief Prašo įvesti pažymį, kol jo reikšmė yra nuo 1 iki 10.
+ * @param gradeNumber Įvedamo pažymio eilės numeris.
+ * @return Įvestas tinkamas pažymys.
+ */
 int inputGrade(int gradeNumber) {
     int grade;
     do {
@@ -30,6 +43,10 @@ int inputGrade(int gradeNumber) {
     return grade;
 }
 
+/**
+ * @brief Patikrina įvestį ir išvalo cin klaidą.
+ * @return true, jei įvestis tinkama; false, jei nepavyko nuskaityti.
+ */
 bool checkNumberInput() {
     if (cin.fail()) {
         cin.clear();
@@ -38,6 +55,18 @@ bool checkNumberInput() {
         return false;
     }
     return true;
+}
+
+/**
+ * @brief Išspausdina pasirinktą kiekį simbolių.
+ * @param s Simbolis.
+ * @param count simoblių kiekis.
+ */
+void printSymbols(char s, int count) {
+    for (int i = 0; i < count; ++i) {
+        cout << s;
+    }
+    cout << "\n";
 }
 
 int main() {
@@ -87,7 +116,7 @@ int main() {
                     break;
                 }
 
-                cout << "----------\n";
+                printSymbols('-', 20);
                 for (int i = 0; i < studentCount; ++i) {
                     cout << i + 1 << ". " << names[i];
                     for (int j = 0; j < gradesCount[i]; ++j) {
@@ -95,7 +124,7 @@ int main() {
                     }
                     cout << "\n";
                 }
-                cout << "----------\n";
+                printSymbols('-', 20);
                 break;
             case 3:
                 break;
