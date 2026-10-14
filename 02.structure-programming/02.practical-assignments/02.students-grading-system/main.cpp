@@ -1,4 +1,6 @@
+#include <iomanip>
 #include <iostream>
+#include <format>
 
 using namespace std;
 
@@ -214,8 +216,20 @@ int main() {
                 cout << "Pažymys sėkmingai atnaujintas\n";
                 printStudentNameAndGrades(names, grades, gradesCount, studentNumber);
                 break;
-            case 5:
+            case 5: {
+                if (!checkStudentsCount(studentCount)) {
+                    break;
+                }
+                studentNumber = inputStudentNumber(studentCount);
+                double sum = 0;
+
+                for (int i = 0; i < gradesCount[studentNumber - 1]; ++i) {
+                    sum += grades[studentNumber - 1][i];
+                }
+                double avg = sum / gradesCount[studentNumber - 1];
+                cout << format("Studento {} vidurkis yra: {:.2f}\n", names[studentNumber - 1], avg);
                 break;
+            }
             case 6:
                 break;
             case 7:
