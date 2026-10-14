@@ -69,6 +69,19 @@ void printSymbols(char s, int count) {
     cout << "\n";
 }
 
+/**
+ * @brief Patikrina, ar sąraše yra mokinių. Jei tuščias, išveda pranešimą.
+ * @param studentCount Mokinių skaičius sąraše.
+ * @return true, jei mokinių yra; false, jei sąrašas tuščias.
+ */
+bool checkStudentsCount(int studentCount) {
+    if (studentCount == 0) {
+        cout << "Mokinių sąrašas tuščias.\n";
+        return false;
+    }
+    return true;
+}
+
 int main() {
     string names[100];
     int grades[100][10];
@@ -112,8 +125,7 @@ int main() {
                 studentCount++;
                 break;
             case 2:
-                if (studentCount == 0) {
-                    cout << "Mokinių sąrašas tuščias.\n";
+                if (!checkStudentsCount(studentCount)) {
                     break;
                 }
 
@@ -128,15 +140,18 @@ int main() {
                 printSymbols('-', 20);
                 break;
             case 3:
-                if (studentCount == 0) {
-                    cout << "Mokinių sąrašas tuščias.\n";
+                if (!checkStudentsCount(studentCount)) {
                     break;
                 }
+
                 cout << "Šiuo metu yra mokinių: " << studentCount << "\n";
 
                 do {
                     cout << "Įveskite mokinio numerį.\n";
                     cin >> studentNumber;
+                    if (!checkNumberInput()) {
+                        studentNumber = 0;
+                    }
                 } while (studentNumber < 1 || studentNumber > studentCount);
 
                 printSymbols('-', 20);
