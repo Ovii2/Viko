@@ -1,6 +1,12 @@
-#include <iomanip>
 #include <iostream>
+#include <string>
 #include <format>
+#include <limits>
+
+#ifdef _WIN32
+#define NOMINMAX
+#include <windows.h>
+#endif
 
 using namespace std;
 
@@ -141,6 +147,11 @@ bool checkGradesCount(int count) {
 }
 
 int main() {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+#endif
+
     string names[100];
     int grades[100][10];
     int studentCount = 0;
