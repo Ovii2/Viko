@@ -35,6 +35,7 @@ img {
 }
 
 .content-container {
+  display: grid;
   flex: 1;
   margin: 0.5rem;
 }
@@ -439,7 +440,7 @@ hr {
   aside {
     display: flex;
     flex-direction: column;
-    margin: 0;   
+    margin: 0;
     gap: 1.5rem;
     align-self: stretch;
   }
