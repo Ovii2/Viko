@@ -417,7 +417,6 @@ hr {
 
 @media screen and (min-width: 1024px) {
   .content-container {
-    display: grid;
     grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
     gap: 1rem;
     align-items: start;
