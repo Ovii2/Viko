@@ -146,7 +146,6 @@ aside {
 }
 
 .aside-header > img {
-  /* width: clamp(4rem, 7vw, 8rem); */
   width: clamp(3rem, 6vw, 6rem);
   margin: 0 auto;
 }
@@ -276,6 +275,7 @@ aside p {
     }
 
     .form-field {
+      text-align: right;
       flex-direction: row;
       align-items: center;
       gap: 1rem;
