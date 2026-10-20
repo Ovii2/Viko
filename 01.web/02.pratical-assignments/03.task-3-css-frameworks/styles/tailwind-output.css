@@ -1,0 +1,234 @@
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --spacing: 0.25rem;
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-semibold: 600;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .top-0 {
+    top: 0px;
+  }
+  .top-\[calc\(100\%\+1rem\)\] {
+    top: calc(100% + 1rem);
+  }
+  .right-0 {
+    right: 0px;
+  }
+  .left-auto {
+    left: auto;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .w-40 {
+    width: calc(var(--spacing) * 40);
+  }
+  .w-\[clamp\(3\.5rem\,12vw\,5rem\)\] {
+    width: clamp(3.5rem, 12vw, 5rem);
+  }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-\[clamp\(0\.5rem\,2vw\,1rem\)\] {
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
+  .bg-\[var\(--color-primary\)\] {
+    background-color: var(--color-primary);
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .pl-10 {
+    padding-left: calc(var(--spacing) * 10);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+  .text-\[var\(--color-table-header\)\] {
+    color: var(--color-table-header);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  @media (width >= 500px) {
+    .min-\[500px\]\:static {
+      position: static;
+    }
+    .min-\[500px\]\:my-0 {
+      margin-block: 0px;
+    }
+    .min-\[500px\]\:ml-0 {
+      margin-left: 0px;
+    }
+    .min-\[500px\]\:block {
+      display: block;
+    }
+    .min-\[500px\]\:hidden {
+      display: none;
+    }
+    .min-\[500px\]\:w-auto {
+      width: auto;
+    }
+    .min-\[500px\]\:w-full {
+      width: 100%;
+    }
+    .min-\[500px\]\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .min-\[500px\]\:pl-0 {
+      padding-left: 0px;
+    }
+  }
+  @media (width >= 800px) {
+    .min-\[800px\]\:ml-auto {
+      margin-left: auto;
+    }
+    .min-\[800px\]\:w-auto {
+      width: auto;
+    }
+    .min-\[800px\]\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+  }
+  @media (width >= 40rem) {
+    .sm\:block {
+      display: block;
+    }
+  }
+  .\[\&_\.nav-item\]\:text-\[var\(--color-table-header\)\] .nav-item {
+    color: var(--color-table-header);
+  }
+  .\[\&_\.nav-item\.active\]\:font-semibold .nav-item.active {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .\[\&_\.nav-item\.active\]\:underline\! .nav-item.active {
+    text-decoration-line: underline !important;
+  }
+  .\[\&_\.nav-item\.active\]\:underline-offset-4 .nav-item.active {
+    text-underline-offset: 4px;
+  }
+  .\[\&\.is-open\]\:flex.is-open {
+    display: flex;
+  }
+  .\[\&\.is-open\]\:flex-col.is-open {
+    flex-direction: column;
+  }
+  .\[\&\>li\]\:cursor-pointer > li {
+    cursor: pointer;
+  }
+  .\[\&\>li\]\:p-\[0\.1rem\] > li {
+    padding: 0.1rem;
+  }
+  .\[\&\>li\]\:text-\[var\(--color-table-header\)\] > li {
+    color: var(--color-table-header);
+  }
+  @media (width >= 500px) {
+    .min-\[500px\]\:\[\&\>ul\]\:m-0 > ul {
+      margin: 0px;
+    }
+    .min-\[500px\]\:\[\&\>ul\]\:flex > ul {
+      display: flex;
+    }
+    .min-\[500px\]\:\[\&\>ul\]\:justify-center > ul {
+      justify-content: center;
+    }
+    .min-\[500px\]\:\[\&\>ul\]\:gap-4 > ul {
+      gap: calc(var(--spacing) * 4);
+    }
+    .min-\[500px\]\:\[\&\>ul\]\:p-0 > ul {
+      padding: 0px;
+    }
+  }
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-outline-style: solid;
+      --tw-font-weight: initial;
+    }
+  }
+}

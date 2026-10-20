@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerija | Atrask Lietuvą</title>
+    <link rel="stylesheet" href="../../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/tailwind-output.css" />
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <script type="module">
+      import { initMenu } from "../../scripts/menu.js";
+
+      initMenu();
+    </script>
+  </head>
+  <body>
+    <!-- HEADER START -->
+    <header
+      class="flex justify-center items-center bg-[var(--color-primary)] p-4 gap-[clamp(0.5rem,2vw,1rem)] sticky top-0 z-50 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
+    >
+      <a href="./index.html" class="shrink-0 min-[500px]:ml-0">
+        <img
+          class="w-[clamp(3.5rem,12vw,5rem)]"
+          src="../../assets/icons/logo.svg"
+          alt="Logo"
+        />
+      </a>
+      <div class="header-text">
+        <p class="text-[var(--color-table-header)] text-2xl text-center">
+          Atrask Lietuvą
+        </p>
+        <p class="text-[var(--color-table-header)] text-base whitespace-nowrap">
+          Gamta · Kelionės · Įspūdžiai
+        </p>
+      </div>
+      <div
+        class="header-menu shrink-0 relative flex-col min-[500px]:w-full min-[800px]:w-auto min-[800px]:ml-auto"
+      >
+        <button
+          class="menu-toggle bg-transparent border-none shrink-0 p-2 cursor-pointer min-[500px]:hidden"
+          type="button"
+        >
+          <img class="w-6" src="../../assets/icons/menu.svg" alt="Menu" />
+        </button>
+        <!-- prettier-ignore -->
+        <nav
+          class="
+          navigation
+          hidden sm:block absolute top-[calc(100%+1rem)] left-auto right-0 w-40 
+          bg-[var(--color-primary)] p-2 z-10 
+          [&_.nav-item]:text-[var(--color-table-header)] 
+          [&_.nav-item.active]:underline!
+          [&_.nav-item.active]:underline-offset-4 
+          [&_.nav-item.active]:font-semibold [&.is-open]:flex 
+          [&.is-open]:flex-col          
+          min-[500px]:static 
+          min-[500px]:block 
+          min-[500px]:w-auto
+          min-[500px]:[&>ul]:flex
+          min-[500px]:[&>ul]:justify-center
+          min-[500px]:[&>ul]:gap-4
+          min-[500px]:[&>ul]:m-0
+          min-[500px]:[&>ul]:p-0
+          "
+        >
+          <ul class="
+          [&>li]:text-[var(--color-table-header)] 
+          [&>li]:cursor-pointer [&>li]:p-[0.1rem] 
+          pl-10 
+          min-[500px]:pl-0 
+          my-4 
+          min-[500px]:my-0
+          ">
+            <li>
+              <a class="nav-item" href="../../index.html">Pagrindinis</a>
+            </li>
+            <li><a class="nav-item" href="../../pages/about/about.html">Apie</a></li>
+            <li>
+              <a class="nav-item active" href="../../pages/gallery/gallery.html">Galerija</a>
+            </li>
+            <li>
+              <a class="nav-item" href="../../pages/survery/survey.html">Anketa</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- HEADER END -->
+    <!-- MAIN START -->
+    <div class="content-container">
+      <main>
+        <section class="gallery-text">
+          <h1 class="gallery-text-tile">Galerija</h1>
+          <hr />
+          <p class="gallery-text-subtitle">
+            Lietuvos grožis - nuo ežerų iki senamiesčių.
+          </p>
+        </section>
+        <section class="gallery-section-cards">
+          <article class="gallery-card">
+            <img src="../../assets/images/traku-pilis.jpeg" alt="Trakų pilis" />
+            <div class="gallery-card-text">
+              <h3>Trakų pilis</h3>
+              <p>Istorija ir gamta</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="../../assets/images/nidos-kopos.jpg" alt="Nidos kopos" />
+            <div class="gallery-card-text">
+              <h3>Nidos kopos</h3>
+              <p>Vėjo ir smėlio ramybė</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img
+              src="../../assets/images/aukstaitijos-ezerai.jpeg"
+              alt="Aukštaitijos Ežerai"
+            />
+            <div class="gallery-card-text">
+              <h3>Aukštaitijos Ežerai</h3>
+              <p>Ramybės oazė</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img
+              src="../../assets/images/cepkeliu-raistas.jpg"
+              alt="Čepkelių raistas"
+            />
+            <div class="gallery-card-text">
+              <h3>Čepkelių raistas</h3>
+              <p>Ramybės oazė</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img
+              src="../../assets/images/anyksciu-silelis.jpeg"
+              alt="Anykščių šilelis"
+            />
+            <div class="gallery-card-text">
+              <h3>Anykščių šilelis</h3>
+              <p>Miškų paslaptys</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img
+              src="../../assets/images/vilniaus-senamiestis.jpg"
+              alt="Vilniaus senamiestis"
+            />
+            <div class="gallery-card-text">
+              <h3>Vilniaus senamiestis</h3>
+              <p>Kultūra ir atmosfera</p>
+            </div>
+          </article>
+        </section>
+      </main>
+      <aside>
+        <img src="../../assets/icons/camera.svg" alt="Fotoaparatas" />
+        <h2 class="aside-title">Fotografavimo patarimai</h2>
+        <div class="tip-card-container">
+          <article class="tip-card">
+            <h3>Šviesa</h3>
+            <p>Fotografuok anksti ryte arba prieš saulėlydį.</p>
+          </article>
+          <article class="tip-card">
+            <h3>Rakursas</h3>
+            <p>Išbandyk skirtingus kampus ir pastebėk detales.</p>
+          </article>
+          <article class="tip-card">
+            <h3>Gamta</h3>
+            <p>Lik takuose ir netrukdyk gyvūnams.</p>
+          </article>
+        </div>
+        <hr />
+        <div class="your-discoveries">
+          <h3>Tavo atradimai</h3>
+          <p>
+            Žinai vietą, kuri verta patekti į galeriją? Pasidalink savo idėja!
+          </p>
+          <a class="aside-link" href="../survery/survey.html"
+            >Pildyti anketą →</a
+          >
+        </div>
+        <div class="slogan">
+          <img src="../../assets/icons/leaf.svg" alt="Lapas" />
+          <p>Atrask. Įamžink. Pasidalink</p>
+        </div>
+      </aside>
+    </div>
+    <!-- MAIN END -->
+    <!-- FOOTER START -->
+    <footer class="footer">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/icons/logo.svg" alt="Logo" />
+        <div class="footer-text">
+          <p class="footer-title">Atrask Lietuvą</p>
+          <p class="footer-subtitle">Gamta · Kelionės · Įspūdžiai</p>
+        </div>
+      </div>
+      <p class="footer-moto">Lietuva įkvėpia keliauti</p>
+      <div class="footer-info">
+        <div class="icons-container">
+          <a class="social-icon" href="#"
+            ><img src="../../assets/icons/youtube.svg" alt="Youtube"
+          /></a>
+          <a class="social-icon" href="#"
+            ><img src="../../assets/icons/facebook.svg" alt="Facebook"
+          /></a>
+          <a class="social-icon" href="#"
+            ><img src="../../assets/icons/instagram.svg" alt="Instagram"
+          /></a>
+        </div>
+        <p>&copy; 2026 Visos teisės saugomos</p>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </body>
+</html>
