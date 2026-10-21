@@ -318,26 +318,10 @@ aside {
   flex-direction: column;
 }
 
-.registration-form label {
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
-
-.registration-form input,
-.registration-form select {
-  border: 1px solid var(--color-border);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-}
-
 .travel-group-title {
   color: var(--color-text);
   font-weight: 600;
   margin-top: 0.5rem;
-}
-
-.travel-group label {
-  font-weight: 500;
 }
 
 .travel-options {
@@ -366,10 +350,6 @@ aside {
 .registration-field {
   display: flex;
   flex-direction: column;
-}
-
-hr {
-  border-color: var(--color-border);
 }
 
 .form-footer {

@@ -28,11 +28,6 @@
   color: var(--color-primary);
 }
 
-hr {
-  border-color: var(--color-border);
-  width: 100%;
-}
-
 .about-title {
   display: flex;
   flex-direction: column;
