@@ -1,0 +1,3 @@
+Vidurkis: 12.47
+Minimumas: 9.70
+Maksimumas: 15.10

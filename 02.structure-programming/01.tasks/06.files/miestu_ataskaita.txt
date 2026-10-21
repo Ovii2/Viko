@@ -1,0 +1,3 @@
+Miestų skaičius: 6
+Ilgiausias pavadinimas: Naujoji Akemene
+Pavadinimo ilgis: 15
