@@ -30,7 +30,8 @@ img {
   min-width: 0;
   border-radius: 0.25rem;
   border: 2px solid var(--color-border);
-  background: url("assets/icons/search.svg") no-repeat left 0.5rem center / 1.25rem;
+  background: url("assets/icons/search.svg") no-repeat left 0.5rem center /
+    1.25rem;
   padding-left: 2.25rem;
 }
 
@@ -143,6 +144,7 @@ img {
 
 .destination-rating > p {
   font-weight: 600;
+  color: var(--color-text-on-primary);
 }
 
 .destination-rating img {

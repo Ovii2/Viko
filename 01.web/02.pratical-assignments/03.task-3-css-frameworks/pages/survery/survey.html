@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anketa | Atrask Lietuvą</title>
-    <link rel="stylesheet" href="../../styles/footer.css" />
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/tailwind-output.css" />
     <link rel="stylesheet" href="../../reset.css" />
@@ -253,26 +252,35 @@
     </div>
     <!-- MAIN END -->
     <!-- FOOTER START -->
-    <footer class="footer">
-      <div class="footer-brand">
-        <img class="footer-logo" src="../../assets/icons/logo.svg" alt="Logo" />
-        <div class="footer-text">
-          <p class="footer-title">Atrask Lietuvą</p>
-          <p class="footer-subtitle">Gamta · Kelionės · Įspūdžiai</p>
+    <!-- prettier-ignore -->
+    <footer
+      class="flex flex-col items-center 
+      p-4 text-center 
+      bg-[var(--color-primary)] 
+      min-[700px]:flex-row 
+      min-[700px]:justify-between
+      [&_p]:text-[var(--color-table-header)]
+      "      
+    >
+      <div class="flex items-center gap-4 mb-2 text-center min-[700px]:justify-between min-[700px]:mb-0">
+        <img
+          class="w-[clamp(3.5rem,12vw,5rem)] shrink-0"
+          src="../../assets/icons/logo.svg"
+          alt="Logo"
+        />
+        <div>
+          <p class="text-2xl text-center">Atrask Lietuvą</p>
+          <p class="text-base whitespace-nowrap">
+            Gamta · Kelionės · Įspūdžiai
+          </p>
         </div>
       </div>
-      <p class="footer-moto">Lietuva įkvėpia keliauti</p>
-      <div class="footer-info">
-        <div class="icons-container">
-          <a class="social-icon" href="#"
-            ><img src="../../assets/icons/youtube.svg" alt="Youtube"
-          /></a>
-          <a class="social-icon" href="#"
-            ><img src="../../assets/icons/facebook.svg" alt="Facebook"
-          /></a>
-          <a class="social-icon" href="#"
-            ><img src="../../assets/icons/instagram.svg" alt="Instagram"
-          /></a>
+      <p class="text-lg italic">Lietuva įkvėpia keliauti</p>
+      <div class="flex flex-col items-center">
+        <div class="icons-container flex gap-2 py-2 px-0 [&>a]:w-6 [&>a]:max-w-full">
+          <a href="#"><img src="../../assets/icons/youtube.svg" alt="Youtube"/></a>
+          <a href="#"><img src="../../assets/icons/facebook.svg" alt="Facebook"/></a>
+          <a href="#"><img src="../../assets/icons/instagram.svg" alt="Instagram"/></a>
         </div>
         <p>&copy; 2026 Visos teisės saugomos</p>
       </div>
