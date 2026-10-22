@@ -18,7 +18,7 @@
   <body>
     <!-- HEADER START -->
     <header
-      class="flex justify-center items-center bg-[var(--color-primary)] p-4 gap-[clamp(0.5rem,2vw,1rem)] sticky top-0 z-50 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
+      class="sticky top-0 z-50 flex items-center justify-center gap-[clamp(0.5rem,2vw,1rem)] bg-[var(--color-primary)] p-4 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
     >
       <a href="./index.html" class="shrink-0 min-[500px]:ml-0">
         <img
@@ -28,57 +28,37 @@
         />
       </a>
       <div class="header-text">
-        <p class="text-[var(--color-table-header)] text-2xl text-center">
+        <p class="text-center text-2xl text-[var(--color-table-header)]">
           Atrask Lietuvą
         </p>
-        <p class="text-[var(--color-table-header)] text-base whitespace-nowrap">
+        <p class="text-base whitespace-nowrap text-[var(--color-table-header)]">
           Gamta · Kelionės · Įspūdžiai
         </p>
       </div>
       <div
-        class="header-menu shrink-0 relative flex-col min-[500px]:w-full min-[800px]:w-auto min-[800px]:ml-auto"
+        class="header-menu relative shrink-0 flex-col min-[500px]:w-full min-[800px]:ml-auto min-[800px]:w-auto"
       >
         <button
-          class="menu-toggle bg-transparent border-none shrink-0 p-2 cursor-pointer min-[500px]:hidden"
+          class="menu-toggle shrink-0 cursor-pointer border-none bg-transparent p-2 min-[500px]:hidden"
           type="button"
         >
           <img class="w-6" src="./assets/icons/menu.svg" alt="Menu" />
         </button>
         <!-- prettier-ignore -->
         <nav
-          class="
-          navigation
-          hidden sm:block absolute top-[calc(100%+1rem)] left-auto right-0 w-40 
-          bg-[var(--color-primary)] p-2 z-10 
-          [&_.nav-item]:text-[var(--color-table-header)] 
-          [&_.nav-item.active]:underline!
-          [&_.nav-item.active]:underline-offset-4 
-          [&_.nav-item.active]:font-semibold [&.is-open]:flex 
-          [&.is-open]:flex-col          
-          min-[500px]:static 
-          min-[500px]:block 
-          min-[500px]:w-auto
-          min-[500px]:[&>ul]:flex
-          min-[500px]:[&>ul]:justify-center
-          min-[500px]:[&>ul]:gap-4
-          min-[500px]:[&>ul]:m-0
-          min-[500px]:[&>ul]:p-0
-          "
+          class="navigation absolute top-[calc(100%+1rem)] right-0 left-auto z-10 hidden w-40 bg-[var(--color-primary)] p-2 min-[500px]:static min-[500px]:block min-[500px]:w-auto sm:block [&_.nav-item]:text-[var(--color-table-header)] [&_.nav-item.active]:font-semibold [&_.nav-item.active]:underline! [&_.nav-item.active]:underline-offset-4 [&.is-open]:flex [&.is-open]:flex-col min-[500px]:[&>ul]:m-0 min-[500px]:[&>ul]:flex min-[500px]:[&>ul]:justify-center min-[500px]:[&>ul]:gap-4 min-[500px]:[&>ul]:p-0"
         >
-          <ul class="
-          [&>li]:text-[var(--color-table-header)] 
-          [&>li]:cursor-pointer [&>li]:p-[0.1rem] 
-          pl-10 
-          min-[500px]:pl-0 
-          my-4 
-          min-[500px]:my-0
-          ">
+          <ul
+            class="my-4 pl-10 min-[500px]:my-0 min-[500px]:pl-0 [&>li]:cursor-pointer [&>li]:p-[0.1rem] [&>li]:text-[var(--color-table-header)]"
+          >
             <li>
               <a class="nav-item active" href="./index.html">Pagrindinis</a>
             </li>
             <li><a class="nav-item" href="/pages/about/about.html">Apie</a></li>
             <li>
-              <a class="nav-item" href="/pages/gallery/gallery.html">Galerija</a>
+              <a class="nav-item" href="/pages/gallery/gallery.html"
+                >Galerija</a
+              >
             </li>
             <li>
               <a class="nav-item" href="/pages/survery/survey.html">Anketa</a>

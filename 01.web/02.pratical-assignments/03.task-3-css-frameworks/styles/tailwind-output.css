@@ -73,6 +73,36 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-\[\(clamp\(2rem\,4vw\,4rem\)\)\] {
+    margin-top: (clamp(2rem, 4vw, 4rem));
+  }
+  .mt-\[clamp\(0\.5rem\,1vw\,1rem\)\] {
+    margin-top: clamp(0.5rem, 1vw, 1rem);
+  }
+  .mt-\[clamp\(0\.5rem\,2vw\,1rem\)\] {
+    margin-top: clamp(0.5rem, 2vw, 1rem);
+  }
+  .mt-\[clamp\(1rem\,2vw\,2rem\)\] {
+    margin-top: clamp(1rem, 2vw, 2rem);
+  }
+  .mt-\[clamp\(1rem\,4vw\,2rem\)\] {
+    margin-top: clamp(1rem, 4vw, 2rem);
+  }
+  .mt-\[clamp\(2rem\,1vw\,3rem\)\] {
+    margin-top: clamp(2rem, 1vw, 3rem);
+  }
+  .mt-\[clamp\(2rem\,2vw\+1rem\,4rem\)\] {
+    margin-top: clamp(2rem, 2vw + 1rem, 4rem);
+  }
+  .mt-\[clamp\(2rem\,2vw\,3rem\)\] {
+    margin-top: clamp(2rem, 2vw, 3rem);
+  }
+  .mt-\[clamp\(2rem\,2vw\,4rem\)\] {
+    margin-top: clamp(2rem, 2vw, 4rem);
+  }
+  .mt-\[clamp\(2rem\,4vw\,4rem\)\] {
+    margin-top: clamp(2rem, 4vw, 4rem);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -124,6 +154,9 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
   }
@@ -135,6 +168,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -257,6 +293,9 @@
   }
   .italic {
     font-style: italic;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   @media (hover: hover) {
     .hover\:bg-\[var\(--color-primary-hover\)\]:hover {
