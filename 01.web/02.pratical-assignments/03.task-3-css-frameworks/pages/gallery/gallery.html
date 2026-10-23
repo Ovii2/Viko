@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/tailwind-output.css" />
     <link rel="stylesheet" href="../../reset.css" />
-    <link rel="stylesheet" href="gallery.css" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -22,7 +21,7 @@
   <body>
     <!-- HEADER START -->
     <header
-      class="flex justify-center items-center bg-[var(--color-primary)] p-4 gap-[clamp(0.5rem,2vw,1rem)] sticky top-0 z-50 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
+      class="sticky top-0 z-50 flex items-center justify-center gap-[clamp(0.5rem,2vw,1rem)] bg-[var(--color-primary)] p-4 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
     >
       <a href="./index.html" class="shrink-0 min-[500px]:ml-0">
         <img
@@ -32,18 +31,18 @@
         />
       </a>
       <div class="header-text">
-        <p class="text-[var(--color-table-header)] text-2xl text-center">
+        <p class="text-center text-2xl text-[var(--color-table-header)]">
           Atrask Lietuvą
         </p>
-        <p class="text-[var(--color-table-header)] text-base whitespace-nowrap">
+        <p class="text-base whitespace-nowrap text-[var(--color-table-header)]">
           Gamta · Kelionės · Įspūdžiai
         </p>
       </div>
       <div
-        class="header-menu shrink-0 relative flex-col min-[500px]:w-full min-[800px]:w-auto min-[800px]:ml-auto"
+        class="header-menu relative shrink-0 flex-col min-[500px]:w-full min-[800px]:ml-auto min-[800px]:w-auto"
       >
         <button
-          class="menu-toggle bg-transparent border-none shrink-0 p-2 cursor-pointer min-[500px]:hidden"
+          class="menu-toggle shrink-0 cursor-pointer border-none bg-transparent p-2 min-[500px]:hidden"
           type="button"
         >
           <img class="w-6" src="../../assets/icons/menu.svg" alt="Menu" />
@@ -93,16 +92,39 @@
     </header>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <div class="content-container">
+    <!-- prettier-ignore -->
+    <div
+      class="
+      m-4 
+      flex flex-1 flex-col 
+      gap-4 
+      min-[1000px]:grid
+      min-[1000px]:grid-cols-[minmax(0,1fr)_clamp(24rem,35vw,40rem)]        
+      "
+    >
       <main>
-        <section class="gallery-text">
-          <h1 class="gallery-text-tile">Galerija</h1>
+        <section>
+          <h1>Galerija</h1>
           <hr />
-          <p class="gallery-text-subtitle">
+          <p class="text-[var(--color-text-muted)]">
             Lietuvos grožis - nuo ežerų iki senamiesčių.
           </p>
         </section>
-        <section class="gallery-section-cards">
+        <!-- prettier-ignore -->
+        <section
+          class="
+          mt-4 grid gap-2 
+          [&_p]:text-[var(--color-text-muted)]
+          [&_.gallery-card]:grid         
+          [&_.gallery-card]:gap-2
+          [&_.gallery-card_img]:rounded-sm
+          [&_.gallery-card_img]:object-cover
+          [&_.gallery-card_img]:aspect-video
+          min-[600px]:grid-cols-2
+          min-[600px]:gap-y-4
+          min-[1000px]:grid-cols-3
+          "
+        >
           <article class="gallery-card">
             <img src="../../assets/images/traku-pilis.jpeg" alt="Trakų pilis" />
             <div class="gallery-card-text">
@@ -159,10 +181,31 @@
           </article>
         </section>
       </main>
-      <aside>
-        <img src="../../assets/icons/camera.svg" alt="Fotoaparatas" />
-        <h2 class="aside-title">Fotografavimo patarimai</h2>
-        <div class="tip-card-container">
+      <!-- prettier-ignore -->
+      <aside
+        class="
+        bg[var(--color-table-header)] 
+        rounded-sm p-4 
+        [&_p]:text-[var(--color-text-muted)]
+        [&_.aside-link:focus]:[outline:var(--color-focus)]
+        [&_.aside-link:focus]:outline-offset-[0.1rem]
+        "
+      >
+        <img
+          class="w-[clamp(3rem,4vw,4rem)]"
+          src="../../assets/icons/camera.svg"
+          alt="Fotoaparatas"
+        />
+        <h2>Fotografavimo patarimai</h2>
+        <!-- prettier-ignore -->
+        <div class="
+        tip-card-container flex flex-col 
+        gap-3 my-4 mx-0 
+        [&_.tip-card]:bg-[var(--color-tip-background)]
+        [&_.tip-card]:rounded-sm
+        [&_.tip-card]:p-2
+        [&_p]:max-w-[80%]
+        ">
           <article class="tip-card">
             <h3>Šviesa</h3>
             <p>Fotografuok anksti ryte arba prieš saulėlydį.</p>
@@ -177,17 +220,32 @@
           </article>
         </div>
         <hr />
-        <div class="your-discoveries">
+        <div class="flex flex-col gap-2">
           <h3>Tavo atradimai</h3>
           <p>
             Žinai vietą, kuri verta patekti į galeriją? Pasidalink savo idėja!
           </p>
-          <a class="aside-link" href="../survery/survey.html"
-            >Pildyti anketą →</a
+          <a class="
+          aside-link
+          bg-[var(--color-primary)]
+          text-[var(--color-text-on-primary)]
+          py-2
+          px-4
+          rounded-sm
+          text-center
+          text-[clamp(1rem,3vw,1.3rem)]
+          font-semibold
+          hover:bg-[var(--color-primary-hover)]
+          " 
+          href="../survery/survey.html">Pildyti anketą →</a
           >
         </div>
-        <div class="slogan">
-          <img src="../../assets/icons/leaf.svg" alt="Lapas" />
+        <div class="flex items-center gap-2 my-4 mx-0 [&_p]:italic text-[clamp(1rem,3vw,1.2rem)]">
+          <img
+            class="w-[clamp(3rem,4vw,4rem)]"
+            src="../../assets/icons/leaf.svg"
+            alt="Lapas"
+          />
           <p>Atrask. Įamžink. Pasidalink</p>
         </div>
       </aside>

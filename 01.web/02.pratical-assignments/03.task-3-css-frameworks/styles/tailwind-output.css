@@ -12,7 +12,9 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
+    --radius-sm: 0.25rem;
     --radius-lg: 0.5rem;
+    --aspect-video: 16 / 9;
   }
 }
 @layer utilities {
@@ -73,35 +75,8 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
-  .mt-\[\(clamp\(2rem\,4vw\,4rem\)\)\] {
-    margin-top: (clamp(2rem, 4vw, 4rem));
-  }
   .mt-\[clamp\(0\.5rem\,1vw\,1rem\)\] {
     margin-top: clamp(0.5rem, 1vw, 1rem);
-  }
-  .mt-\[clamp\(0\.5rem\,2vw\,1rem\)\] {
-    margin-top: clamp(0.5rem, 2vw, 1rem);
-  }
-  .mt-\[clamp\(1rem\,2vw\,2rem\)\] {
-    margin-top: clamp(1rem, 2vw, 2rem);
-  }
-  .mt-\[clamp\(1rem\,4vw\,2rem\)\] {
-    margin-top: clamp(1rem, 4vw, 2rem);
-  }
-  .mt-\[clamp\(2rem\,1vw\,3rem\)\] {
-    margin-top: clamp(2rem, 1vw, 3rem);
-  }
-  .mt-\[clamp\(2rem\,2vw\+1rem\,4rem\)\] {
-    margin-top: clamp(2rem, 2vw + 1rem, 4rem);
-  }
-  .mt-\[clamp\(2rem\,2vw\,3rem\)\] {
-    margin-top: clamp(2rem, 2vw, 3rem);
-  }
-  .mt-\[clamp\(2rem\,2vw\,4rem\)\] {
-    margin-top: clamp(2rem, 2vw, 4rem);
-  }
-  .mt-\[clamp\(2rem\,4vw\,4rem\)\] {
-    margin-top: clamp(2rem, 4vw, 4rem);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -208,6 +183,9 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
   .border-none {
     --tw-border-style: none;
     border-style: none;
@@ -232,6 +210,9 @@
   }
   .px-0 {
     padding-inline: 0px;
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -275,9 +256,16 @@
   .text-\[clamp\(1rem\,3vw\,1\.2rem\)\] {
     font-size: clamp(1rem, 3vw, 1.2rem);
   }
+  .text-\[clamp\(1rem\,3vw\,1\.3rem\)\] {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .whitespace-nowrap {
     white-space: nowrap;
@@ -288,6 +276,9 @@
   .text-\[var\(--color-text\)\] {
     color: var(--color-text);
   }
+  .text-\[var\(--color-text-muted\)\] {
+    color: var(--color-text-muted);
+  }
   .text-\[var\(--color-text-on-primary\)\] {
     color: var(--color-text-on-primary);
   }
@@ -296,6 +287,10 @@
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   @media (hover: hover) {
     .hover\:bg-\[var\(--color-primary-hover\)\]:hover {
@@ -369,6 +364,20 @@
       padding-left: 0px;
     }
   }
+  @media (width >= 600px) {
+    .min-\[600px\]\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .min-\[600px\]\:grid-cols-\[2\,1fr\] {
+      grid-template-columns: 2,1fr;
+    }
+    .min-\[600px\]\:gap-4 {
+      gap: calc(var(--spacing) * 4);
+    }
+    .min-\[600px\]\:gap-y-4 {
+      row-gap: calc(var(--spacing) * 4);
+    }
+  }
   @media (width >= 700px) {
     .min-\[700px\]\:mb-0 {
       margin-bottom: 0px;
@@ -422,6 +431,9 @@
     .min-\[1000px\]\:grid-cols-1 {
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+    .min-\[1000px\]\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
     .min-\[1000px\]\:grid-cols-\[minmax\(0\,1fr\)_clamp\(24rem\,35vw\,40rem\)\] {
       grid-template-columns: minmax(0,1fr) clamp(24rem, 35vw, 40rem);
     }
@@ -449,6 +461,45 @@
       display: block;
     }
   }
+  .\[\&_\.aside-link\:focus\]\:\[outline\:var\(--color-focus\)\] .aside-link:focus {
+    outline: var(--color-focus);
+  }
+  .\[\&_\.aside-link\:focus\]\:outline-offset-\[0\.1rem\] .aside-link:focus {
+    outline-offset: 0.1rem;
+  }
+  .\[\&_\.aside-link\:focus\]\:outline-\[var\(--color-focus\)\] .aside-link:focus {
+    outline-color: var(--color-focus);
+  }
+  .\[\&_\.gallery-card\]\:grid .gallery-card {
+    display: grid;
+  }
+  .\[\&_\.gallery-card\]\:flex-col .gallery-card {
+    flex-direction: column;
+  }
+  .\[\&_\.gallery-card\]\:gap-1 .gallery-card {
+    gap: var(--spacing);
+  }
+  .\[\&_\.gallery-card\]\:gap-2 .gallery-card {
+    gap: calc(var(--spacing) * 2);
+  }
+  .\[\&_\.gallery-card_img\]\:aspect-video .gallery-card img {
+    aspect-ratio: var(--aspect-video);
+  }
+  .\[\&_\.gallery-card_img\]\:rounded-sm .gallery-card img {
+    border-radius: var(--radius-sm);
+  }
+  .\[\&_\.gallery-card_img\]\:object-cover .gallery-card img {
+    object-fit: cover;
+  }
+  .\[\&_\.gallery-card-img\]\:aspect-video .gallery-card-img {
+    aspect-ratio: var(--aspect-video);
+  }
+  .\[\&_\.gallery-card-img\]\:rounded-sm .gallery-card-img {
+    border-radius: var(--radius-sm);
+  }
+  .\[\&_\.gallery-card-img\]\:object-cover .gallery-card-img {
+    object-fit: cover;
+  }
   .\[\&_\.nav-item\]\:text-\[var\(--color-table-header\)\] .nav-item {
     color: var(--color-table-header);
   }
@@ -462,8 +513,36 @@
   .\[\&_\.nav-item\.active\]\:underline-offset-4 .nav-item.active {
     text-underline-offset: 4px;
   }
+  .\[\&_\.tip-card\]\:rounded-\[0\.1rem\] .tip-card {
+    border-radius: 0.1rem;
+  }
+  .\[\&_\.tip-card\]\:rounded-sm .tip-card {
+    border-radius: var(--radius-sm);
+  }
+  .\[\&_\.tip-card\]\:border-\[0\.5rem\] .tip-card {
+    border-style: var(--tw-border-style);
+    border-width: 0.5rem;
+  }
+  .\[\&_\.tip-card\]\:bg-\[var\(--color-tip-background\)\] .tip-card {
+    background-color: var(--color-tip-background);
+  }
+  .\[\&_\.tip-card\]\:p-2 .tip-card {
+    padding: calc(var(--spacing) * 2);
+  }
+  .\[\&_p\]\:max-w-\[80\%\] p {
+    max-width: 80%;
+  }
   .\[\&_p\]\:text-\[var\(--color-table-header\)\] p {
     color: var(--color-table-header);
+  }
+  .\[\&_p\]\:text-\[var\(--color-text\)\] p {
+    color: var(--color-text);
+  }
+  .\[\&_p\]\:text-\[var\(--color-text-muted\)\] p {
+    color: var(--color-text-muted);
+  }
+  .\[\&_p\]\:italic p {
+    font-style: italic;
   }
   .\[\&\.is-open\]\:flex.is-open {
     display: flex;
@@ -528,6 +607,11 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -542,6 +626,7 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
       --tw-border-style: solid;
     }
   }
