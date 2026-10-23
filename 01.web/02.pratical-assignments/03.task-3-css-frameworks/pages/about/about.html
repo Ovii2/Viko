@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/tailwind-output.css" />
     <link rel="stylesheet" href="../../reset.css" />
-    <link rel="stylesheet" href="about.css" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -22,7 +21,7 @@
   <body>
     <!-- HEADER START -->
     <header
-      class="flex justify-center items-center bg-[var(--color-primary)] p-4 gap-[clamp(0.5rem,2vw,1rem)] sticky top-0 z-50 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
+      class="sticky top-0 z-50 flex items-center justify-center gap-[clamp(0.5rem,2vw,1rem)] bg-[var(--color-primary)] p-4 min-[500px]:flex-wrap min-[800px]:flex-nowrap"
     >
       <a href="./index.html" class="shrink-0 min-[500px]:ml-0">
         <img
@@ -32,18 +31,18 @@
         />
       </a>
       <div class="header-text">
-        <p class="text-[var(--color-table-header)] text-2xl text-center">
+        <p class="text-center text-2xl text-[var(--color-table-header)]">
           Atrask Lietuvą
         </p>
-        <p class="text-[var(--color-table-header)] text-base whitespace-nowrap">
+        <p class="text-base whitespace-nowrap text-[var(--color-table-header)]">
           Gamta · Kelionės · Įspūdžiai
         </p>
       </div>
       <div
-        class="header-menu shrink-0 relative flex-col min-[500px]:w-full min-[800px]:w-auto min-[800px]:ml-auto"
+        class="header-menu relative shrink-0 flex-col min-[500px]:w-full min-[800px]:ml-auto min-[800px]:w-auto"
       >
         <button
-          class="menu-toggle bg-transparent border-none shrink-0 p-2 cursor-pointer min-[500px]:hidden"
+          class="menu-toggle shrink-0 cursor-pointer border-none bg-transparent p-2 min-[500px]:hidden"
           type="button"
         >
           <img class="w-6" src="../../assets/icons/menu.svg" alt="Menu" />
@@ -93,136 +92,287 @@
     </header>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <div class="content-container">
+    <!-- prettier-ignore -->
+    <div
+      class="
+        m-4      
+        flex
+        flex-1
+        flex-col
+        min-[1000px]:grid
+        min-[1000px]:grid-cols-[minmax(0,1fr)_clamp(24rem,35vw,40rem)]
+        min-[1000px]:gap-4
+      "
+    >
       <main>
-        <section class="about-intro">
-          <div class="about-intro-text">
-            <div class="about-title">
+        <section
+          class="
+            flex
+            flex-col
+            gap-2
+            min-[1000px]:grid
+            min-[1000px]:grid-cols-2
+            min-[1000px]:gap-0
+          "
+        >
+          <div
+            class="
+              flex
+              flex-col
+              gap-2
+              min-[1000px]:justify-around
+              min-[1000px]:gap-0
+            "
+          >
+            <div class="mr-[clamp(0rem,2vw,1rem)] flex flex-col">
               <h1>Apie mus</h1>
               <hr />
-              <h2>Lietuva prasideda nuo smalsumo.</h2>
-              <p class="about-intro-text-subtitle">
-                Kviečiame atrasti ežerus, miškus ir mažus miestelius. Dalijamės
-                idėjomis kelionėms po Lietuvą.
+              <h2 class="text-[var(--color-primary)]">Lietuva prasideda nuo smalsumo.</h2>
+              <p class="text-[var(--color-text)]">
+                Kviečiame atrasti ežerus, miškus ir mažus miestelius. Dalijamės idėjomis
+                kelionėms po Lietuvą.
               </p>
             </div>
             <div>
-              <h2>Mūsų tikslas</h2>
-              <p class="about-intro-text-subtitle">
+              <h2 class="text-[var(--color-primary)]">Mūsų tikslas</h2>
+              <p class="text-[var(--color-text)]">
                 Padėti atrasti įdomias vietas ir paskatinti keliauti atsakingai
               </p>
             </div>
           </div>
           <img
+            class="w-full h-[clamp(12rem,30vw,24rem)]! object-cover"
             src="../../assets/images/sartu-parkas.jpg"
             alt="Sartų regionins parkas"
           />
         </section>
-        <section class="explore-section">
-          <h2 class="explore-section-title">Atrask Lietuvą savaip</h2>
-          <article class="explore-section-card">
+        <section class="grid gap-4 min-[600px]:grid-cols-2 mb-2">
+          <h2 class="col-span-full">Atrask Lietuvą savaip</h2>
+          <article>
             <img
+              class="
+                w-full
+                h-[clamp(10rem,20vw,18rem)]!
+                object-cover
+                mb-2
+                rounded-[0.2rem]
+              "
               src="../../assets/images/aukstaitijos-ezerai.jpeg"
               alt="Aukštaitijos ežerai"
             />
             <h3>Gamta</h3>
-            <p>
+            <p class="text-[var(--color-text)]">
               Ežerai, miškai ir pažintiniai takai kviečia sulėtinti žingsnį.
             </p>
           </article>
-          <article class="explore-section-card">
-            <img src="../../assets/images/traku-pilis.jpeg" alt="Trakų pilis" />
-            <h3>Istorija</h3>
-            <p>Pilys, dvarai ir senamiesčiai pasakoja Lietuvos istorijas.</p>
-          </article>
-          <article class="explore-section-card">
+          <article>
             <img
+              class="
+                w-full
+                h-[clamp(10rem,20vw,18rem)]!
+                object-cover
+                mb-2
+                rounded-[0.2rem]
+              "
+              src="../../assets/images/traku-pilis.jpeg"
+              alt="Trakų pilis"
+            />
+            <h3>Istorija</h3>
+            <p class="text-[var(--color-text)]">
+              Pilys, dvarai ir senamiesčiai pasakoja Lietuvos istorijas.
+            </p>
+          </article>
+          <article>
+            <img
+              class="
+                w-full
+                h-[clamp(10rem,20vw,18rem)]!
+                object-cover
+                mb-2
+                rounded-[0.2rem]
+              "
               src="../../assets/images/senas-namas.jpg"
               alt="Senovinis namas"
             />
             <h3>Maži atradimai</h3>
-            <p>
-              Jaukūs miesteliai ir vietinės tradicijos laukia smalsių
-              keliautojų.
+            <p class="text-[var(--color-text)]">
+              Jaukūs miesteliai ir vietinės tradicijos laukia smalsių keliautojų.
             </p>
           </article>
-          <article class="explore-section-card">
-            <img src="../../assets/images/nidos-kopos.jpg" alt="Nidos kopos" />
+          <article>
+            <img
+              class="
+                w-full
+                h-[clamp(10rem,20vw,18rem)]!
+                object-cover
+                mb-2
+                rounded-[0.2rem]
+              "
+              src="../../assets/images/nidos-kopos.jpg"
+              alt="Nidos kopos"
+            />
             <h3>Pajūris</h3>
-            <p>Smėlio kopos ir jūros ošimas kviečia atsikvėpti.</p>
+            <p class="text-[var(--color-text)]">Smėlio kopos ir jūros ošimas kviečia atsikvėpti.</p>
           </article>
         </section>
-        <hr />
-        <section class="features-section">
-          <h2 class="features-section-title">Ką čia rasite?</h2>
-          <div class="features-section-item">
-            <img src="../../assets/icons/location_pin.svg" alt="Vieta" />
-            <div class="features-section-item-text">
+        <hr/>
+        <section
+          class="
+            mt-2           
+            grid
+            gap-y-2
+            gap-x-4
+            min-[600px]:grid-cols-3
+          "
+        >
+          <h2 class="col-span-full">Ką čia rasite?</h2>
+          <div
+            class="
+              flex
+              items-center
+              gap-4
+              min-[600px]:flex-col
+              min-[600px]:justify-center
+              min-[600px]:pr-4
+              min-[600px]:text-center
+              min-[600px]:[border-right:0.1rem_solid_var(--color-border)]
+            "
+          >
+            <img
+              class="w-[clamp(3rem,10vw,5rem)] min-[600px]:pl-4"
+              src="../../assets/icons/location_pin.svg"
+              alt="Vieta"
+            />
+            <div class="grid gap-1">
               <h4>Kelionių kryptys</h4>
-              <p>Vietos, kurias verta aplankyti.</p>
+              <p class="text-[var(--color-text)]">Vietos, kurias verta aplankyti.</p>
             </div>
           </div>
-
-          <div class="features-section-item">
-            <img src="../../assets/icons/route.svg" alt="Maršrutas" />
-            <div class="features-section-item-text">
+          <div
+            class="
+              flex
+              items-center
+              gap-4
+              min-[600px]:flex-col
+              min-[600px]:justify-center
+              min-[600px]:pr-4
+              min-[600px]:text-center
+              min-[600px]:border-r-[0.1rem]
+              min-[600px]:[border-right-style:solid]
+              min-[600px]:border-r-[var(--color-border)]
+            "
+          >
+            <img
+              class="w-[clamp(3rem,10vw,5rem)] min-[600px]:pl-4"
+              src="../../assets/icons/route.svg"
+              alt="Maršrutas"
+            />
+            <div class="grid gap-1">
               <h4>Maršrutų idėjos</h4>
-              <p>Įkvėpimas trumpoms išvykoms.</p>
+              <p class="text-[var(--color-text)]">Įkvėpimas trumpoms išvykoms.</p>
             </div>
           </div>
-
-          <div class="features-section-item">
-            <img src="../../assets/icons/leaf.svg" alt="Lapas" />
-            <div class="features-section-item-text">
+          <div
+            class="
+              flex
+              items-center
+              gap-4
+              min-[600px]:flex-col
+              min-[600px]:justify-center
+              min-[600px]:pr-4
+              min-[600px]:text-center
+            "
+          >
+            <img
+              class="w-[clamp(3rem,10vw,5rem)] min-[600px]:pl-4"
+              src="../../assets/icons/leaf.svg"
+              alt="Lapas"
+            />
+            <div class="grid gap-1">
               <h4>Atsakingoms kelionėms</h4>
-              <p>Paprasti patarimai gamtai saugoti.</p>
+              <p class="text-[var(--color-text)]">Paprasti patarimai gamtai saugoti.</p>
             </div>
           </div>
         </section>
       </main>
-      <aside>
-        <div class="aside-header">
-          <img
-            class="compass"
-            src="../../assets/icons/compass.svg"
-            alt="Kompasas"
-          />
-          <p class="aside-eyebrow">Atrask daugiau</p>
+      <aside
+        class="
+          flex
+          flex-col
+          gap-4
+          mt-4
+          bg-[var(--color-table-header)]
+          p-4
+          rounded-[0.2rem]
+          min-[1000px]:m-0
+        "
+      >
+        <div>
+          <img class="w-[clamp(3rem,4vw,4rem)]" src="../../assets/icons/compass.svg" alt="Kompasas" />
+          <p
+            class="
+              text-[var(--color-primary)]
+              uppercase
+              font-semibold
+              tracking-[0.15rem]
+            "
+          >
+            Atrask daugiau
+          </p>
           <h2>Kelionė prasideda čia</h2>
           <figure>
             <img
+              class="w-full rounded-[0.2rem]"
               src="../../assets/images/pazintinis-takas.jpeg"
               alt="Pažintinis takas"
             />
-            <figcaption><em>Maži žingsniai. Dideli atradimai</em></figcaption>
+            <figcaption class="mt-[0.2rem] mb-2">
+              <em>Maži žingsniai. Dideli atradimai</em>
+            </figcaption>
           </figure>
         </div>
-        <div class="aside-content">
+        <div>
           <h2>Lietuva šalia tavęs</h2>
-          <p>
-            Nauji įspūdžiai laukia ir visai netoli namų. Leisk smalsumui
-            pasirinkti kitą kryptį.
+          <p class="text-[var(--color-text)]">
+            Nauji įspūdžiai laukia ir visai netoli namų. Leisk smalsumui pasirinkti kitą kryptį.
           </p>
           <hr />
           <h2>Tęsk pažintį</h2>
-          <div class="aside-links">
-            <a class="aside-link" href="../gallery/gallery.html">
-              <p>Vietų galerija</p>
-              <img
-                src="../../assets/icons/arrow_right.svg"
-                alt="Rodyklė į dešinę"
-              />
+          <div
+            class="
+              flex
+              flex-col
+              gap-2
+              cursor-pointer
+              mt-2
+            "
+          >
+            <a
+              class="flex justify-between border-b-[0.1rem] [border-bottom-style:solid] border-b-[var(--color-text)]"
+              href="../gallery/gallery.html"
+            >
+              <p class="text-[var(--color-text)] mb-[0.2rem]">Vietų galerija</p>
+              <img src="../../assets/icons/arrow_right.svg" alt="Rodyklė į dešinę" />
             </a>
-            <a class="aside-link" href="#">
-              <p>Pasidalink atradimu</p>
-              <img
-                src="../../assets/icons/arrow_right.svg"
-                alt="Rodyklė į dešinę"
-              />
+            <a
+               class="flex justify-between border-b-[0.1rem] [border-bottom-style:solid] border-b-[var(--color-text)]"
+              href="#"
+            >
+              <p class="text-[var(--color-text)] mb-[0.2rem]">Pasidalink atradimu</p>
+              <img src="../../assets/icons/arrow_right.svg" alt="Rodyklė į dešinę" />
             </a>
           </div>
         </div>
-        <p class="aside-slogan">
+        <p
+          class="
+            m-4
+            px-6
+            py-3
+            text-center
+            italic
+            text-[var(--color-text)]
+          "
+        >
           <q>Geriausios kelionės prasideda nuo smalsumo.</q>
         </p>
       </aside>
@@ -231,7 +381,8 @@
     <!-- FOOTER START -->
     <!-- prettier-ignore -->
     <footer
-      class="flex flex-col items-center 
+      class="
+      flex flex-col items-center 
       p-4 text-center 
       bg-[var(--color-primary)] 
       min-[700px]:flex-row 
@@ -241,9 +392,9 @@
     >
       <div class="flex items-center gap-4 mb-2 text-center min-[700px]:justify-between min-[700px]:mb-0">
         <img
-          class="w-[clamp(3.5rem,12vw,5rem)] shrink-0"
-          src="../../assets/icons/logo.svg"
-          alt="Logo"
+        class="w-[clamp(3.5rem,12vw,5rem)] shrink-0"
+        src="../../assets/icons/logo.svg"
+        alt="Logo"
         />
         <div>
           <p class="text-2xl text-center">Atrask Lietuvą</p>
