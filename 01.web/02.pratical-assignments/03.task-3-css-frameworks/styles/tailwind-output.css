@@ -129,9 +129,6 @@
   .flex-1 {
     flex: 1;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .shrink-0 {
     flex-shrink: 0;
   }
@@ -143,9 +140,6 @@
   }
   .flex-col {
     flex-direction: column;
-  }
-  .flex-wrap {
-    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -210,9 +204,6 @@
   }
   .px-0 {
     padding-inline: 0px;
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -284,13 +275,6 @@
   }
   .italic {
     font-style: italic;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   @media (hover: hover) {
     .hover\:bg-\[var\(--color-primary-hover\)\]:hover {
@@ -367,12 +351,6 @@
   @media (width >= 600px) {
     .min-\[600px\]\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .min-\[600px\]\:grid-cols-\[2\,1fr\] {
-      grid-template-columns: 2,1fr;
-    }
-    .min-\[600px\]\:gap-4 {
-      gap: calc(var(--spacing) * 4);
     }
     .min-\[600px\]\:gap-y-4 {
       row-gap: calc(var(--spacing) * 4);
@@ -467,17 +445,8 @@
   .\[\&_\.aside-link\:focus\]\:outline-offset-\[0\.1rem\] .aside-link:focus {
     outline-offset: 0.1rem;
   }
-  .\[\&_\.aside-link\:focus\]\:outline-\[var\(--color-focus\)\] .aside-link:focus {
-    outline-color: var(--color-focus);
-  }
   .\[\&_\.gallery-card\]\:grid .gallery-card {
     display: grid;
-  }
-  .\[\&_\.gallery-card\]\:flex-col .gallery-card {
-    flex-direction: column;
-  }
-  .\[\&_\.gallery-card\]\:gap-1 .gallery-card {
-    gap: var(--spacing);
   }
   .\[\&_\.gallery-card\]\:gap-2 .gallery-card {
     gap: calc(var(--spacing) * 2);
@@ -489,15 +458,6 @@
     border-radius: var(--radius-sm);
   }
   .\[\&_\.gallery-card_img\]\:object-cover .gallery-card img {
-    object-fit: cover;
-  }
-  .\[\&_\.gallery-card-img\]\:aspect-video .gallery-card-img {
-    aspect-ratio: var(--aspect-video);
-  }
-  .\[\&_\.gallery-card-img\]\:rounded-sm .gallery-card-img {
-    border-radius: var(--radius-sm);
-  }
-  .\[\&_\.gallery-card-img\]\:object-cover .gallery-card-img {
     object-fit: cover;
   }
   .\[\&_\.nav-item\]\:text-\[var\(--color-table-header\)\] .nav-item {
@@ -513,15 +473,8 @@
   .\[\&_\.nav-item\.active\]\:underline-offset-4 .nav-item.active {
     text-underline-offset: 4px;
   }
-  .\[\&_\.tip-card\]\:rounded-\[0\.1rem\] .tip-card {
-    border-radius: 0.1rem;
-  }
   .\[\&_\.tip-card\]\:rounded-sm .tip-card {
     border-radius: var(--radius-sm);
-  }
-  .\[\&_\.tip-card\]\:border-\[0\.5rem\] .tip-card {
-    border-style: var(--tw-border-style);
-    border-width: 0.5rem;
   }
   .\[\&_\.tip-card\]\:bg-\[var\(--color-tip-background\)\] .tip-card {
     background-color: var(--color-tip-background);
@@ -534,9 +487,6 @@
   }
   .\[\&_p\]\:text-\[var\(--color-table-header\)\] p {
     color: var(--color-table-header);
-  }
-  .\[\&_p\]\:text-\[var\(--color-text\)\] p {
-    color: var(--color-text);
   }
   .\[\&_p\]\:text-\[var\(--color-text-muted\)\] p {
     color: var(--color-text-muted);
@@ -607,11 +557,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -626,7 +571,6 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-border-style: solid;
     }
   }
