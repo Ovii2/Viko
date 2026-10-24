@@ -6,7 +6,6 @@
     <title>Pagrindinis | Atrask Lietuvą</title>
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/tailwind-output.css" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="icon" type="image/svg+xml" href="/assets/icons/spruce.svg" />
     <script type="module">
@@ -69,34 +68,142 @@
     </header>
     <!-- HEADER END -->
     <!-- MAIN START -->
-    <div class="content-container">
-      <form class="search-bar-container" method="post">
+    <!-- prettier-ignore -->
+    <div
+      class="
+      content-container 
+      m-2 grid flex-1 grid-cols-1 
+      [&_img]:rounded-sm
+      min-[1024px]:grid-cols-[minmax(0,1fr)_clamp(24rem,35vw,40rem)] 
+      min-[1024px]:gap-4
+      min-[1024px]:items-start
+      "
+    >   
+      <form
+        class="search-bar-container col-span-full mx-0 my-2 flex w-full gap-4"
+        method="post"
+        >    
         <input
+          class="
+          min-w-0 
+          flex-1 
+          rounded-sm 
+          [background:url('/assets/icons/search.svg')_no-repeat_left_0.5rem_center/1.25rem] 
+          [border:0.25rem_solid_var(--color-border)]
+          pl-9!
+          "
           id="search"
           type="text"
           name="search"
           placeholder="Ieškoti vietovės ar maršruto"
           required
         />
-        <button type="submit">Ieškoti</button>
+        <button
+          class="cursor-pointer 
+          rounded-sm 
+          border-none 
+          bg-[var(--color-primary)] 
+          px-8 py-1 
+          text-[var(--color-text-on-primary)] 
+          hover:bg-[var(--color-primary-hover)]"
+          type="submit"
+        >
+          Ieškoti
+        </button>
       </form>
-      <main class="main">
-        <section class="hero">
+      <main class="main min-[1024px]:flex min-[1024px]:flex-col min-[1024px]:items-stretch">
+        <section class="hero relative [&_img]:w-full [&_img]:object-cover min-[1024px]:[&_img]:h-[clamp(30rem,25vw,30rem)]">
           <img
             src="assets/images/sartu-parkas.jpg"
             alt="Sartų regionins parkas"
           />
-          <div class="hero-content">
-            <h1 class="hero-title">Atrask Lietuvą</h1>
-            <p class="hero-description">
+          <div
+            class="hero-content absolute right-4 bottom-4 left-4 max-w-[clamp(10rem,25rem,40rem)] text-[var(--color-text-on-primary)]"
+          >
+            <h1
+              class="hero-title text-[var(--color-text-on-primary)] text-shadow-[0_0.2rem_0.4rem_rgb(0_0_0_/_70%)]"
+            >
+              Atrask Lietuvą
+            </h1>
+            <p
+              class="hero-description font-semibold text-[var(--color-text-on-primary)] text-shadow-[0_0.2rem_0.4rem_rgb(0_0_0_/_70%)]"
+            >
               Ežerai, miškai, miesteliai ir unikali gamta laukia tavęs visai čia
               pat.
             </p>
-            <button class="hero-button" type="button">Planuok kelionę ➝</button>
+            <!-- prettier-ignore -->
+            <button
+              class="hero-button 
+              mt-4 
+              cursor-pointer 
+              rounded-sm border-none 
+              bg-[var(--color-primary)] 
+              px-4 py-2 
+              font-semibold 
+              text-inherit
+              [transition:background-color_0.2s]
+              hover:bg-[var(--color-primary-hover)]
+              "
+              type="button"
+            >
+              Planuok kelionę ➝
+            </button>
           </div>
         </section>
-        <section class="destinations-grid">
-          <h2>Populiarios kryptys</h2>
+        <!-- prettier-ignore -->
+        <section
+          class="destinations-grid 
+          mx-0 my-4 
+          grid 
+          gap-2 
+          [&_.destination-card-image]:relative
+          [&_.destination-card]:[transition:all_0.3s_ease-in-out]
+          perspective-[60rem] 
+          [&_.destination-card]:flex 
+          [&_.destination-card]:hover:translate-z-4         
+          [&_.destination-card]:cursor-pointer 
+          [&_.destination-card]:gap-4 
+          [&_.destination-card]:rounded-lg 
+          [&_.destination-card]:hover:shadow-[0_0.1rem_0.8rem_var(--color-primary-hover)]
+          [&_.destination-card-image]:w-[clamp(5rem,30%,100%)]
+          [&_.destination-card-image]:shrink-0
+          [&_.destination-card-image>img]:block
+          [&_.destination-card-image>img]:w-full
+          [&_.destination-card-image>img]:aspect-4/3
+          [&_.destination-card-image>img]:object-cover
+          [&_.destination-card-text]:p-1
+          [&_.destination-card-description]:text-[var(--color-text-muted)]
+          [&_.destination-card-description]:uppercase
+          [&_.destination-card-description]:text-base
+          [&_.destination-card-description]:tracking-widest
+          [&_.destination-rating]:flex
+          [&_.destination-rating]:gap-1
+          [&_.destination-rating]:items-center
+          [&_.destination-rating]:absolute
+          [&_.destination-rating]:top-2
+          [&_.destination-rating]:right-2
+          [&_.destination-rating]:bg-[var(--color-primary)]
+          [&_.destination-rating]:rounded-lg
+          [&_.destination-rating]:py-1
+          [&_.destination-rating]:px-2.5
+          [&_.destination-rating]:font-semibold
+          [&_.destination-rating]:text-[var(--color-text-on-primary)]
+          [&_.destination-rating>img]:mb-[clamp(0.1rem,0.15rem,0.3rem)]
+          [&_.destination-rating>img]:max-w-[clamp(1rem,3rem,0.4rem)]
+          min-[500px]:grid-cols-2
+          min-[500px]:[&_.destination-card]:flex-col
+          min-[500px]:[&_.destination-card>img]:block
+          min-[500px]:[&_.destination-card>img]:w-full
+          min-[500px]:[&_.destination-card>img]:aspect-video
+          min-[500px]:[&_.destination-card>img]:object-cover
+          min-[500px]:[&_.destination-card-image]:w-full
+          min-[500px]:[&_.destination-card-image]:aspect-auto
+          min-[1024px]:grid-cols-3
+          min-[1024px]:[&_.destination-card]:mb-4
+          min-[1024px]:[&_.destination-card>img]:h-[clamp(6rem,9vw,12rem)]
+          "
+        >
+          <h2 class="col-span-full">Populiarios kryptys</h2>
           <article class="destination-card">
             <div class="destination-card-image">
               <div class="destination-rating">
@@ -105,7 +212,7 @@
               </div>
               <img src="assets/images/traku-pilis.jpeg" alt="Trakų pilis" />
             </div>
-            <div class="destination-card-text">
+            <div class="destination-card-text p-1">
               <h3 class="destination-card-title">Trakų pilis</h3>
               <p class="destination-card-description">Istorija ir gamta</p>
             </div>
@@ -188,8 +295,30 @@
             </div>
           </article>
         </section>
-        <section class="reviews">
-          <h2>Keliautojų atsiliepimai</h2>
+        <!-- prettier-ignore -->
+        <section
+          class="reviews 
+          mb-4 grid gap-2 
+          [&_.review-card]:bg-[var(--color-table-header)]
+          [&_.review-card]:p-4
+          [&_.review-card]:rounded-sm 
+          [&_.review-card_.reviewer-name]:text-[var(--color-primary)]        
+          [&_.review-card_.reviewer-name]:font-semibold      
+          [&_.review-card_.reviewer-name]:text-xl       
+          [&_.review-card_.review-card-top]:flex       
+          [&_.review-card_.review-card-top]:justify-between       
+          [&_.review-card_.review-card-top]:items-center       
+          [&_.review-card_.reviewer-rating]:flex       
+          [&_.review-card_.reviewer-rating]:items-center       
+          [&_.review-card_.reviewer-rating>img]:mb-[0.1rem]       
+          [&_.review-card_.reviewer-rating>img]:max-w-[clamp(1rem,3vw,4rem)]       
+          [&_.review-card_.review-destination]:text-[var(--color-text-muted)]       
+          [&_.review-card_.review]:italic       
+          [&_.review-card_.review]:mt-1.5    
+          min-[500px]:grid-cols-3 
+          "
+        >
+          <h2 class="col-span-full">Keliautojų atsiliepimai</h2>
           <article class="review-card">
             <div class="review-card-top">
               <p class="reviewer-name">Austėja P.</p>
@@ -235,9 +364,31 @@
             </p>
           </article>
         </section>
-        <section class="routes">
+        <!-- prettier-ignore -->
+        <section class="routes mt-auto">
           <h2>Maršrutai</h2>
-          <table class="routes-table">
+          <table
+            class="routes-table 
+            mt-4 w-full 
+            border-collapse 
+            text-[var(--color-text)]
+            text-[clamp(0.875rem,2vw,1.25rem)]
+            [&_:is(th,td)]:[border:0.1rem_solid_var(--color-border)]
+            [&_:is(th,td)]:p-[clamp(0.2rem,0.5vw,0.5rem)]
+            [&_:is(th,td)]:text-center
+            [&_th]:bg-[var(--color-table-header)]
+            [&_th]:font-semibold
+            [&_:is(th,td)]:first:text-left
+            [&_.difficulty]:inline-block
+            [&_.difficulty]:w-[90%]
+            [&_.difficulty]:py-1
+            [&_.difficulty]:px-0
+            [&_.difficulty]:rounded-lg
+            [&_.easy]:bg-[var(--color-difficulty-easy)]
+            [&_.medium]:bg-[var(--color-difficulty-medium)]
+            [&_.hard]:bg-[var(--color-difficulty-hard)]
+            " 
+          >
             <tr>
               <th>Kryptis</th>
               <th>Atstumas (km)</th>
@@ -265,9 +416,29 @@
           </table>
         </section>
       </main>
-      <aside>
-        <div class="route-plan">
-          <div class="route-plan-title">
+      <!-- prettier-ignore -->
+      <aside class="mx-0 my-4 rounded-sm 
+      bg-[var(--color-table-header)] p-4
+      [&_:is(.route-plan-title,.registration-title)]:flex
+      [&_:is(.route-plan-title,.registration-title)]:items-center
+      [&_:is(.route-plan-title,.registration-title)]:gap-2
+      [&_:is(.route-plan-title_img,.registration-title_img,.interesting-facts_img)]:w-12
+      [&_.route-plan-option]:flex
+      [&_.route-plan-option]:items-center
+      [&_.route-plan-option]:gap-2
+      [&_.route-plan-option_p]:text-[var(--color-text)] 
+      min-[1024px]:flex
+      min-[1024px]:flex-col
+      min-[1024px]:m-0
+      min-[1024px]:gap-6
+      min-[1024px]:self-stretch
+      min-[1024px]:grid-cols-1
+      min-[1024px]:items-start
+
+
+      ">
+        <div class="route-plan grid gap-x-2 gap-y-1 min-[500px]:grid-cols-2] items-start">
+          <div class="route-plan-title min-[500px]:col-span-full">
             <img src="assets/icons/terrain.svg" alt="Kalnai" />
             <h3>Kelionės planas</h3>
           </div>
@@ -321,19 +492,33 @@
           </div>
         </div>
 
-        <section class="travel-quote">
+        <section class="travel-quote hidden min-[1024px]:block">
           <hr />
-          <p><q>Geriausios kelionės prasideda nuo smalsumo.</q></p>
+          <p class="text-[var(--color-text) italic text-2xl"><q>Geriausios kelionės prasideda nuo smalsumo.</q></p>
           <hr />
         </section>
 
-        <section class="registration">
+        <section class="registration my-4 mx-0 [&_.registration-title_img]:ml-[-0.2rem]">
           <div class="registration-title">
             <img src="assets/icons/location_pin.svg" alt="Lokacija" />
             <h3>Registracija</h3>
           </div>
-
-          <form class="registration-form">
+        <!-- prettier-ignore -->
+          <form class="registration-form 
+          flex flex-col 
+          [&_.registration-field]:flex 
+          [&_.registration-field]:flex-col
+          min-[1024px]:[&_.registration-field]:flex-row
+          min-[1024px]:[&_.registration-field]:items-center
+          min-[1024px]:[&_.registration-field]:gap-4
+          min-[1024px]:[&_.registration-field]:my-1
+          min-[1024px]:[&_.registration-field]:mx-0
+          min-[1024px]:[&_.registration-field>label]:w-[8rem]
+          min-[1024px]:[&_.registration-field>label]:shrink-0
+          min-[1024px]:[&_.registration-field>label]:m-0
+          min-[1024px]:[&_:is(.registration-field>input,.registration-field>select)]:flex-1
+          min-[1024px]:[&_:is(.registration-field>input,.registration-field>select)]:min-w-0
+          ">
             <div class="registration-field">
               <label for="name">Vardas</label>
               <input
@@ -379,10 +564,10 @@
               </select>
             </div>
 
-            <div class="travel-group">
-              <p class="travel-group-title">Kaip keliausite?</p>
+            <div class="travel-group mt-4">
+              <p class="travel-group-title text-[var(--color-text)] font-semibold mt-2">Kaip keliausite?</p>
 
-              <div class="travel-options">
+              <div class="travel-options grid grid-cols-2 min-[1024px]:grid-cols-1">
                 <label for="alone">
                   <input
                     type="radio"
@@ -445,7 +630,7 @@
               </div>
             </div>
 
-            <label class="newsletter-option" for="newsletter">
+            <label class="newsletter-option font-normal!" for="newsletter">
               <input
                 type="checkbox"
                 name="newsletter"
@@ -455,12 +640,30 @@
               Taip, noriu gauti naujienas el. paštu
             </label>
 
-            <button class="registration-button" type="submit">
+            <button class="
+            registration-button 
+            cursor-pointer 
+            border-none 
+            rounded-sm 
+            bg-[var(--color-primary)] 
+            text-[var(--color-text-on-primary)] 
+            py-2 px-4 my-4 mx-0 
+            hover:bg-[var(--color-primary-hover)]" type="submit">
               Registruotis
             </button>
-          </form>
-          <section class="interesting-facts">
-            <div class="interesting-facts-title">
+          </form>         
+          <section
+            class="interesting-facts 
+            mx-0 my-8 
+            [&_li]:list-disc! 
+            [&_li]:text-[var(--color-text)]
+            [&_li]:cursor-default 
+            [&_li]:marker:text-[var(--color-primary)] 
+            "
+          >
+            <div
+              class="interesting-facts-title flex items-center [&>img]:w-[clamp(1rem,5vw,3rem)]"
+            >
               <img src="assets/icons/bulb.svg" alt="Lemputė" />
               <h3>Ar žinojai?</h3>
             </div>
@@ -478,11 +681,11 @@
             </ul>
           </section>
         </section>
-        <section class="form-footer">
+        <section class="form-footer hidden min-[1024px]:mt-auto min-[1024px]:block min-[1024px]:w-full min-[1440px]:mt-4">
           <hr />
-          <div class="form-footer-content">
-            <img src="assets/icons/leaf.svg" alt="Lapas" />
-            <p>Lietuva - gražesnė, kai ją atrandame kartu.</p>
+          <div class="form-footer-content min-[1024px]:flex min-[1024px]:items-center min-[1024px]:gap-4">
+            <img class="min-[1024px]:max-w-[4rem]!" src="assets/icons/leaf.svg" alt="Lapas" />
+            <p class="italic">Lietuva - gražesnė, kai ją atrandame kartu.</p>
           </div>
         </section>
       </aside>
