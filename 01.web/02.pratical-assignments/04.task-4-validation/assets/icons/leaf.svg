@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill="#234b32" fill-rule="evenodd"
+    d="M18 49C3 31 26 12 54 4C57 31 47 51 24 52Z
+       M21 48L46 16L33 37L43 32L31 41L23 51Z"/>
+  <path d="M12 59L25 43" fill="none"
+    stroke="#234b32" stroke-width="3" stroke-linecap="round"/>
+</svg>

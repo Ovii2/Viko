@@ -1,0 +1,54 @@
+@import "/colors.css";
+
+.modal {
+  border-radius: 0.2rem;
+  border: none;
+  animation: slide 0.7s ease-in-out;
+  width: clamp(0rem, 90vw, 36rem);
+  padding: 1.5rem;
+}
+
+.modal-data {
+  white-space: pre-line;
+  background-color: var(--color-background);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.check-icon {
+  width: clamp(2rem, 4vw, 3rem);
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.modal-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem 1rem;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.modal::backdrop {
+  background-color: var(--color-backdrop);
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-15rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
