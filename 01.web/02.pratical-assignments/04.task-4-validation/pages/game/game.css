@@ -6,6 +6,8 @@
   flex: 1;
   margin: 1rem auto;
   color: var(--color-text);
+  width: calc(100% - 1rem);
+  max-width: 80rem;
 }
 
 .game-title {
@@ -131,6 +133,7 @@
 .giveup-btn {
   flex: 1;
   min-width: 0;
+  padding: 0.5rem 2rem;
 }
 
 .guess-btn {
@@ -302,17 +305,13 @@
   }
 
   .guess-buttons {
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 1000px) {
   .game-layout {
     grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
-  }
-
-  .content-container {
-    width: calc(100% - 1rem);
-    max-width: 80rem;
   }
 }
