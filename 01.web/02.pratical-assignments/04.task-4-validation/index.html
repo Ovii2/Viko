@@ -125,8 +125,12 @@
     <div class="content-container">
       <form class="search-bar-container" method="post" novalidate>
         <div class="field-control search-field">
-          <input class="search" id="search" type="text" name="search" placeholder="Ieškoti vietos" required />
-          <button class="search-clear-btn" type="button">x</button>
+          <div class="search-control">
+            <input class="search" id="search" type="text" name="search" placeholder="Ieškoti vietos" required />
+            <button class="search-clear-btn" type="button">
+              <img src="./assets/icons/close_filled.svg" alt="Išvalyti" />
+            </button>
+          </div>
           <p class="search-error error"></p>
         </div>
         <button type="submit">Ieškoti</button>

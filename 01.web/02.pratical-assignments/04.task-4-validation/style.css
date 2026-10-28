@@ -6,7 +6,7 @@ img {
 
 .search-bar-container {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 1rem;
   width: 100%;
   margin: 0.5rem 0;
@@ -377,17 +377,21 @@ aside {
   width: 100%;
 }
 
-.search-field {
+.search-control {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .search-bar-container .search-clear-btn {
   position: absolute;
   background-color: transparent;
   color: var(--color-error);
-  top: -0.1rem;
   right: clamp(0.2rem, 2vw, 1rem);
+  top: 50%;
+  transform: translateY(-50%);
   padding: 0.25rem 0.5rem;
+  width: clamp(2rem, 3vw, 2.5rem);
 }
 
 .search-bar-container .search-clear-btn:hover {
