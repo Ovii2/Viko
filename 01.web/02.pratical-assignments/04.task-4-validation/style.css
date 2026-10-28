@@ -377,6 +377,27 @@ aside {
   width: 100%;
 }
 
+.search-field {
+  position: relative;
+}
+
+.search-bar-container .search-clear-btn {
+  position: absolute;
+  background-color: transparent;
+  color: var(--color-error);
+  top: -0.1rem;
+  right: clamp(0.2rem, 2vw, 1rem);
+  padding: 0.25rem 0.5rem;
+}
+
+.search-bar-container .search-clear-btn:hover {
+  background-color: transparent;
+}
+
+.search {
+  padding-right: 2rem;
+}
+
 hr {
   border-color: var(--color-border);
 }
