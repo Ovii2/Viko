@@ -1,0 +1,318 @@
+@import "../../colors.css";
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 1rem auto;
+  color: var(--color-text);
+}
+
+.game-title {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.game-title h1 {
+  color: var(--color-primary);
+}
+
+.game-title h3,
+.game-board-header p {
+  color: var(--color-text-muted);
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.game-board,
+.aside {
+  min-width: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.game-board,
+.aside {
+  background-color: var(--color-table-header);
+}
+
+.game-board h3,
+.guess-history h4,
+.aside h3 {
+  color: var(--color-text);
+}
+
+.game-board-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.game-board-header img {
+  width: clamp(3rem, 4vw, 4rem);
+}
+
+.game-stats {
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.game-stats p {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 600;
+}
+
+.attempts-count,
+.range-limit {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.your-guess {
+  margin: 1rem 0;
+}
+
+.your-guess > label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.guess-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.number {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  background-color: var(--color-input-background);
+  color: var(--color-text);
+}
+
+.guess-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.guess-btn,
+.giveup-btn,
+.new-game-btn {
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.guess-btn,
+.giveup-btn {
+  flex: 1;
+  min-width: 0;
+}
+
+.guess-btn {
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.guess-btn:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.giveup-btn,
+.new-game-btn {
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.giveup-btn:hover,
+.new-game-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.guess-result {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border: 1px solid var(--color-focus);
+  border-radius: 0.25rem;
+  background-color: var(--color-difficulty-medium);
+  color: var(--color-hint-text, #805014);
+  text-align: center;
+  font-weight: 600;
+}
+
+.guess-history {
+  margin-top: 1rem;
+}
+
+.guess-history h4 {
+  margin-bottom: 0.5rem;
+}
+
+.table-wrapper {
+  max-height: clamp(10rem, 30vh, 18rem);
+  overflow: auto;
+  padding-right: 0.5rem;
+}
+
+.guess-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: clamp(0.875rem, 2vw, 1.2rem);
+}
+
+.guess-history-table th,
+.guess-history-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.guess-history-table th {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: 600;
+}
+
+.guess-history-table td {
+  background-color: var(--color-surface);
+}
+
+.guess-history-table tbody tr:nth-child(even) td {
+  background-color: var(--color-background);
+}
+
+.guess-history-table tbody tr:hover td {
+  background-color: var(--color-difficulty-easy);
+}
+
+.guess-history-table th:nth-child(2),
+.guess-history-table td:nth-child(2) {
+  text-align: center;
+}
+
+.guess-history-table td:nth-child(2) {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.guess-history-table td:first-child {
+  font-weight: 700;
+}
+
+.new-game-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.guess-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.guess-tips li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  color: var(--color-text);
+  cursor: default;
+}
+
+.tip-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.game-tip-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-surface);
+}
+
+.game-tip-container > img {
+  width: clamp(3rem, 4vw, 4rem);
+  flex-shrink: 0;
+}
+
+.game-tip {
+  min-width: 0;
+}
+
+.game-tip p {
+  color: var(--color-text);
+}
+
+.game-tip-title {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 600px) {
+  .guess-controls {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .number {
+    flex: 1;
+    width: auto;
+  }
+
+  .guess-buttons {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
+  }
+
+  .content-container {
+    width: calc(100% - 1rem);
+    max-width: 80rem;
+  }
+}
