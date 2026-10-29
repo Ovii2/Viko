@@ -12,6 +12,7 @@
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/spruce.svg" />
     <script type="module">
       import { initMenu } from "../../scripts/menu.js";
+      import "../../scripts/game.js";
 
       initMenu();
     </script>
@@ -42,11 +43,11 @@
     </header>
     <!-- HEADER END -->
     <!-- MAIN START -->
+    <section class="game-title">
+      <h1>Atspėk skaičių</h1>
+      <p>Mažas iššūkis tavo logikai</p>
+    </section>
     <div class="content-container">
-      <div class="game-title">
-        <h1>Atspėk skaičių</h1>
-        <h3>Mažas iššūkis tavo logikai</h3>
-      </div>
       <div class="game-layout">
         <main class="game-board">
           <div class="game-board-header">
@@ -55,8 +56,8 @@
             <p>Ar pavyks jį atspėti?</p>
           </div>
           <div class="game-stats">
-            <p class="attempts">Bandymai: <span class="attempts-count">3</span></p>
-            <p class="range">Intervalas: <span class="range-limit">56-69</span></p>
+            <p class="attempts">Bandymai: <span class="attempts-count"></span></p>
+            <p class="range">Intervalas: <span class="range-limit"></span></p>
           </div>
           <section class="your-guess">
             <label for="number">Tavo spėjimas</label>
@@ -81,20 +82,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>70</td>
-                    <td>↓</td>
-                    <td>Per didelis</td>
-                  </tr>
-                  <tr>
-                    <td>40</td>
-                    <td>↑</td>
-                    <td>Per mažas</td>
-                  </tr>
-                  <tr>
-                    <td>55</td>
-                    <td>↑</td>
-                    <td>Per mažas</td>
+                  <tr class="empty-history">
+                    <td colspan="3">Spėjimų nėra</td>
                   </tr>
                 </tbody>
               </table>

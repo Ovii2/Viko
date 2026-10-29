@@ -1,27 +1,31 @@
 @import "../../colors.css";
 
 .content-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
   flex: 1;
   margin: 1rem auto;
   color: var(--color-text);
-  width: calc(100% - 1rem);
+  width: calc(100% - 2rem);
   max-width: 80rem;
 }
 
 .game-title {
   text-align: center;
-  margin: 1rem 0;
+  margin-top: 2rem;
 }
 
 .game-title h1 {
   color: var(--color-primary);
 }
 
-.game-title h3,
+.game-title p,
 .game-board-header p {
   color: var(--color-text-muted);
+}
+
+.game-title p {
+  margin-bottom: 1rem;
 }
 
 .game-layout {
@@ -66,6 +70,11 @@
   display: flex;
   gap: 0.5rem;
   text-align: center;
+}
+
+.game-stats span {
+  display: block;
+  white-space: nowrap;
 }
 
 .game-stats p {
@@ -142,7 +151,7 @@
   color: var(--color-text-on-primary);
 }
 
-.guess-btn:hover {
+.guess-btn:not(:disabled):hover {
   background-color: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
 }
@@ -154,8 +163,8 @@
   color: var(--color-primary);
 }
 
-.giveup-btn:hover,
-.new-game-btn:hover {
+.giveup-btn:not(:disabled):hover,
+.new-game-btn:not(:disabled):hover {
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
 }
@@ -183,6 +192,7 @@
   max-height: clamp(10rem, 30vh, 18rem);
   overflow: auto;
   padding-right: 0.5rem;
+  margin-right: -0.5rem;
 }
 
 .guess-history-table {
@@ -293,6 +303,18 @@
   font-weight: 700;
 }
 
+.guess-btn:disabled,
+.giveup-btn:disabled,
+.number:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.empty-history td {
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
 @media screen and (min-width: 600px) {
   .guess-controls {
     flex-direction: row;
@@ -307,6 +329,10 @@
   .guess-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .game-stats span {
+    display: inline;
   }
 }
 
