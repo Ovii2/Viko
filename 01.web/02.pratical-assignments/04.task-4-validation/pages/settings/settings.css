@@ -13,8 +13,56 @@
   margin: 1rem 0;
 }
 
+.content-container p {
+  color: var(--color-text-muted);
+}
+
+main section {
+  background-color: var(--color-table-header);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.theme-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.theme-button {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1.75rem 6rem;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+  border: none;
+  padding: 1rem 0;
+  width: 100%;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  background-color: var(--color-tip-background);
+}
+
+.theme-button:focus {
+  outline: 0.2rem solid var(--color-primary);
+  outline-offset: 0.1rem;
+  background-color: var(--color-table-header);
+}
+
+.theme-button img {
+  width: clamp(1.5rem, 4vw, 2.5rem);
+}
+
 @media screen and (min-width: 600px) {
   .game-title {
     margin: 2rem 0;
+  }
+
+  .theme-buttons-container {
+    flex-direction: row;
   }
 }
