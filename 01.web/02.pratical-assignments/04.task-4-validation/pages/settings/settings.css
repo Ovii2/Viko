@@ -1,5 +1,20 @@
 .content-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
   flex: 1;
+  margin: 1rem auto;
+  color: var(--color-text);
+  width: calc(100% - 2rem);
+  max-width: 80rem;
+}
+
+.settings-title {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .game-title {
+    margin: 2rem 0;
+  }
 }

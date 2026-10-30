@@ -11,12 +11,6 @@ label {
   margin: 0.75rem 0 0.25rem 0;
 }
 
-aside a:focus,
-form a:focus {
-  outline: var(--color-focus);
-  outline-offset: 0.1rem;
-}
-
 input,
 select,
 textarea {
@@ -43,12 +37,11 @@ textarea {
 
 .survey-text-section p {
   color: var(--color-text);
-  margin-bottom: 1rem;
 }
 
 .survey-text-section {
-  margin-top: 2rem;
   text-align: center;
+  margin: 1rem 0;
 }
 
 .about-you,
@@ -254,59 +247,63 @@ aside p {
     padding: 0.75rem;
   }
 
-  @media screen and (min-width: 1000px) {
-    .content-container {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
-      gap: 1rem;
-      margin: 1rem auto;
-      max-width: 80rem;
-      width: calc(100% - 2rem);
-    }
+  .survey-text-section {
+    margin: 2rem 0;
+  }
+}
 
-    .about-you-inputs {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
+@media screen and (min-width: 1000px) {
+  .content-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
+    gap: 1rem;
+    margin: 1rem auto;
+    max-width: 80rem;
+    width: calc(100% - 2rem);
+  }
 
-    .date-and-frequency {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
+  .about-you-inputs {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 
-    .form-field {
-      text-align: right;
-      flex-direction: row;
-      align-items: center;
-      gap: 1rem;
-    }
+  .date-and-frequency {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 
-    .form-field > label {
-      width: 10rem;
-      flex-shrink: 0;
-      margin: 0;
-    }
+  .form-field {
+    text-align: right;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .form-field > input,
-    .form-field > select {
-      flex: 1;
-      min-width: 0;
-      width: auto;
-      margin: 0;
-      box-sizing: border-box;
-    }
+  .form-field > label {
+    width: 10rem;
+    flex-shrink: 0;
+    margin: 0;
+  }
 
-    .about-you hr {
-      margin-bottom: 1rem;
-    }
+  .form-field > input,
+  .form-field > select {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-    main {
-      flex: 1;
-      min-width: 0;
-    }
+  .about-you hr {
+    margin-bottom: 1rem;
+  }
 
-    aside {
-      margin: 0;
-    }
+  main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  aside {
+    margin: 0;
   }
 }
