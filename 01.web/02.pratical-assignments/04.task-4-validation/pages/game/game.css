@@ -142,7 +142,7 @@
 .giveup-btn {
   flex: 1;
   min-width: 0;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
 }
 
 .guess-btn {
@@ -333,6 +333,11 @@
 
   .game-stats span {
     display: inline;
+  }
+
+  .guess-btn,
+  .giveup-btn {
+    padding: 0.5rem 2rem;
   }
 }
 
