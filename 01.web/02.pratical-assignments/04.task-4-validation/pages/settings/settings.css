@@ -23,7 +23,13 @@ main section {
   border-radius: 0.25rem;
 }
 
-.theme-buttons-container {
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+.theme-buttons-container,
+.background-colors-buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,12 +63,65 @@ main section {
   width: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+.background-colors-buttons-container {
+  gap: 0.75rem;
+}
+
+.background-color-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0;
+  border-radius: 0.25rem;
+}
+
+.color-preview {
+  display: block;
+  width: 100%;
+  height: clamp(3rem, 4vw, 5rem);
+  border-radius: 0.25rem;
+}
+
+.color-green {
+  background-color: var(--color-background);
+}
+
+.color-cream {
+  background-color: var(--color-cream-background);
+}
+
+.color-blue {
+  background-color: var(--color-blue-background);
+}
+
+.color-gray {
+  background-color: var(--color-gray-background);
+}
+
+.background-color-button:focus {
+  outline: none;
+}
+
+.background-color-button:focus .color-preview {
+  outline: 0.2rem solid var(--color-primary);
+  outline-offset: 0.1rem;
+}
+
 @media screen and (min-width: 600px) {
   .game-title {
     margin: 2rem 0;
   }
 
   .theme-buttons-container {
+    flex-direction: row;
+  }
+
+  .background-colors-buttons-container {
     flex-direction: row;
   }
 }
