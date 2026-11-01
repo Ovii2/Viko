@@ -29,7 +29,8 @@ main {
 }
 
 .theme-buttons-container,
-.background-colors-buttons-container {
+.background-colors-buttons-container,
+.font-colors-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,7 +68,8 @@ main {
   gap: 0.75rem;
 }
 
-.background-color-button {
+.background-color-button,
+.font-color-button {
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -103,13 +105,27 @@ main {
   background-color: var(--color-gray-background);
 }
 
-.background-color-button:focus {
+.background-color-button:focus,
+.font-color-button:focus {
   outline: none;
 }
 
-.background-color-button:focus .color-preview {
+.background-color-button:focus .color-preview,
+.font-color-button:focus .color-preview {
   outline: 0.2rem solid var(--color-primary);
   outline-offset: 0.1rem;
+}
+
+.font-green {
+  background-color: var(--color-primary);
+}
+
+.font-gray {
+  background-color: var(--color-font-gray);
+}
+
+.font-black {
+  background-color: var(--color-font-black);
 }
 
 @media screen and (min-width: 600px) {
@@ -117,11 +133,9 @@ main {
     margin: 2rem 0;
   }
 
-  .theme-buttons-container {
-    flex-direction: row;
-  }
-
-  .background-colors-buttons-container {
+  .theme-buttons-container,
+  .background-colors-buttons-container,
+  .font-colors-container {
     flex-direction: row;
   }
 }
