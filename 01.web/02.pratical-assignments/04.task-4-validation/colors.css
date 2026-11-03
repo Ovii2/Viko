@@ -11,6 +11,7 @@
   --color-text: #18221b;
   --color-text-muted: #596354;
   --color-text-on-primary: #faf9f4;
+  --color-text-on-image: #faf9f4;
   --color-input-background: #ffffff;
   --color-difficulty-easy: #dce8ce;
   --color-difficulty-medium: #f3e3ad;
@@ -22,6 +23,34 @@
   --color-input-error: #c6534c;
   --color-backdrop: #000000b3;
   --color-game-hint-text: #805014;
+  --color-font-gray: #454545;
+  --color-font-black: #111111;
+}
+
+.dark-theme {
+  --color-primary: #8fbd9c;
+  --color-primary-hover: #acd2b6;
+  --color-background: #151c17;
+  --color-cream-background: #383426;
+  --color-blue-background: #253743;
+  --color-gray-background: #33393b;
+  --color-surface: #202a23;
+  --color-table-header: #28342b;
+  --color-border: #46584a;
+  --color-text: #edf2e9;
+  --color-text-muted: #b6c3b3;
+  --color-text-on-primary: #142019;
+  --color-input-background: #1b241e;
+  --color-difficulty-easy: #304832;
+  --color-difficulty-medium: #493d22;
+  --color-difficulty-hard: #4c2c2c;
+  --color-card-shadow: #000000b3;
+  --color-tip-background: #202a23;
+  --color-focus: #e8bd62;
+  --color-error: #ffaaa0;
+  --color-input-error: #e58e85;
+  --color-backdrop: #000000cc;
+  --color-game-hint-text: #f3d58d;
   --color-font-gray: #454545;
   --color-font-black: #111111;
 }

@@ -62,7 +62,7 @@ img {
 
 .hero-title,
 .hero-description {
-  color: var(--color-text-on-primary);
+  color: var(--color-text-on-image);
   text-shadow: 0 0.2rem 0.4rem rgb(0 0 0 / 70%);
 }
 

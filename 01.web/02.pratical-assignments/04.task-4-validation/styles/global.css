@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   background-color: var(--color-background);
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  color: var(--color-text);
 }
 
 h1,
@@ -45,6 +46,10 @@ textarea:focus,
 select:focus {
   outline: 0.2rem solid var(--color-primary);
   outline-offset: 0.1rem;
+}
+
+button {
+  color: inherit;
 }
 
 button:focus {
