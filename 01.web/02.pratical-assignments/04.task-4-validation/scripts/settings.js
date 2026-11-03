@@ -1,3 +1,5 @@
+import { toast } from "../components/toast/toast.js";
+
 const lightThemeBtn = document.querySelector(".theme-light");
 const darkThemeBtn = document.querySelector(".theme-dark");
 const defaultThemeBtn = document.querySelector(".theme-default");
@@ -21,4 +23,5 @@ saveBtn.addEventListener("click", (e) => {
   } else {
     localStorage.setItem("theme", "light");
   }
+  toast();
 });

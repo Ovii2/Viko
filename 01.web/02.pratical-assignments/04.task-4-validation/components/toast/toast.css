@@ -1,0 +1,57 @@
+@import url("color.css");
+
+.toast {
+  background-color: var(--color-toast-success);
+  position: fixed;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 999;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  animation: toast-slide-in 0.2s ease-out;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text {
+  color: var(--color-text);
+}
+
+.dark-theme .toast-content img {
+  filter: brightness(0) invert(1);
+}
+
+.toast.toast-exit {
+  animation: toast-slide-out 0.2s ease-in;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}

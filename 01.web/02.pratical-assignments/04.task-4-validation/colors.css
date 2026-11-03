@@ -25,6 +25,9 @@
   --color-game-hint-text: #805014;
   --color-font-gray: #454545;
   --color-font-black: #111111;
+  --color-toast-success: #dce8ce;
+  --color-toast-error: #edc5bf;
+  --color-toast-info: #cce3ef;
 }
 
 .dark-theme {
@@ -53,4 +56,7 @@
   --color-game-hint-text: #f3d58d;
   --color-font-gray: #454545;
   --color-font-black: #111111;
+  --color-toast-success: #304832;
+  --color-toast-error: #4c2c2c;
+  --color-toast-info: #253743;
 }
