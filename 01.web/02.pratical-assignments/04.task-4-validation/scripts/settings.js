@@ -45,5 +45,12 @@ saveBtn.addEventListener("click", (e) => {
     localStorage.setItem("theme", "light");
   }
   localStorage.setItem("backgroundColor", documentEl.style.getPropertyValue("--color-background"));
-  toast();
+  toast("Nustatymai išsaugoti");
+});
+
+resetBtn.addEventListener("click", () => {
+  localStorage.clear();
+  documentEl.classList.remove("dark-theme");
+  documentEl.style.removeProperty("--color-background");
+  toast("Nustatymai atkurti");
 });

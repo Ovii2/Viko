@@ -1,11 +1,11 @@
-export const toast = () => {
+export const toast = (message) => {
   const toastContainer = document.createElement("div");
   toastContainer.classList.add("toast");
 
   toastContainer.innerHTML = `
     <div class="toast-content">
       <img src="../../assets/icons/check_circle.svg" alt="Atlikta" />
-      <p class="text">Nustaymai išsaugoti</p>
+      <p class="text">${message}</p>
     </div>
   `;
 
