@@ -1,6 +1,7 @@
 const documentEl = document.documentElement;
 
 const theme = localStorage.getItem("theme");
+const backgroundColor = localStorage.getItem("backgroundColor");
 
 switch (theme) {
   case "dark":
@@ -13,3 +14,5 @@ switch (theme) {
     documentEl.classList.remove("dark-theme");
     break;
 }
+
+documentEl.style.setProperty("--color-background", backgroundColor);

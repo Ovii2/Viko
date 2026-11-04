@@ -93,19 +93,19 @@ main {
   border-radius: 0.25rem;
 }
 
-.color-green {
-  background-color: var(--color-background);
+.background-green {
+  background-color: var(--color-green-background);
 }
 
-.color-cream {
+.background-cream {
   background-color: var(--color-cream-background);
 }
 
-.color-blue {
+.background-blue {
   background-color: var(--color-blue-background);
 }
 
-.color-gray {
+.background-gray {
   background-color: var(--color-gray-background);
 }
 
