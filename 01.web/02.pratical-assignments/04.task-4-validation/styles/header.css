@@ -26,12 +26,12 @@ header > a {
 }
 
 .header-title {
-  font-size: x-large;
+  font-size: 1.5em;
   text-align: center;
 }
 
 .header-subtitle {
-  font-size: medium;
+  font-size: 1.2em;
   white-space: nowrap;
 }
 

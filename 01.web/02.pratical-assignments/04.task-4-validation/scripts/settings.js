@@ -20,10 +20,23 @@ const fontGreenTxt = document.querySelector(".font-green-text");
 const fontGrayTxt = document.querySelector(".font-gray-text");
 const fontBlackTxt = document.querySelector(".font-black-text");
 
+const fontSmallerBtn = document.querySelector(".font-smaller");
+const fontDefaultBtn = document.querySelector(".font-default");
+const fontBiggerBtn = document.querySelector(".font-bigger");
+
 const documentEl = document.documentElement;
+
+const changeFontSize = (step) => {
+  const currentFontSize = parseFloat(getComputedStyle(document.body).fontSize);
+  const newFontSize = currentFontSize + step;
+  documentEl.style.setProperty("--font-size", `${newFontSize}px`);
+};
 
 lightThemeBtn.addEventListener("click", (e) => {
   documentEl.classList.remove("dark-theme");
+  fontGreenTxt.textContent = "Tamsiai žalia";
+  fontGrayTxt.textContent = "Tamsiai pilka";
+  fontBlackTxt.textContent = "Juoda";
 });
 
 darkThemeBtn.addEventListener("click", (e) => {
@@ -61,6 +74,18 @@ fontBlackBtn.addEventListener("click", (e) => {
   documentEl.style.setProperty("--color-text", "var(--color-font-black)");
 });
 
+fontSmallerBtn.addEventListener("click", (e) => {
+  changeFontSize(-1);
+});
+
+fontDefaultBtn.addEventListener("click", (e) => {
+  documentEl.style.removeProperty("--font-size");
+});
+
+fontBiggerBtn.addEventListener("click", (e) => {
+  changeFontSize(+1);
+});
+
 saveBtn.addEventListener("click", (e) => {
   if (documentEl.classList.contains("dark-theme")) {
     localStorage.setItem("theme", "dark");
@@ -69,6 +94,7 @@ saveBtn.addEventListener("click", (e) => {
   }
   localStorage.setItem("backgroundColor", documentEl.style.getPropertyValue("--color-background"));
   localStorage.setItem("fontColor", documentEl.style.getPropertyValue("--color-text"));
+  localStorage.setItem("fontSize", documentEl.style.getPropertyValue("--font-size"));
   toast("Nustatymai išsaugoti");
 });
 
@@ -77,5 +103,6 @@ resetBtn.addEventListener("click", () => {
   documentEl.classList.remove("dark-theme");
   documentEl.style.removeProperty("--color-background");
   documentEl.style.removeProperty("--color-text");
+  documentEl.style.removeProperty("--font-size");
   toast("Nustatymai atkurti");
 });

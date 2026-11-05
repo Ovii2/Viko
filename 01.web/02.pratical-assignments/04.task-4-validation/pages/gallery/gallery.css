@@ -83,7 +83,7 @@ aside a:focus {
   padding: 0.6rem 1rem;
   border-radius: 0.2rem;
   text-align: center;
-  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-size: inherit;
   font-weight: 600;
 }
 

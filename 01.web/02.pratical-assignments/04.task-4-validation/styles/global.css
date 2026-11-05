@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--color-background);
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  font-size: var(--font-size, clamp(1rem, 0.9rem + 0.5vw, 1.25rem));
   color: var(--color-text);
 }
 

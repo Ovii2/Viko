@@ -170,7 +170,6 @@ img {
 .reviewer-name {
   color: var(--color-text);
   font-weight: 600;
-  font-size: 1.2rem;
 }
 
 .review-card-top {
@@ -203,7 +202,7 @@ img {
   margin-top: 1rem;
   border-collapse: collapse;
   color: var(--color-text);
-  font-size: clamp(0.875rem, 2vw, 1.25rem);
+  font-size: inherit;
 }
 
 .routes-table th,
