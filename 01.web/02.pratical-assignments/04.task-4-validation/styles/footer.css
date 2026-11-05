@@ -59,6 +59,11 @@ p {
   padding: 0.5rem 0;
 }
 
+.dark-theme .footer-logo,
+.dark-theme .social-icon img {
+  filter: brightness(0);
+}
+
 @media screen and (min-width: 700px) {
   .footer {
     flex-direction: row;

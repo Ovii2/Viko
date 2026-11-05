@@ -85,6 +85,11 @@ ul li {
   flex-shrink: 0;
 }
 
+.dark-theme .header-logo,
+.dark-theme .burger-menu {
+  filter: brightness(0);
+}
+
 @media screen and (min-width: 500px) {
   .header {
     flex-wrap: wrap;

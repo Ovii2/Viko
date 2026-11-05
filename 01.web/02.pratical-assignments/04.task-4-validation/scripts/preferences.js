@@ -2,6 +2,7 @@ const documentEl = document.documentElement;
 
 const theme = localStorage.getItem("theme");
 const backgroundColor = localStorage.getItem("backgroundColor");
+const fontColor = localStorage.getItem("fontColor");
 
 switch (theme) {
   case "dark":
@@ -16,3 +17,4 @@ switch (theme) {
 }
 
 documentEl.style.setProperty("--color-background", backgroundColor);
+documentEl.style.setProperty("--color-text", fontColor);

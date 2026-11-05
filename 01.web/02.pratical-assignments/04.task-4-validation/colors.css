@@ -24,7 +24,7 @@
   --color-input-error: #c6534c;
   --color-backdrop: #000000b3;
   --color-game-hint-text: #805014;
-  --color-font-gray: #454545;
+  --color-font-gray: #333333;
   --color-font-black: #111111;
   --color-toast-success: #dce8ce;
   --color-toast-error: #edc5bf;
@@ -56,8 +56,8 @@
   --color-input-error: #e58e85;
   --color-backdrop: #000000cc;
   --color-game-hint-text: #f3d58d;
-  --color-font-gray: #454545;
-  --color-font-black: #111111;
+  --color-font-gray: #c4c4c4;
+  --color-font-black: #ffffff;
   --color-toast-success: #304832;
   --color-toast-error: #4c2c2c;
   --color-toast-info: #253743;

@@ -15,11 +15,11 @@
 }
 
 .gallery-text-subtitle {
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .gallery-card-text p {
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .gallery-card {
@@ -119,5 +119,5 @@ aside a:focus {
     display: grid;
     grid-template-columns: minmax(0, 1fr) clamp(24rem, 35vw, 40rem);
     gap: 1rem;
-  } 
+  }
 }
