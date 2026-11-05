@@ -32,18 +32,30 @@ const changeFontSize = (step) => {
   documentEl.style.setProperty("--font-size", `${newFontSize}px`);
 };
 
-lightThemeBtn.addEventListener("click", (e) => {
-  documentEl.classList.remove("dark-theme");
-  fontGreenTxt.textContent = "Tamsiai žalia";
-  fontGrayTxt.textContent = "Tamsiai pilka";
-  fontBlackTxt.textContent = "Juoda";
-});
-
-darkThemeBtn.addEventListener("click", (e) => {
+const addDarkTheme = () => {
   documentEl.classList.add("dark-theme");
   fontGreenTxt.textContent = "Šviesiai žalia";
   fontGrayTxt.textContent = "Šviesiai pilka";
   fontBlackTxt.textContent = "Balta";
+};
+
+const removeDarkTheme = () => {
+  documentEl.classList.remove("dark-theme");
+  fontGreenTxt.textContent = "Tamsiai žalia";
+  fontGrayTxt.textContent = "Tamsiai pilka";
+  fontBlackTxt.textContent = "Juoda";
+};
+
+lightThemeBtn.addEventListener("click", (e) => {
+  removeDarkTheme();
+});
+
+darkThemeBtn.addEventListener("click", (e) => {
+  addDarkTheme();
+});
+
+defaultThemeBtn.addEventListener("click", (e) => {
+  window.matchMedia("(prefers-color-scheme: dark)").matches ? addDarkTheme() : removeDarkTheme();
 });
 
 backgroundGreenBtn.addEventListener("click", (e) => {
