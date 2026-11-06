@@ -16,9 +16,13 @@ const int DISCOUNT_MIN_AMOUNT = 10;
 const double DISCOUNT_RATE = 0.10;
 const int TABLE_WIDTH = 115;
 
-void showMenu() {
+void printMenuTitle(string title, int dashCount) {
     cout << "\n";
-    cout << "----------MENIU----------\n";
+    cout << string(dashCount, '-') << title << string(dashCount, '-') << "\n";
+}
+
+void showMenu() {
+    printMenuTitle("MENIU", 20);
     cout << "1.Peržiūrėti visas užsakymo prekes.\n";
     cout << "2.Peržiūrėti pasirinktos kategorijos prekes.\n";
     cout << "3.Peržiūrėti viso užsakymo sumas.\n";
@@ -94,19 +98,93 @@ double calculateDiscount(double sumBeforeDiscount, int amount) {
     return sumBeforeDiscount * DISCOUNT_RATE;
 }
 
-void printItems(int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+void printTableHeader() {
     cout << format("{:<12}{:<47}{:>11}{:>8}{:>13}{:>11}{:>13}\n",
                    "Kategorija", "Pavadinimas", "Kaina", "Kiekis", "Suma", "Nuolaida", "Moketi");
     cout << string(TABLE_WIDTH, '-') << "\n";
+}
 
+void printTableRow(string category, string title, double price, int amount) {
+    double sumBeforeDiscount = calculateSumBeforeDiscount(price, amount);
+    double discount = calculateDiscount(sumBeforeDiscount, amount);
+    double finalSum = sumBeforeDiscount - discount;
+    cout << format("{:<12}{:<47}{:>10.2f}€{:>8}{:>12.2f}€{:>10.2f}€{:>12.2f}€\n",
+                   category, title, price, amount,
+                   sumBeforeDiscount, discount, finalSum);
+}
+
+void printItems(int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+    printTableHeader();
     for (int i = 0; i < itemCount; ++i) {
+        printTableRow(categories[i], titles[i], prices[i], amounts[i]);
+    }
+}
+
+
+string chooseCategory() {
+    int categoryChoice;
+
+    do {
+        printMenuTitle("Kategorijos", 10);
+        cout << "1.Dviraciai\n";
+        cout << "2.Dalys\n";
+        cout << "3.Aksesuarai\n";
+
+        cin >> categoryChoice;
+        if (!checkUserNumberInput()) {
+            categoryChoice = 0;
+            continue;
+        }
+
+        if (categoryChoice < 1 || categoryChoice > 3) {
+            cout << "Tokios kategorijos nėra.\n";
+        }
+    } while (categoryChoice < 1 || categoryChoice > 3);
+
+    if (categoryChoice == 1) {
+        return "Dviraciai";
+    }
+    if (categoryChoice == 2) {
+        return "Dalys";
+    }
+    return "Aksesuarai";
+}
+
+double calculateCategorySum(string category, int itemCount, string categories[], double prices[], int amounts[]) {
+    double categorySum = 0;
+    for (int i = 0; i < itemCount; ++i) {
+        if (categories[i] != category) {
+            continue;
+        }
         double sumBeforeDiscount = calculateSumBeforeDiscount(prices[i], amounts[i]);
         double discount = calculateDiscount(sumBeforeDiscount, amounts[i]);
-        double finalSum = sumBeforeDiscount - discount;
-        cout << format("{:<12}{:<47}{:>10.2f}€{:>8}{:>12.2f}€{:>10.2f}€{:>12.2f}€\n",
-                       categories[i], titles[i], prices[i], amounts[i],
-                       sumBeforeDiscount, discount, finalSum);
+        categorySum += sumBeforeDiscount - discount;
     }
+    return categorySum;
+}
+
+void printCategoryItems(string category, int itemCount, string categories[], string titles[], double prices[],
+                        int amounts[]) {
+    int foundCount = 0;
+
+    for (int i = 0; i < itemCount; ++i) {
+        if (categories[i] != category) {
+            continue;
+        }
+        if (foundCount == 0) {
+            printTableHeader();
+        }
+        printTableRow(categories[i], titles[i], prices[i], amounts[i]);
+        foundCount++;
+    }
+
+    if (foundCount == 0) {
+        cout << "Šios kategorijos prekių užsakyme nėra.\n";
+        return;
+    }
+
+    double categorySum = calculateCategorySum(category, itemCount, categories, prices, amounts);
+    cout << format("\n{} kategorijos mokėtina suma: {:.2f}€\n", category, categorySum);
 }
 
 int main() {
@@ -141,8 +219,11 @@ int main() {
             case 1:
                 printItems(itemCount, categories, titles, prices, amounts);
                 break;
-            case 2:
+            case 2: {
+                string chosenCategory = chooseCategory();
+                printCategoryItems(chosenCategory, itemCount, categories, titles, prices, amounts);
                 break;
+            }
             case 3:
                 break;
             case 4:
