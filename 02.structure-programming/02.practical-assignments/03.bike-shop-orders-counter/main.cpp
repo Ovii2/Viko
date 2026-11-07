@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <format>
+#include <locale>
 #include <limits>
 
 #ifdef _WIN32
@@ -108,7 +109,7 @@ void printTableRow(string category, string title, double price, int amount) {
     double sumBeforeDiscount = calculateSumBeforeDiscount(price, amount);
     double discount = calculateDiscount(sumBeforeDiscount, amount);
     double finalSum = sumBeforeDiscount - discount;
-    cout << format("{:<12}{:<47}{:>10.2f}€{:>8}{:>12.2f}€{:>10.2f}€{:>12.2f}€\n",
+    cout << format("{:<12}{:<47}{:>10.2Lf}€{:>8}{:>12.2Lf}€{:>10.2Lf}€{:>12.2Lf}€\n",
                    category, title, price, amount,
                    sumBeforeDiscount, discount, finalSum);
 }
@@ -184,10 +185,41 @@ void printCategoryItems(string category, int itemCount, string categories[], str
     }
 
     double categorySum = calculateCategorySum(category, itemCount, categories, prices, amounts);
-    cout << format("\n{} kategorijos mokėtina suma: {:.2f}€\n", category, categorySum);
+    cout << format("\n{} kategorijos mokėtina suma: {:.2Lf}€\n", category, categorySum);
+}
+
+double calculateTotalBeforeDiscount(int itemCount, double prices[], int amounts[]) {
+    double total = 0.0;
+    for (int i = 0; i < itemCount; ++i) {
+        total += calculateSumBeforeDiscount(prices[i], amounts[i]);
+    }
+    return total;
+}
+
+double calculateTotalDiscount(int itemCount, double prices[], int amounts[]) {
+    double discount = 0.0;
+    for (int i = 0; i < itemCount; ++i) {
+        double sumBeforeDiscount = calculateSumBeforeDiscount(prices[i], amounts[i]);
+        discount += calculateDiscount(sumBeforeDiscount, amounts[i]);
+    }
+    return discount;
+}
+
+void printOrderTotals(int itemCount, double prices[], int amounts[]) {
+    double totalBeforeDiscount = calculateTotalBeforeDiscount(itemCount, prices, amounts);
+    double totalDiscount = calculateTotalDiscount(itemCount, prices, amounts);
+    double finalTotal = totalBeforeDiscount - totalDiscount;
+
+    printMenuTitle("SUMOS", 17);
+    cout << format("{:<25}{:>12.2Lf}€\n", "Suma prieš nuolaidas", totalBeforeDiscount);
+    cout << format("{:<25}{:>12.2Lf}€\n", "Nuolaidų suma", totalDiscount);
+    cout << string(38, '-') << "\n";
+    cout << format("{:<25}{:>12.2Lf}€\n", "Mokėtina suma", finalTotal);
 }
 
 int main() {
+    locale::global(locale("en_US.UTF-8"));
+
 #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -225,6 +257,7 @@ int main() {
                 break;
             }
             case 3:
+                printOrderTotals(itemCount, prices, amounts);
                 break;
             case 4:
                 break;
