@@ -16,6 +16,9 @@ const int MAX_ITEMS = 100;
 const int DISCOUNT_MIN_AMOUNT = 10;
 const double DISCOUNT_RATE = 0.10;
 const int TABLE_WIDTH = 115;
+const string BIKES_CATEGORY = "Dviraciai";
+const string PARTS_CATEGORY = "Dalys";
+const string ACCESSORIES_CATEGORY = "Aksesuarai";
 
 void printMenuTitle(string title, int dashCount) {
     cout << "\n";
@@ -79,7 +82,8 @@ int readData(string filename, string categories[], string titles[], double price
             cout << "Neteisingas kiekis\n";
             return 0;
         }
-        if (categories[i] != "Dviraciai" && categories[i] != "Dalys" && categories[i] != "Aksesuarai") {
+        if (categories[i] != BIKES_CATEGORY && categories[i] != PARTS_CATEGORY && categories[i] !=
+            ACCESSORIES_CATEGORY) {
             cout << "Neteisinga kategorija\n";
             return 0;
         }
@@ -127,9 +131,9 @@ string chooseCategory() {
 
     do {
         printMenuTitle("Kategorijos", 10);
-        cout << "1.Dviraciai\n";
-        cout << "2.Dalys\n";
-        cout << "3.Aksesuarai\n";
+        cout << format("1.{}\n", BIKES_CATEGORY);
+        cout << format("2.{}\n", PARTS_CATEGORY);
+        cout << format("3.{}\n", ACCESSORIES_CATEGORY);
 
         cin >> categoryChoice;
         if (!checkUserNumberInput()) {
@@ -143,12 +147,12 @@ string chooseCategory() {
     } while (categoryChoice < 1 || categoryChoice > 3);
 
     if (categoryChoice == 1) {
-        return "Dviraciai";
+        return BIKES_CATEGORY;
     }
     if (categoryChoice == 2) {
-        return "Dalys";
+        return PARTS_CATEGORY;
     }
-    return "Aksesuarai";
+    return ACCESSORIES_CATEGORY;
 }
 
 double calculateCategorySum(string category, int itemCount, string categories[], double prices[], int amounts[]) {
@@ -217,6 +221,16 @@ void printOrderTotals(int itemCount, double prices[], int amounts[]) {
     cout << format("{:<25}{:>12.2Lf}€\n", "Mokėtina suma", finalTotal);
 }
 
+void printCategoryTotals(int itemCount, string categories[], double prices[], int amounts[]) {
+    printMenuTitle("KATEGORIJŲ SUMOS", 11);
+    cout << format("{:<25}{:>12.2Lf}€\n", BIKES_CATEGORY,
+                   calculateCategorySum(BIKES_CATEGORY, itemCount, categories, prices, amounts));
+    cout << format("{:<25}{:>12.2Lf}€\n", PARTS_CATEGORY,
+                   calculateCategorySum(PARTS_CATEGORY, itemCount, categories, prices, amounts));
+    cout << format("{:<25}{:>12.2Lf}€\n", ACCESSORIES_CATEGORY,
+                   calculateCategorySum(ACCESSORIES_CATEGORY, itemCount, categories, prices, amounts));
+}
+
 int main() {
     locale::global(locale("en_US.UTF-8"));
 
@@ -260,6 +274,7 @@ int main() {
                 printOrderTotals(itemCount, prices, amounts);
                 break;
             case 4:
+                printCategoryTotals(itemCount, categories, prices, amounts);
                 break;
             case 5:
                 break;
