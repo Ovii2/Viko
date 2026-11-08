@@ -286,11 +286,9 @@ int main() {
             case 1:
                 printItems(cout, itemCount, categories, titles, prices, amounts);
                 break;
-            case 2: {
-                string chosenCategory = chooseCategory();
-                printCategoryItems(chosenCategory, itemCount, categories, titles, prices, amounts);
+            case 2:
+                printCategoryItems(chooseCategory(), itemCount, categories, titles, prices, amounts);
                 break;
-            }
             case 3:
                 printOrderTotals(cout, itemCount, prices, amounts);
                 break;
