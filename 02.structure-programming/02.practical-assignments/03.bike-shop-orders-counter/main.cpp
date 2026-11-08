@@ -20,13 +20,13 @@ const string BIKES_CATEGORY = "Dviraciai";
 const string PARTS_CATEGORY = "Dalys";
 const string ACCESSORIES_CATEGORY = "Aksesuarai";
 
-void printMenuTitle(string title, int dashCount) {
-    cout << "\n";
-    cout << string(dashCount, '-') << title << string(dashCount, '-') << "\n";
+void printMenuTitle(ostream &out, string title, int dashCount) {
+    out << "\n";
+    out << string(dashCount, '-') << title << string(dashCount, '-') << "\n";
 }
 
 void showMenu() {
-    printMenuTitle("MENIU", 20);
+    printMenuTitle(cout, "MENIU", 20);
     cout << "1.Peržiūrėti visas užsakymo prekes.\n";
     cout << "2.Peržiūrėti pasirinktos kategorijos prekes.\n";
     cout << "3.Peržiūrėti viso užsakymo sumas.\n";
@@ -103,25 +103,25 @@ double calculateDiscount(double sumBeforeDiscount, int amount) {
     return sumBeforeDiscount * DISCOUNT_RATE;
 }
 
-void printTableHeader() {
-    cout << format("{:<12}{:<47}{:>11}{:>8}{:>13}{:>11}{:>13}\n",
-                   "Kategorija", "Pavadinimas", "Kaina", "Kiekis", "Suma", "Nuolaida", "Moketi");
-    cout << string(TABLE_WIDTH, '-') << "\n";
+void printTableHeader(ostream &out) {
+    out << format("{:<12}{:<47}{:>11}{:>8}{:>13}{:>11}{:>13}\n",
+                  "Kategorija", "Pavadinimas", "Kaina", "Kiekis", "Suma", "Nuolaida", "Moketi");
+    out << string(TABLE_WIDTH, '-') << "\n";
 }
 
-void printTableRow(string category, string title, double price, int amount) {
+void printTableRow(ostream &out, string category, string title, double price, int amount) {
     double sumBeforeDiscount = calculateSumBeforeDiscount(price, amount);
     double discount = calculateDiscount(sumBeforeDiscount, amount);
     double finalSum = sumBeforeDiscount - discount;
-    cout << format("{:<12}{:<47}{:>10.2Lf}€{:>8}{:>12.2Lf}€{:>10.2Lf}€{:>12.2Lf}€\n",
-                   category, title, price, amount,
-                   sumBeforeDiscount, discount, finalSum);
+    out << format("{:<12}{:<47}{:>10.2Lf}€{:>8}{:>12.2Lf}€{:>10.2Lf}€{:>12.2Lf}€\n",
+                  category, title, price, amount,
+                  sumBeforeDiscount, discount, finalSum);
 }
 
-void printItems(int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
-    printTableHeader();
+void printItems(ostream &out, int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+    printTableHeader(out);
     for (int i = 0; i < itemCount; ++i) {
-        printTableRow(categories[i], titles[i], prices[i], amounts[i]);
+        printTableRow(out, categories[i], titles[i], prices[i], amounts[i]);
     }
 }
 
@@ -130,7 +130,7 @@ string chooseCategory() {
     int categoryChoice;
 
     do {
-        printMenuTitle("Kategorijos", 10);
+        printMenuTitle(cout, "Kategorijos", 10);
         cout << format("1.{}\n", BIKES_CATEGORY);
         cout << format("2.{}\n", PARTS_CATEGORY);
         cout << format("3.{}\n", ACCESSORIES_CATEGORY);
@@ -177,9 +177,9 @@ void printCategoryItems(string category, int itemCount, string categories[], str
             continue;
         }
         if (foundCount == 0) {
-            printTableHeader();
+            printTableHeader(cout);
         }
-        printTableRow(categories[i], titles[i], prices[i], amounts[i]);
+        printTableRow(cout, categories[i], titles[i], prices[i], amounts[i]);
         foundCount++;
     }
 
@@ -209,33 +209,47 @@ double calculateTotalDiscount(int itemCount, double prices[], int amounts[]) {
     return discount;
 }
 
-void printOrderTotals(int itemCount, double prices[], int amounts[]) {
+void printOrderTotals(ostream &out, int itemCount, double prices[], int amounts[]) {
     double totalBeforeDiscount = calculateTotalBeforeDiscount(itemCount, prices, amounts);
     double totalDiscount = calculateTotalDiscount(itemCount, prices, amounts);
     double finalTotal = totalBeforeDiscount - totalDiscount;
 
-    printMenuTitle("SUMOS", 17);
-    cout << format("{:<25}{:>12.2Lf}€\n", "Suma prieš nuolaidas", totalBeforeDiscount);
-    cout << format("{:<25}{:>12.2Lf}€\n", "Nuolaidų suma", totalDiscount);
-    cout << string(38, '-') << "\n";
-    cout << format("{:<25}{:>12.2Lf}€\n", "Mokėtina suma", finalTotal);
+    printMenuTitle(out, "SUMOS", 17);
+    out << format("{:<25}{:>12.2Lf}€\n", "Suma prieš nuolaidas", totalBeforeDiscount);
+    out << format("{:<25}{:>12.2Lf}€\n", "Nuolaidų suma", totalDiscount);
+    out << string(38, '-') << "\n";
+    out << format("{:<25}{:>12.2Lf}€\n", "Mokėtina suma", finalTotal);
 }
 
-void printCategoryTotals(int itemCount, string categories[], double prices[], int amounts[]) {
-    printMenuTitle("KATEGORIJŲ SUMOS", 11);
-    cout << format("{:<25}{:>12.2Lf}€\n", BIKES_CATEGORY,
-                   calculateCategorySum(BIKES_CATEGORY, itemCount, categories, prices, amounts));
-    cout << format("{:<25}{:>12.2Lf}€\n", PARTS_CATEGORY,
-                   calculateCategorySum(PARTS_CATEGORY, itemCount, categories, prices, amounts));
-    cout << format("{:<25}{:>12.2Lf}€\n", ACCESSORIES_CATEGORY,
-                   calculateCategorySum(ACCESSORIES_CATEGORY, itemCount, categories, prices, amounts));
+void printCategoryTotals(ostream &out, int itemCount, string categories[], double prices[], int amounts[]) {
+    printMenuTitle(out, "KATEGORIJŲ SUMOS", 11);
+    out << format("{:<25}{:>12.2Lf}€\n", BIKES_CATEGORY,
+                  calculateCategorySum(BIKES_CATEGORY, itemCount, categories, prices, amounts));
+    out << format("{:<25}{:>12.2Lf}€\n", PARTS_CATEGORY,
+                  calculateCategorySum(PARTS_CATEGORY, itemCount, categories, prices, amounts));
+    out << format("{:<25}{:>12.2Lf}€\n", ACCESSORIES_CATEGORY,
+                  calculateCategorySum(ACCESSORIES_CATEGORY, itemCount, categories, prices, amounts));
 }
 
-void printReport(int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
-    printMenuTitle("UŽSAKYMO ATASKAITA", 48);
-    printItems(itemCount, categories, titles, prices, amounts);
-    printOrderTotals(itemCount, prices, amounts);
-    printCategoryTotals(itemCount, categories, prices, amounts);
+void printReport(ostream &out, int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+    printMenuTitle(out, "UŽSAKYMO ATASKAITA", 48);
+    printItems(out, itemCount, categories, titles, prices, amounts);
+    printOrderTotals(out, itemCount, prices, amounts);
+    printCategoryTotals(out, itemCount, categories, prices, amounts);
+}
+
+bool saveReport(string filename, int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+    ofstream fout(filename);
+
+    if (!fout.is_open()) {
+        return false;
+    }
+
+    printReport(fout, itemCount, categories, titles, prices, amounts);
+    if (!fout) {
+        return false;
+    }
+    return true;
 }
 
 int main() {
@@ -270,7 +284,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                printItems(itemCount, categories, titles, prices, amounts);
+                printItems(cout, itemCount, categories, titles, prices, amounts);
                 break;
             case 2: {
                 string chosenCategory = chooseCategory();
@@ -278,16 +292,24 @@ int main() {
                 break;
             }
             case 3:
-                printOrderTotals(itemCount, prices, amounts);
+                printOrderTotals(cout, itemCount, prices, amounts);
                 break;
             case 4:
-                printCategoryTotals(itemCount, categories, prices, amounts);
+                printCategoryTotals(cout, itemCount, categories, prices, amounts);
                 break;
             case 5:
-                printReport(itemCount, categories, titles, prices, amounts);
+                printReport(cout, itemCount, categories, titles, prices, amounts);
                 break;
-            case 6:
+            case 6: {
+                string filename = "ataskaita.txt";
+                bool saveResult = saveReport(filename, itemCount, categories, titles, prices, amounts);
+                if (!saveResult) {
+                    cout << format("Nepavyko išsaugoti ataskaitos į failą {}\n", filename);
+                } else {
+                    cout << format("Ataskaita išsaugota faile {}\n", filename);
+                }
                 break;
+            }
             case 7:
                 cout << "Viso gero!\n";
                 break;
