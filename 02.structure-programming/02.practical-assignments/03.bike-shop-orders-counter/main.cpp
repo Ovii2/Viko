@@ -231,6 +231,13 @@ void printCategoryTotals(int itemCount, string categories[], double prices[], in
                    calculateCategorySum(ACCESSORIES_CATEGORY, itemCount, categories, prices, amounts));
 }
 
+void printReport(int itemCount, string categories[], string titles[], double prices[], int amounts[]) {
+    printMenuTitle("UŽSAKYMO ATASKAITA", 48);
+    printItems(itemCount, categories, titles, prices, amounts);
+    printOrderTotals(itemCount, prices, amounts);
+    printCategoryTotals(itemCount, categories, prices, amounts);
+}
+
 int main() {
     locale::global(locale("en_US.UTF-8"));
 
@@ -277,6 +284,7 @@ int main() {
                 printCategoryTotals(itemCount, categories, prices, amounts);
                 break;
             case 5:
+                printReport(itemCount, categories, titles, prices, amounts);
                 break;
             case 6:
                 break;
