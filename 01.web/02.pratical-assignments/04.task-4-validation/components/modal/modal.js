@@ -3,7 +3,7 @@ export const modal = (title, data) => {
   dialog.classList.add("modal");
 
   dialog.innerHTML = `
-    <img class="check-icon" src="./assets/icons/check_circle.svg" alt="Atlikta">
+    <img class="check-icon" src="${new URL("../../assets/icons/check_circle.svg", import.meta.url)}" alt="Atlikta">
     <h2 class="title"></h2>
     <div class="modal-data"></div>
     <form method="dialog">

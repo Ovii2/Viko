@@ -57,6 +57,17 @@ button:focus {
   outline-offset: 0.1rem;
 }
 
+.field-control {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.field-control > input,
+.field-control > select {
+  width: 100%;
+}
+
 .error {
   color: var(--color-error);
   margin-left: 0.4rem;

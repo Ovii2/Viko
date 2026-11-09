@@ -366,16 +366,6 @@ aside {
   flex-direction: column;
 }
 
-.field-control {
-  flex: 1;
-  min-width: 0;
-}
-
-.field-control > input,
-.field-control > select {
-  width: 100%;
-}
-
 .search-control {
   position: relative;
   display: flex;

@@ -6,6 +6,7 @@
   animation: slide 0.7s ease-in-out;
   width: clamp(0rem, 90vw, 36rem);
   padding: 1.5rem;
+  background-color: var(--color-tip-background);
 }
 
 .modal-data {

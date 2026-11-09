@@ -9,10 +9,39 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../reset.css" />
     <link rel="stylesheet" href="survey.css" />
+    <link rel="stylesheet" href="../../components/modal/modal.css" />
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/spruce.svg" />
     <script type="module">
       import { initMenu } from "../../scripts/menu.js";
+      import { validateName, validateEmail, validateTravelDate } from "../../scripts/form-validation.js";
+      import { modal } from "../../components/modal/modal.js";
       import "../../scripts/preferences.js";
+
+      const form = document.querySelector(".survey-form");
+
+      const nameInput = form.querySelector(".name");
+      const nameError = form.querySelector(".name-error");
+
+      const emailInput = form.querySelector(".email");
+      const emailError = form.querySelector(".email-error");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        nameError.textContent = validateName(nameInput.value);
+        emailError.textContent = validateEmail(emailInput.value);
+
+        nameInput.classList.toggle("input-error", nameError.textContent !== "");
+        emailInput.classList.toggle("input-error", emailError.textContent !== "");
+
+        if (nameError.textContent === "" && emailError.textContent === "") {
+          modal(
+            "Anketa pateikta!",
+            `Vardas: ${nameInput.value.trim()}
+                   El. paštas: ${emailInput.value.trim()}`,
+          );
+        }
+      });
 
       initMenu();
     </script>
@@ -49,35 +78,43 @@
     </section>
     <div class="content-container">
       <main>
-        <form class="survey-form">
+        <form class="survey-form" novalidate>
           <div class="about-you">
             <h3>Apie Tave</h3>
             <hr />
             <div class="about-you-inputs">
               <div class="form-field">
-                <label for="name">Vardas</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  minlength="5"
-                  maxlength="50"
-                  placeholder="Įveskite vardą"
-                  required
-                />
+                <label for="name">Vardas<span class="star">*</span></label>
+                <div class="field-control">
+                  <input
+                    class="name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    minlength="5"
+                    maxlength="50"
+                    placeholder="Įveskite vardą"
+                    required
+                  />
+                  <p class="error name-error"></p>
+                </div>
               </div>
 
               <div class="form-field">
-                <label for="email">El. paštas</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  minlength="5"
-                  maxlength="50"
-                  placeholder="Įveskite el. paštą"
-                  required
-                />
+                <label for="email">El. paštas<span class="star">*</span></label>
+                <div class="field-control">
+                  <input
+                    class="email"
+                    type="email"
+                    name="email"
+                    id="email"
+                    minlength="5"
+                    maxlength="50"
+                    placeholder="Įveskite el. paštą"
+                    required
+                  />
+                  <p class="error email-error"></p>
+                </div>
               </div>
             </div>
           </div>
