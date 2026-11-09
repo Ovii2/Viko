@@ -8,7 +8,10 @@ let sign = "Montague House";
 let tiles = sign.length;
 let subTotal = tiles * 5;
 let shipping = 7;
-let grandTotal = subTotal + shipping;
+
+let discount = 2;
+let priceAfterDiscount = (subTotal * (100 - discount)) / 100;
+let grandTotal = priceAfterDiscount + shipping;
 
 let el = document.getElementById("greeting");
 el.textContent = welcome;
@@ -24,6 +27,12 @@ elSubTotal.textContent = "$" + subTotal;
 
 let elShipping = document.getElementById("shipping");
 elShipping.textContent = "$" + shipping;
+
+let elDiscount = document.getElementById("discount");
+elDiscount.textContent = discount + "%";
+
+let elDiscountAmount = document.getElementById("discount-amount");
+elDiscountAmount.textContent = "$" + (subTotal * discount) / 100;
 
 let elGrandTotal = document.getElementById("grandTotal");
 elGrandTotal.textContent = "$" + grandTotal;
