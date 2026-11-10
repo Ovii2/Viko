@@ -1,4 +1,4 @@
-@import url("color.css");
+@import "/colors.css";
 
 .toast {
   background-color: var(--color-toast-success);

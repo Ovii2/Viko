@@ -29,8 +29,11 @@
 }
 
 .footer-subtitle {
-  font-size: 1.2em;
-  white-space: nowrap;
+  font-size: clamp(0.9em, 3.5vw, 1.2em);
+}
+
+.footer-text {
+  min-width: 0;
 }
 
 .footer-moto {
@@ -62,6 +65,12 @@ p {
 .dark-theme .footer-logo,
 .dark-theme .social-icon img {
   filter: brightness(0);
+}
+
+@media screen and (min-width: 500px) {
+  .footer-subtitle {
+    white-space: nowrap;
+  }
 }
 
 @media screen and (min-width: 700px) {

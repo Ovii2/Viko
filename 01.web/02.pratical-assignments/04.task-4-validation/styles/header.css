@@ -31,8 +31,11 @@ header > a {
 }
 
 .header-subtitle {
-  font-size: 1.2em;
-  white-space: nowrap;
+  font-size: clamp(0.9em, 3.5vw, 1.2em);
+}
+
+.header-text {
+  min-width: 0;
 }
 
 .burger-menu {
@@ -101,6 +104,10 @@ ul li {
 
   .header-menu {
     width: 100%;
+  }
+
+  .header-subtitle {
+    white-space: nowrap;
   }
 
   .menu-toggle {
