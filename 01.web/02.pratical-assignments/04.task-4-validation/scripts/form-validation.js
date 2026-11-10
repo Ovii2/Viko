@@ -11,6 +11,10 @@ export const validateName = (value) => {
     return `Vardą turi sudaryti nuo ${min} iki ${max} simbolių.`;
   }
 
+  if (name.match(/\d/)) {
+    return "Varde negali būti skaičių.";
+  }
+
   return "";
 };
 
@@ -56,11 +60,29 @@ export const validateDestination = (value) => {
   if (destination === "") {
     return "Pasirinkite kelionės kryptį.";
   }
+
+  return "";
 };
 
 export const validateTravelGroup = (value) => {
   if (!value) {
     return "Pasirinkite, kaip keliausite.";
+  }
+
+  return "";
+};
+
+export const validateInterestsGroup = (value) => {
+  if (!value) {
+    return "Pasirinkite pomėgį.";
+  }
+
+  return "";
+};
+
+export const validateCompanionGroup = (value) => {
+  if (!value) {
+    return "Pasirinkite, su kuo keliaujate.";
   }
 
   return "";
@@ -72,4 +94,6 @@ export const validateFrequency = (value) => {
   if (frequency === "") {
     return "Pasirinkite kelionės dažnį.";
   }
+
+  return "";
 };

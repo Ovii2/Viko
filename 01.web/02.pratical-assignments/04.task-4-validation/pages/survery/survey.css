@@ -84,7 +84,7 @@ textarea {
 }
 
 .travel-frequency select,
-.travel-date input[type="date"] {
+.tavel-survey-date input[type="date"] {
   height: 2.25rem;
 }
 
@@ -217,7 +217,7 @@ aside p {
   }
 
   .travel-frequency,
-  .travel-date,
+  .tavel-survey-date,
   .interests,
   .travel-companions {
     flex: 1;
@@ -225,7 +225,7 @@ aside p {
   }
 
   .travel-frequency,
-  .travel-date {
+  .tavel-survey-date {
     display: flex;
     flex-direction: column;
   }

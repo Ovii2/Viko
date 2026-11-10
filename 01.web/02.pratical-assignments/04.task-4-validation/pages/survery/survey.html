@@ -18,6 +18,8 @@
         validateEmail,
         validateTravelDate,
         validateFrequency,
+        validateInterestsGroup,
+        validateCompanionGroup,
       } from "../../scripts/form-validation.js";
       import { modal } from "../../components/modal/modal.js";
       import "../../scripts/preferences.js";
@@ -33,23 +35,46 @@
       const frequencyInput = form.querySelector(".frequency");
       const frequencyError = form.querySelector(".frequency-error");
 
+      const travelDateInput = form.querySelector(".travel-date");
+      const travelDateError = form.querySelector(".travel-date-error");
+
+      const travelInterestsError = form.querySelector(".travel-interests-error");
+      const travelCompanionsError = form.querySelector(".travel-companions-error");
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+
+        const travelInterestInput = form.querySelector('input[name="travel-interest"]:checked');
+        const travelCompanionInput = form.querySelector('input[name="travel-companion"]:checked');
 
         nameError.textContent = validateName(nameInput.value);
         emailError.textContent = validateEmail(emailInput.value);
         frequencyError.textContent = validateFrequency(frequencyInput.value);
+        travelDateError.textContent = validateTravelDate(travelDateInput.value);
+        travelInterestsError.textContent = validateInterestsGroup(travelInterestInput?.value);
+        travelCompanionsError.textContent = validateCompanionGroup(travelCompanionInput?.value);
 
         nameInput.classList.toggle("input-error", nameError.textContent !== "");
         emailInput.classList.toggle("input-error", emailError.textContent !== "");
         frequencyInput.classList.toggle("input-error", frequencyError.textContent !== "");
+        travelDateInput.classList.toggle("input-error", travelDateError.textContent !== "");
 
-        if (nameError.textContent === "" && emailError.textContent === "" && frequencyError.textContent === "") {
+        if (
+          nameError.textContent === "" &&
+          emailError.textContent === "" &&
+          frequencyError.textContent === "" &&
+          travelDateError.textContent === "" &&
+          travelInterestInput.textContent === "" &&
+          travelCompanionInput.textContent === ""
+        ) {
           modal(
             "Anketa pateikta!",
             `Vardas: ${nameInput.value.trim()}
                    El. paštas: ${emailInput.value.trim()}
                    Dažnis: ${frequencyInput.selectedOptions[0].textContent}
+                   Kelionės data: ${travelDateInput.value}
+                   Pomėgiai: ${travelInterestInput.value}
+                   Keliaujate su: ${travelCompanionInput.value}
                    `,
           );
         }
@@ -148,53 +173,62 @@
                 </div>
               </div>
 
-              <div class="travel-date form-field">
-                <label for="date">Kada planuoji šitą kelionę?</label>
-                <input type="date" name="date" id="date" />
+              <div class="travel-survey-date form-field">
+                <label for="date">Kada planuoji šitą kelionę?<span class="star">*</span></label>
+                <div class="field-control">
+                  <input class="travel-date" type="date" name="date" id="date" />
+                  <p class="error travel-date-error"></p>
+                </div>
               </div>
             </div>
 
             <div class="interests-and-companions">
-              <div class="interests">
-                <h4>Kas tave domina?</h4>
+              <div class="field-control">
+                <div class="interests">
+                  <h4>Kas tave domina?<span class="star">*</span></h4>
 
-                <label for="nature">
-                  <input type="checkbox" name="nature" id="nature" />
-                  Gamta
-                </label>
+                  <label for="nature">
+                    <input type="radio" name="travel-interest" id="nature" value="Gamta" />
+                    Gamta
+                  </label>
 
-                <label for="history">
-                  <input type="checkbox" name="history" id="history" />
-                  Istorija
-                </label>
+                  <label for="history">
+                    <input type="radio" name="travel-interest" id="history" value="Istorija" />
+                    Istorija
+                  </label>
 
-                <label for="cities">
-                  <input type="checkbox" name="cities" id="cities" />
-                  Miestai
-                </label>
+                  <label for="cities">
+                    <input type="radio" name="travel-interest" id="cities" value="Miestai" />
+                    Miestai
+                  </label>
 
-                <label for="seaside">
-                  <input type="checkbox" name="seaside" id="seaside" />
-                  Pajūris
-                </label>
+                  <label for="seaside">
+                    <input type="radio" name="travel-interest" id="seaside" value="Pajūris" />
+                    Pajūris
+                  </label>
+                  <p class="error travel-interests-error"></p>
+                </div>
               </div>
 
-              <div class="travel-companions">
-                <h4>Su kuo dažniausiai keliauji?</h4>
-                <label for="alone">
-                  <input type="radio" name="travel-companion" id="alone" />
-                  Vienas
-                </label>
+              <div class="field-control">
+                <div class="travel-companions">
+                  <h4>Su kuo dažniausiai keliauji?<span class="star">*</span></h4>
+                  <label for="alone">
+                    <input type="radio" name="travel-companion" id="alone" value="Vienas" />
+                    Vienas
+                  </label>
 
-                <label for="friends">
-                  <input type="radio" name="travel-companion" id="friends" />
-                  Su draugais
-                </label>
+                  <label for="friends">
+                    <input type="radio" name="travel-companion" id="friends" value="Su draugais" />
+                    Su draugais
+                  </label>
 
-                <label for="family">
-                  <input type="radio" name="travel-companion" id="family" />
-                  Su šeima
-                </label>
+                  <label for="family">
+                    <input type="radio" name="travel-companion" id="family" value="Su šeima" />
+                    Su šeima
+                  </label>
+                  <p class="error travel-companions-error"></p>
+                </div>
               </div>
             </div>
           </div>
