@@ -13,7 +13,12 @@
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/spruce.svg" />
     <script type="module">
       import { initMenu } from "../../scripts/menu.js";
-      import { validateName, validateEmail, validateTravelDate } from "../../scripts/form-validation.js";
+      import {
+        validateName,
+        validateEmail,
+        validateTravelDate,
+        validateFrequency,
+      } from "../../scripts/form-validation.js";
       import { modal } from "../../components/modal/modal.js";
       import "../../scripts/preferences.js";
 
@@ -25,20 +30,27 @@
       const emailInput = form.querySelector(".email");
       const emailError = form.querySelector(".email-error");
 
+      const frequencyInput = form.querySelector(".frequency");
+      const frequencyError = form.querySelector(".frequency-error");
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         nameError.textContent = validateName(nameInput.value);
         emailError.textContent = validateEmail(emailInput.value);
+        frequencyError.textContent = validateFrequency(frequencyInput.value);
 
         nameInput.classList.toggle("input-error", nameError.textContent !== "");
         emailInput.classList.toggle("input-error", emailError.textContent !== "");
+        frequencyInput.classList.toggle("input-error", frequencyError.textContent !== "");
 
-        if (nameError.textContent === "" && emailError.textContent === "") {
+        if (nameError.textContent === "" && emailError.textContent === "" && frequencyError.textContent === "") {
           modal(
             "Anketa pateikta!",
             `Vardas: ${nameInput.value.trim()}
-                   El. paštas: ${emailInput.value.trim()}`,
+                   El. paštas: ${emailInput.value.trim()}
+                   Dažnis: ${frequencyInput.selectedOptions[0].textContent}
+                   `,
           );
         }
       });
@@ -123,13 +135,17 @@
             <hr />
             <div class="date-and-frequency">
               <div class="travel-frequency form-field">
-                <label for="frequency">Kaip dažnai keliauji?</label>
-                <select name="frequency" id="frequency">
-                  <option value="everyday">Kasdien</option>
-                  <option value="semiweekly">Du kartus į savaitę</option>
-                  <option value="monthly">Kartą į mėnesį</option>
-                  <option value="yearly">Kartą per metus</option>
-                </select>
+                <label for="frequency">Kaip dažnai keliauji?<span class="star">*</span></label>
+                <div class="field-control">
+                  <select class="frequency" name="frequency" id="frequency">
+                    <option value="" disabled selected>Pasirinkite dažnumą</option>
+                    <option value="everyday">Kasdien</option>
+                    <option value="semiweekly">Du kartus į savaitę</option>
+                    <option value="monthly">Kartą į mėnesį</option>
+                    <option value="yearly">Kartą per metus</option>
+                  </select>
+                  <p class="error frequency-error"></p>
+                </div>
               </div>
 
               <div class="travel-date form-field">

@@ -65,3 +65,11 @@ export const validateTravelGroup = (value) => {
 
   return "";
 };
+
+export const validateFrequency = (value) => {
+  const frequency = value.trim();
+
+  if (frequency === "") {
+    return "Pasirinkite kelionės dažnį.";
+  }
+};
