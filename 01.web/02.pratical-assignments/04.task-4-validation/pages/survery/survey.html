@@ -23,6 +23,7 @@
       } from "../../scripts/form-validation.js";
       import { modal } from "../../components/modal/modal.js";
       import "../../scripts/preferences.js";
+      import "../../scripts/idea-counter.js";
 
       const form = document.querySelector(".survey-form");
 
@@ -237,7 +238,16 @@
             <h3>Tavo pasiūlymai</h3>
             <hr />
             <label for="idea">Kokią Lietuvos vietą norėtum aplankyti?</label>
-            <textarea name="idea" id="idea" maxlength="500" placeholder="Parašyk savo idėją..."></textarea>
+            <div class="field-control">
+              <textarea
+                class="idea"
+                name="idea"
+                id="idea"
+                maxlength="500"
+                placeholder="Parašyk savo idėją..."
+              ></textarea>
+              <p class="idea-counter">0/500</p>
+            </div>
           </section>
           <button class="submit-survey-button" type="submit">Pateikti anketą</button>
         </form>

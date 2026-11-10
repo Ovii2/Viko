@@ -102,8 +102,10 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-.suggestions textarea {
-  margin: 0.5rem 0;
+.idea-counter {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-size: clamp(0.8rem, 4vw, 1.1rem);
 }
 
 .submit-survey-button {

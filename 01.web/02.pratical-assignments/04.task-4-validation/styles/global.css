@@ -64,7 +64,8 @@ button:focus {
 }
 
 .field-control > input,
-.field-control > select {
+.field-control > select,
+.field-control > textarea {
   width: 100%;
 }
 
