@@ -1,0 +1,11 @@
+10
+Tomas Petraitis;Zalgiris;30;402
+Lukas Jankauskas;Rytas;28;311
+Marco Rossi;Olimpia Milano;32;448
+Carlos Fernandez;Real Madrid;34;527
+Nikola Petrovic;Partizan;29;383
+Ahmet Yilmaz;Anadolu Efes;31;356
+Dimitris Papadakis;Olympiakos;33;495
+Jordi Martinez;Barcelona;30;372
+Ivan Kovac;Crvena Zvezda;27;299
+Andreas Weber;Bayern Munchen;26;247

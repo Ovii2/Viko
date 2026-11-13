@@ -1,0 +1,9 @@
+8
+Kava pupelemis 1 kg;18.50;40
+Zalioji arbata;4.20;120
+Juodasis sokoladas;2.35;300
+Medus 500 g;7.90;65
+Spageti makaronai;1.45;250
+Alyvuogiu aliejus 1 l;11.80;80
+Basmati ryziai 1 kg;3.60;150
+Kvietiniai miltai 2 kg;2.10;200
