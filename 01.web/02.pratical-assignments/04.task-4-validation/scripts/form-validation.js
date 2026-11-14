@@ -25,7 +25,7 @@ export const validateEmail = (value) => {
     return "Įveskite el.paštą.";
   }
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailPattern = /^\S+@\S+\.\S+$/;
 
   if (!email.match(emailPattern)) {
     return "Įveskite tinkamą el. pašto adresą.";
