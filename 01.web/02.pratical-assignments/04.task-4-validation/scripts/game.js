@@ -1,17 +1,3 @@
-const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
-
-let answer = generateRandomNumber();
-// console.log(`Atsakymas : ${answer}`);
-
-let min;
-let max;
-
-const updateRange = () => {
-  min = Math.max(1, answer - 10);
-  max = Math.min(100, answer + 10);
-  rangeLimit.textContent = `${min} - ${max}`;
-};
-
 const attempts = [];
 
 const attemptsCount = document.querySelector(".attempts-count");
@@ -23,12 +9,49 @@ const newGameBtn = document.querySelector(".new-game-btn");
 const guessResult = document.querySelector(".guess-result");
 const historyBody = document.querySelector(".guess-history-table tbody");
 
-attemptsCount.textContent = attempts.length;
-updateRange();
+const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+let answer = generateRandomNumber();
+
+let min;
+let max;
+
+const updateRange = () => {
+  min = Math.max(1, answer - 10);
+  max = Math.min(100, answer + 10);
+  rangeLimit.textContent = `${min} - ${max}`;
+};
+
+const endGame = () => {
+  guessBtn.disabled = true;
+  giveupBtn.disabled = true;
+  numberInput.disabled = true;
+};
 
 const showInitialMessage = () => {
   guessResult.textContent = "Dar nespėjai!";
 };
+
+const restartGame = () => {
+  historyBody.innerHTML = `
+  <tr class="empty-history">
+    <td colspan="3">Spėjimų nėra</td>
+  </tr>
+`;
+  attempts.length = 0;
+  attemptsCount.textContent = 0;
+  numberInput.value = "";
+  guessResult.textContent = "";
+  answer = generateRandomNumber();
+  updateRange();
+  showInitialMessage();
+  guessBtn.disabled = false;
+  giveupBtn.disabled = false;
+  numberInput.disabled = false;
+};
+
+attemptsCount.textContent = attempts.length;
+updateRange();
 
 showInitialMessage();
 
@@ -73,27 +96,3 @@ giveupBtn.addEventListener("click", () => {
 newGameBtn.addEventListener("click", () => {
   restartGame();
 });
-
-const endGame = () => {
-  guessBtn.disabled = true;
-  giveupBtn.disabled = true;
-  numberInput.disabled = true;
-};
-
-const restartGame = () => {
-  historyBody.innerHTML = `
-  <tr class="empty-history">
-    <td colspan="3">Spėjimų nėra</td>
-  </tr>
-`;
-  attempts.length = 0;
-  attemptsCount.textContent = 0;
-  numberInput.value = "";
-  guessResult.textContent = "";
-  answer = generateRandomNumber();
-  updateRange();
-  showInitialMessage();
-  guessBtn.disabled = false;
-  giveupBtn.disabled = false;
-  numberInput.disabled = false;
-};
