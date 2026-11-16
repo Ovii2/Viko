@@ -74,6 +74,7 @@ guessBtn.addEventListener("click", () => {
     guessResult.textContent = "Atspėjai!";
     endGame();
   }
+  numberInput.value = "";
 
   const emptyHistory = historyBody.querySelector(".empty-history");
 
@@ -84,8 +85,10 @@ guessBtn.addEventListener("click", () => {
   const row = historyBody.insertRow(0);
 
   row.insertCell().textContent = guess;
-  row.insertCell().textContent = guess < answer ? "↑" : guess > answer ? "↓" : "✓";
-  row.insertCell().textContent = guess < answer ? "Per mažas" : guess > answer ? "Per didelis" : "Atspėjai";
+  row.insertCell().textContent =
+    guess < answer ? "↑" : guess > answer ? "↓" : "✓";
+  row.insertCell().textContent =
+    guess < answer ? "Per mažas" : guess > answer ? "Per didelis" : "Atspėjai";
 });
 
 giveupBtn.addEventListener("click", () => {
