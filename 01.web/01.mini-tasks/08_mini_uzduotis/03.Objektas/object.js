@@ -1,16 +1,27 @@
-const hotel = {
-  name: "Park",
-  roomRate: 240,
-  discount: 15,
-  offerPrice() {
+function Hotel(name, roomRate, discount) {
+  this.name = name;
+  this.roomRate = roomRate;
+  this.discount = discount;
+  this.offerPrice = function () {
     return this.roomRate * ((100 - this.discount) / 100);
-  },
-};
+  };
+}
 
-let hotelName = document.getElementById("hotelName");
-let roomRate = document.getElementById("roomRate");
-let specialRate = document.getElementById("specialRate");
+const hotelPark = new Hotel("Park", 240, 15);
+const hotelCity = new Hotel("City", 180, 10);
 
-hotelName.textContent = hotel.name;
-roomRate.textContent = `$ ${hotel.roomRate.toFixed(2)}`;
-specialRate.textContent = `$ ${hotel.offerPrice()}`;
+const hotels = [hotelPark, hotelCity];
+
+const hotelsHtml = hotels
+  .map((hotel) => {
+    return `
+  <div class="hotelName">${hotel.name}</div>
+  <div class="roomRate">${hotel.roomRate.toFixed(2)}</div>
+  <div class="specialRate">${hotel.offerPrice().toFixed(2)}</div>
+  `;
+  })
+  .join("");
+
+const hotelsEl = document.querySelector(".hotels");
+
+hotelsEl.innerHTML = hotelsHtml;

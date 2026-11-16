@@ -5,7 +5,8 @@
 
 body {
   background-color: #fff;
-  background: url("/images/travelworthy-backdrop.jpg") no-repeat center center fixed;
+  background: url("/images/travelworthy-backdrop.jpg") no-repeat center center
+    fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -57,7 +58,7 @@ p + h2 {
 
 /* details in the black bar */
 
-#hotelName {
+.hotelName {
   text-transform: uppercase;
   text-align: center;
   font-size: 120%;
@@ -67,19 +68,19 @@ p + h2 {
   padding: 10px 0;
 }
 
-#roomRate {
+.roomRate {
   text-decoration: line-through;
   display: inline-block;
   float: left;
   padding-top: 10px;
 }
 
-#specialRate {
+.specialRate {
   font-size: 440%;
   color: #ffb87a;
   display: inline-block;
   padding: 10px 0 20px 0;
-  margin: 0;
+  margin: 0 -10px;
 }
 
 #offerEnds {
