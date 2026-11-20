@@ -26,10 +26,28 @@ const hotelsEl = document.querySelector(".hotels");
 
 hotelsEl.innerHTML = hotelsHtml;
 
-const calculateOfferExpiration = () => {
-  const date = new Date();
-  const year = date.getFullYear;
-  console.log(year);
+const DAYS_UNTIL_EXPIRY = 7;
+
+const getExpiryDate = () => {
+  const today = new Date();
+  const expiryDate = new Date(today);
+  expiryDate.setDate(today.getDate() + DAYS_UNTIL_EXPIRY);
+  return expiryDate;
 };
 
-calculateOfferExpiration();
+const formatExpiryMessage = (date) => {
+  const dayName = date.toLocaleDateString("en-GB", { weekday: "long" });
+  const fullDate = date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  return `Offer expires next ${dayName} (${fullDate})`;
+};
+
+const expiryMsg = formatExpiryMessage(getExpiryDate());
+const offerEndsEl = document.getElementById("offerEnds");
+
+offerEndsEl.textContent = expiryMsg;
+document.title += ` ${expiryMsg}`;

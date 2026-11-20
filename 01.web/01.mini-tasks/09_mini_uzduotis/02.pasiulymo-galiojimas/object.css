@@ -85,5 +85,6 @@ p + h2 {
 #offerEnds {
   text-transform: uppercase;
   color: #ffb87a;
-  font-size: 75%;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
