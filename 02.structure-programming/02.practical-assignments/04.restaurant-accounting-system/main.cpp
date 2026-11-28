@@ -13,6 +13,7 @@
 using namespace std;
 
 const int MAX_MENU_ITEMS = 20;
+const int MAX_PORTIONS = 50;
 
 struct menuItemType {
     string menuItem;
@@ -41,6 +42,7 @@ void showMenu(menuItemType menuList[], int itemCount) {
     }
     cout << format("\nĮveskite patiekalo numerį (1–{}) ir porcijų skaičių.\n", itemCount);
     cout << "Užsakymui baigti įveskite 0.\n";
+    cout << "\n";
 }
 
 int getData(string filename, menuItemType menuList[]) {
@@ -76,6 +78,51 @@ int getData(string filename, menuItemType menuList[]) {
     return itemCount;
 }
 
+int readDishNumber(int itemCount) {
+    int dishNumber = 0;
+    while (true) {
+        cout << "Patiekalo numeris: ";
+        cin >> dishNumber;
+        if (!checkUserNumberInput()) {
+            continue;
+        }
+        if (dishNumber < 0 || dishNumber > itemCount) {
+            cout << format("Neteisingas patiekalo numeris. Leistinas intervalas: 0–{}\n", itemCount);
+            continue;
+        }
+        return dishNumber;
+    }
+}
+
+int readPortions() {
+    int portions = 0;
+    while (true) {
+        cout << "Porcijų skaičius: ";
+        cin >> portions;
+        if (!checkUserNumberInput()) {
+            continue;
+        }
+        if (portions < 1 || portions > MAX_PORTIONS) {
+            cout << format("Neteisingas porcijų kiekis. Leistinas intervalas: 1–{}\n", MAX_PORTIONS);
+            continue;
+        }
+        return portions;
+    }
+}
+
+void takeOrder(menuItemType menuList[], int itemCount, int portions[]) {
+    while (true) {
+        int dishNumber = readDishNumber(itemCount);
+        if (dishNumber == 0) {
+            cout << "Užsakymas baigtas.\n";
+            break;
+        }
+        int amount = readPortions();
+        portions[dishNumber - 1] += amount;
+        cout << format("Pridėta: {} × {}\n", amount, menuList[dishNumber - 1].menuItem);
+    }
+}
+
 int main() {
     locale::global(locale("en_US.UTF-8"));
 
@@ -84,6 +131,7 @@ int main() {
     SetConsoleCP(CP_UTF8);
 #endif
 
+    int portions[MAX_MENU_ITEMS] = {};
     menuItemType menuList[MAX_MENU_ITEMS];
 
     int itemCount = getData("menu.txt", menuList);
@@ -92,5 +140,6 @@ int main() {
         return 1;
     }
     showMenu(menuList, itemCount);
+    takeOrder(menuList, itemCount, portions);
     return 0;
 }
