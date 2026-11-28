@@ -1,0 +1,16 @@
+Patiekalo pavadinimas,Kaina (EUR)
+Kiaušinienė,1.60
+Kiaulienos šoninė su keptu kiaušiniu,2.69
+Omletas su sūriu ir žolelėmis,2.35
+Blynai su uogiene,2.20
+Avižų košė su uogomis,1.85
+Jogurtas su granola,1.75
+Sumuštinis su lašiša ir varške,3.10
+Varškės apkepas,1.90
+Keksiukas su vyšnia,1.10
+Prancūziškas skrebutis,2.15
+Kruasanas su sviestu,1.25
+Vaisių salotos,2.69
+Kava,0.60
+Arbata,0.85
+Šviežiai spaustos sultys,1.95
